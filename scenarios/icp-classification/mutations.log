@@ -1,5 +1,5 @@
 ## v001 (initial)
 Created: 2026-03-31T17:47:21Z
 Source: Manual baseline prompt
-Train score: pending
-Validation score: pending
+Train score: 0.655
+Validation score: 0.622
