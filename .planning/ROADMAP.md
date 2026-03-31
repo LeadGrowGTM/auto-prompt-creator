@@ -31,7 +31,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   5. Inputs are automatically split into train/validation sets with configurable ratio
 **Plans:** 2 plans
 Plans:
-- [ ] 01-01-PLAN.md -- Create scenario directory structure, scenario.json schema, and 9 company input files
+- [x] 01-01-PLAN.md -- Create scenario directory structure, scenario.json schema, and 9 company input files
 - [ ] 01-02-PLAN.md -- Generate Opus ground truth with consistency check, human review, and train/validation split
 
 ### Phase 2: Execution + Evaluation

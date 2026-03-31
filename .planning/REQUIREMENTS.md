@@ -3,9 +3,9 @@
 ## v1 Requirements
 
 ### Scenario Definition
-- [ ] **SCEN-01**: User can define a scenario as a directory with a scenario.json file containing task description, input/output schema, rubric dimensions with weights, and config (target model, accuracy threshold, max iterations)
-- [ ] **SCEN-02**: User can provide N source inputs (5-10) as individual files within the scenario directory
-- [ ] **SCEN-03**: Scenario supports dynamic output schemas — the prompt defines what fields to extract, not the scenario
+- [x] **SCEN-01**: User can define a scenario as a directory with a scenario.json file containing task description, input/output schema, rubric dimensions with weights, and config (target model, accuracy threshold, max iterations)
+- [x] **SCEN-02**: User can provide N source inputs (5-10) as individual files within the scenario directory
+- [x] **SCEN-03**: Scenario supports dynamic output schemas — the prompt defines what fields to extract, not the scenario
 
 ### Ground Truth
 - [ ] **GT-01**: Opus generates gold-standard outputs for each source input within the CC session
@@ -67,9 +67,9 @@
 
 | REQ-ID | Phase | Status |
 |--------|-------|--------|
-| SCEN-01 | Phase 1 | Pending |
-| SCEN-02 | Phase 1 | Pending |
-| SCEN-03 | Phase 1 | Pending |
+| SCEN-01 | Phase 1 | Complete |
+| SCEN-02 | Phase 1 | Complete |
+| SCEN-03 | Phase 1 | Complete |
 | GT-01 | Phase 1 | Pending |
 | GT-02 | Phase 1 | Pending |
 | GT-03 | Phase 1 | Pending |
