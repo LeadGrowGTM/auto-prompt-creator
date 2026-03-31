@@ -12,20 +12,20 @@ A prompt produced by this system makes a cheap model (Haiku) produce outputs ind
 
 ### Validated
 
-(None yet — ship to validate)
+- [x] Define scenarios as structured files (input data, desired output schema, quality rubric) — Validated in Phase 1
+- [x] Generate ground truth from Opus within Claude Code session — Validated in Phase 1
+- [x] Run candidate prompts against Haiku via Claude Code agent spawning — Validated in Phase 2
+- [x] Score Haiku output vs ground truth using LLM judge (Opus-as-judge within CC) — Validated in Phase 2
+- [x] Track prompt iterations with scores, failure patterns, and mutations applied — Validated in Phase 2
+- [x] Dynamic schema per scenario — fields are part of what the prompt defines, not hardcoded — Validated in Phase 1
 
 ### Active
 
-- [ ] Define scenarios as structured files (input data, desired output schema, quality rubric)
-- [ ] Generate ground truth from Opus within Claude Code session
-- [ ] Run candidate prompts against Haiku via Claude Code agent spawning
-- [ ] Score Haiku output vs ground truth using LLM judge (Opus-as-judge within CC)
-- [ ] Track prompt iterations with scores, failure patterns, and mutations applied
+
 - [ ] Prompt mutation engine: analyze failures, generate targeted prompt improvements
 - [ ] Anneal loop: iterate until 92%+ accuracy or max iterations
 - [ ] Version control prompt iterations (git-tracked, diffable)
 - [ ] Output format uses normalized casual language (LeadGrow-native labels)
-- [ ] Dynamic schema per scenario — fields are part of what the prompt defines, not hardcoded
 
 ### Out of Scope
 
@@ -75,4 +75,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after initialization*
+*Last updated: 2026-03-31 after Phase 2 completion — execution engine + evaluation framework validated*
