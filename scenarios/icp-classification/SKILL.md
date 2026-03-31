@@ -42,7 +42,7 @@ If not, run compute-scores to score all outputs (3 Opus runs, median per dimensi
 python scenarios/icp-classification/evals/compute-scores.py
 ```
 
-Note: The current compute-scores.py is hardcoded for v001. For future versions, adapt the script or create a version-parameterized variant. The script reads `evals/vNNN-raw.json`, applies rubric weights, computes train/val split scores, and writes `evals/vNNN.json`.
+Note: For each version, use the corresponding compute-scores script: `compute-scores-vNNN.py`. Create one for each new version by duplicating the previous version's script and updating the judge run data.
 
 - Output: `scenarios/icp-classification/evals/vNNN.json` with aggregate and per-input scores
 
@@ -77,7 +77,7 @@ Check these conditions in order. First match halts the loop.
 5. **Token budget:** `estimated_tokens` from Step 1 > 800
    - HALT with reason: `token-budget-exhausted`
 
-**On halt:** Set `loop-state.json` `halt_reason` to the halt string. Find `best_version` (score_history entry with highest `val`). Report using the Halt Report Format at the bottom of this skill. Stop.
+**On halt:** Set `loop-state.json` `halt_reason` to the halt string. Find `best_version` (score_history entry with highest `val`). Report using the Halt Report Format at the bottom of this skill. Then run Step 9: Graduate to Library.
 
 **On continue:** Proceed to Step 5.
 
@@ -150,6 +150,27 @@ git commit -m "opt(icp-classification): v[N+1] -- [mutation-type] -- [overall_sc
 Example: `opt(icp-classification): v002 -- additive -- 0.78`
 
 Note: If vNNN-raw.json and vNNN.json already existed before this iteration (as with v001), they may already be committed. Only add files that have changed.
+
+## Step 9: Graduate to Library
+
+Only run when the loop has halted with `halt_reason: threshold-reached`.
+
+Run the graduation script:
+
+```bash
+python scenarios/icp-classification/evals/graduate.py scenarios/icp-classification
+```
+
+The script reads `evals/loop-state.json`, finds the best prompt version, and writes it to `library/{scenario_name}.md` with YAML frontmatter containing: scenario name, graduation date, accuracy scores (overall/train/validation), threshold, iterations run, best version, target model, test set size, and token count.
+
+Then commit the graduated prompt:
+
+```bash
+git add library/icp-classification.md
+git commit -m "grad(icp-classification): graduate {best_version} to library -- val {best_validation_score}"
+```
+
+**If halt_reason is NOT `threshold-reached`:** Do NOT auto-graduate. Report in the halt report that the loop ended without reaching threshold. The user can manually run `graduate.py` to graduate the current best if desired.
 
 ## Halt Report Format
 
