@@ -15,7 +15,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 1: Scenario Foundation + Ground Truth** - Define the scenario file format, input structure, and Opus-generated ground truth with human review (completed 2026-03-31)
 - [ ] **Phase 2: Execution + Evaluation** - Run candidate prompts against Haiku and score outputs against ground truth with a reliable judge
 - [ ] **Phase 3: Mutation + Optimization Loop** - Analyze failures, mutate prompts, enforce convergence rules, and run the full anneal loop
-- [ ] **Phase 4: Graduation + Library** - Graduate winning prompts to a portable library with metadata and lineage
+- [x] **Phase 4: Graduation + Library** - Graduate winning prompts to a portable library with metadata and lineage (completed 2026-03-31)
 
 ## Phase Details
 
@@ -72,9 +72,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Prompts hitting the accuracy threshold are automatically copied to library/ as named, portable files
   2. Each graduated prompt includes metadata: scenario name, final accuracy, iterations needed, test set size, date
-**Plans:** 1 plan
+**Plans:** 1/1 plans complete
 Plans:
-- [ ] 04-01-PLAN.md -- Create graduation script (graduate.py) and update anneal loop SKILL.md with graduation step
+- [x] 04-01-PLAN.md -- Create graduation script (graduate.py) and update anneal loop SKILL.md with graduation step
 
 ## Progress
 
@@ -86,4 +86,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Scenario Foundation + Ground Truth | 2/2 | Complete   | 2026-03-31 |
 | 2. Execution + Evaluation | 0/2 | Planning complete | - |
 | 3. Mutation + Optimization Loop | 0/3 | Planning complete | - |
-| 4. Graduation + Library | 0/1 | Planning complete | - |
+| 4. Graduation + Library | 1/1 | Complete   | 2026-03-31 |

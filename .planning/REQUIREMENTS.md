@@ -43,8 +43,8 @@
 - [x] **TRACK-03**: All prompt iterations and evaluations are git-committed for diffable lineage
 
 ### Graduation
-- [ ] **GRAD-01**: Prompts hitting the accuracy threshold graduate to library/ as named, portable files
-- [ ] **GRAD-02**: Graduated prompt includes metadata: scenario name, accuracy score, iterations needed, test set size, date
+- [x] **GRAD-01**: Prompts hitting the accuracy threshold graduate to library/ as named, portable files
+- [x] **GRAD-02**: Graduated prompt includes metadata: scenario name, accuracy score, iterations needed, test set size, date
 
 ## v2 Requirements (Deferred)
 
@@ -93,5 +93,5 @@
 | LOOP-03 | Phase 3 | Complete |
 | LOOP-04 | Phase 3 | Complete |
 | TRACK-03 | Phase 3 | Complete |
-| GRAD-01 | Phase 4 | Pending |
-| GRAD-02 | Phase 4 | Pending |
+| GRAD-01 | Phase 4 | Complete |
+| GRAD-02 | Phase 4 | Complete |
