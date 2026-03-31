@@ -26,9 +26,9 @@
 - [x] **EVAL-04**: Multi-run voting (3 judge runs, median score) to reduce scoring noise
 
 ### Mutation
-- [ ] **MUT-01**: Failure-driven mutation — analyze what went wrong across test cases, generate targeted prompt improvements (SIMBA-style)
-- [ ] **MUT-02**: Failure taxonomy — categorize failures into named patterns (e.g., "formal-language-regression", "missing-field", "hallucinated-data")
-- [ ] **MUT-03**: Mutations include both additive (add instructions) and subtractive (remove/simplify instructions)
+- [x] **MUT-01**: Failure-driven mutation — analyze what went wrong across test cases, generate targeted prompt improvements (SIMBA-style)
+- [x] **MUT-02**: Failure taxonomy — categorize failures into named patterns (e.g., "formal-language-regression", "missing-field", "hallucinated-data")
+- [x] **MUT-03**: Mutations include both additive (add instructions) and subtractive (remove/simplify instructions)
 - [x] **MUT-04**: Token budget enforcement — prompt length capped (default 800 tokens for Haiku) with consolidation passes when approaching limit
 
 ### Loop Control
@@ -84,9 +84,9 @@
 | EVAL-04 | Phase 2 | Complete |
 | TRACK-01 | Phase 2 | Complete |
 | TRACK-02 | Phase 2 | Complete |
-| MUT-01 | Phase 3 | Pending |
-| MUT-02 | Phase 3 | Pending |
-| MUT-03 | Phase 3 | Pending |
+| MUT-01 | Phase 3 | Complete |
+| MUT-02 | Phase 3 | Complete |
+| MUT-03 | Phase 3 | Complete |
 | MUT-04 | Phase 3 | Complete |
 | LOOP-01 | Phase 3 | Pending |
 | LOOP-02 | Phase 3 | Pending |

@@ -62,7 +62,7 @@ Plans:
 **Plans:** 3 plans
 Plans:
 - [x] 03-01-PLAN.md -- Parameterized execution script (run-vNNN.mjs) and loop-state.json initialization
-- [ ] 03-02-PLAN.md -- Failure analysis prompt and mutation instruction prompt templates
+- [x] 03-02-PLAN.md -- Failure analysis prompt and mutation instruction prompt templates
 - [ ] 03-03-PLAN.md -- Anneal loop SKILL.md + execute iteration 1 to validate pipeline end-to-end
 
 ### Phase 4: Graduation + Library
