@@ -72,7 +72,9 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Prompts hitting the accuracy threshold are automatically copied to library/ as named, portable files
   2. Each graduated prompt includes metadata: scenario name, final accuracy, iterations needed, test set size, date
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 04-01-PLAN.md -- Create graduation script (graduate.py) and update anneal loop SKILL.md with graduation step
 
 ## Progress
 
@@ -84,4 +86,4 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | 1. Scenario Foundation + Ground Truth | 2/2 | Complete   | 2026-03-31 |
 | 2. Execution + Evaluation | 0/2 | Planning complete | - |
 | 3. Mutation + Optimization Loop | 0/3 | Planning complete | - |
-| 4. Graduation + Library | 0/TBD | Not started | - |
+| 4. Graduation + Library | 0/1 | Planning complete | - |
