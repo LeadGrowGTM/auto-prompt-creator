@@ -65,6 +65,33 @@
 
 ## Traceability
 
-| REQ-ID | Phase |
-|--------|-------|
-| (to be filled by roadmap) | |
+| REQ-ID | Phase | Status |
+|--------|-------|--------|
+| SCEN-01 | Phase 1 | Pending |
+| SCEN-02 | Phase 1 | Pending |
+| SCEN-03 | Phase 1 | Pending |
+| GT-01 | Phase 1 | Pending |
+| GT-02 | Phase 1 | Pending |
+| GT-03 | Phase 1 | Pending |
+| GT-04 | Phase 1 | Pending |
+| GT-05 | Phase 1 | Pending |
+| EXEC-01 | Phase 2 | Pending |
+| EXEC-02 | Phase 2 | Pending |
+| EXEC-03 | Phase 2 | Pending |
+| EVAL-01 | Phase 2 | Pending |
+| EVAL-02 | Phase 2 | Pending |
+| EVAL-03 | Phase 2 | Pending |
+| EVAL-04 | Phase 2 | Pending |
+| TRACK-01 | Phase 2 | Pending |
+| TRACK-02 | Phase 2 | Pending |
+| MUT-01 | Phase 3 | Pending |
+| MUT-02 | Phase 3 | Pending |
+| MUT-03 | Phase 3 | Pending |
+| MUT-04 | Phase 3 | Pending |
+| LOOP-01 | Phase 3 | Pending |
+| LOOP-02 | Phase 3 | Pending |
+| LOOP-03 | Phase 3 | Pending |
+| LOOP-04 | Phase 3 | Pending |
+| TRACK-03 | Phase 3 | Pending |
+| GRAD-01 | Phase 4 | Pending |
+| GRAD-02 | Phase 4 | Pending |
