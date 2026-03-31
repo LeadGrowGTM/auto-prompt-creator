@@ -20,10 +20,10 @@
 - [x] **EXEC-03**: Parse failures are handled gracefully (logged, scored as 0, not crash)
 
 ### Evaluation
-- [ ] **EVAL-01**: Opus judges Haiku output against ground truth using a multi-dimension rubric (accuracy, completeness, style)
-- [ ] **EVAL-02**: Evaluation results stored as structured JSON per iteration (per-input scores, per-dimension scores, aggregate accuracy)
-- [ ] **EVAL-03**: Judge uses concrete pass/fail examples from the rubric (calibration anchors)
-- [ ] **EVAL-04**: Multi-run voting (3 judge runs, median score) to reduce scoring noise
+- [x] **EVAL-01**: Opus judges Haiku output against ground truth using a multi-dimension rubric (accuracy, completeness, style)
+- [x] **EVAL-02**: Evaluation results stored as structured JSON per iteration (per-input scores, per-dimension scores, aggregate accuracy)
+- [x] **EVAL-03**: Judge uses concrete pass/fail examples from the rubric (calibration anchors)
+- [x] **EVAL-04**: Multi-run voting (3 judge runs, median score) to reduce scoring noise
 
 ### Mutation
 - [ ] **MUT-01**: Failure-driven mutation — analyze what went wrong across test cases, generate targeted prompt improvements (SIMBA-style)
@@ -78,10 +78,10 @@
 | EXEC-01 | Phase 2 | Complete |
 | EXEC-02 | Phase 2 | Complete |
 | EXEC-03 | Phase 2 | Complete |
-| EVAL-01 | Phase 2 | Pending |
-| EVAL-02 | Phase 2 | Pending |
-| EVAL-03 | Phase 2 | Pending |
-| EVAL-04 | Phase 2 | Pending |
+| EVAL-01 | Phase 2 | Complete |
+| EVAL-02 | Phase 2 | Complete |
+| EVAL-03 | Phase 2 | Complete |
+| EVAL-04 | Phase 2 | Complete |
 | TRACK-01 | Phase 2 | Complete |
 | TRACK-02 | Phase 2 | Complete |
 | MUT-01 | Phase 3 | Pending |
