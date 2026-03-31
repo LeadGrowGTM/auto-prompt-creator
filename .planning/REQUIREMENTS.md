@@ -8,11 +8,11 @@
 - [x] **SCEN-03**: Scenario supports dynamic output schemas — the prompt defines what fields to extract, not the scenario
 
 ### Ground Truth
-- [ ] **GT-01**: Opus generates gold-standard outputs for each source input within the CC session
-- [ ] **GT-02**: Ground truth files are stored as individual JSON files (one per input) with the input and expected output
-- [ ] **GT-03**: Human review checkpoint exists before optimization begins — ground truth must be approved
-- [ ] **GT-04**: Ground truth generation includes consistency check (generate twice, flag disagreements)
-- [ ] **GT-05**: Inputs are split into train/validation sets (configurable ratio, default 60/40) to detect overfitting
+- [x] **GT-01**: Opus generates gold-standard outputs for each source input within the CC session
+- [x] **GT-02**: Ground truth files are stored as individual JSON files (one per input) with the input and expected output
+- [x] **GT-03**: Human review checkpoint exists before optimization begins — ground truth must be approved
+- [x] **GT-04**: Ground truth generation includes consistency check (generate twice, flag disagreements)
+- [x] **GT-05**: Inputs are split into train/validation sets (configurable ratio, default 60/40) to detect overfitting
 
 ### Execution
 - [ ] **EXEC-01**: Candidate prompts are executed against Haiku via CC agent spawning
@@ -70,11 +70,11 @@
 | SCEN-01 | Phase 1 | Complete |
 | SCEN-02 | Phase 1 | Complete |
 | SCEN-03 | Phase 1 | Complete |
-| GT-01 | Phase 1 | Pending |
-| GT-02 | Phase 1 | Pending |
-| GT-03 | Phase 1 | Pending |
-| GT-04 | Phase 1 | Pending |
-| GT-05 | Phase 1 | Pending |
+| GT-01 | Phase 1 | Complete |
+| GT-02 | Phase 1 | Complete |
+| GT-03 | Phase 1 | Complete |
+| GT-04 | Phase 1 | Complete |
+| GT-05 | Phase 1 | Complete |
 | EXEC-01 | Phase 2 | Pending |
 | EXEC-02 | Phase 2 | Pending |
 | EXEC-03 | Phase 2 | Pending |

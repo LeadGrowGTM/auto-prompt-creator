@@ -12,7 +12,7 @@ Four phases following a strict dependency chain: define scenarios and generate g
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Scenario Foundation + Ground Truth** - Define the scenario file format, input structure, and Opus-generated ground truth with human review
+- [x] **Phase 1: Scenario Foundation + Ground Truth** - Define the scenario file format, input structure, and Opus-generated ground truth with human review (completed 2026-03-31)
 - [ ] **Phase 2: Execution + Evaluation** - Run candidate prompts against Haiku and score outputs against ground truth with a reliable judge
 - [ ] **Phase 3: Mutation + Optimization Loop** - Analyze failures, mutate prompts, enforce convergence rules, and run the full anneal loop
 - [ ] **Phase 4: Graduation + Library** - Graduate winning prompts to a portable library with metadata and lineage
@@ -29,10 +29,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can review ground truth before optimization begins and approve/reject individual outputs
   4. Ground truth consistency check flags disagreements when Opus generates different outputs for the same input on two runs
   5. Inputs are automatically split into train/validation sets with configurable ratio
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 01-01-PLAN.md -- Create scenario directory structure, scenario.json schema, and 9 company input files
-- [ ] 01-02-PLAN.md -- Generate Opus ground truth with consistency check, human review, and train/validation split
+- [x] 01-02-PLAN.md -- Generate Opus ground truth with consistency check, human review, and train/validation split
 
 ### Phase 2: Execution + Evaluation
 **Goal**: User can run a candidate prompt against Haiku and get reliable, structured scoring against ground truth
@@ -74,7 +74,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Scenario Foundation + Ground Truth | 0/2 | Planning | - |
+| 1. Scenario Foundation + Ground Truth | 2/2 | Complete   | 2026-03-31 |
 | 2. Execution + Evaluation | 0/TBD | Not started | - |
 | 3. Mutation + Optimization Loop | 0/TBD | Not started | - |
 | 4. Graduation + Library | 0/TBD | Not started | - |
