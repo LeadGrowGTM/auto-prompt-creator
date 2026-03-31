@@ -1,0 +1,222 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-03-31T17:53:45.454Z",
+  "config": {
+    "target_model": "haiku",
+    "prompt_file": "prompts/v001.md"
+  },
+  "results": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "haiku_output": {
+        "industry": "AI/ML platform",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP of Sales",
+          "VP of Marketing",
+          "business development lead"
+        ],
+        "pain_points": [
+          "Reaching Fortune 500 engineering and analytics teams through gatekeepers",
+          "Building qualified pipeline for complex enterprise deals against well-funded competitors",
+          "Educating market on ML capabilities while differentiating from DataRobot and H2O2O"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Enterprise software company selling to Fortune 500 customers needs efficient outbound lead generation and sales development to compete with well-funded rivals and accelerate pipeline growth."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"AI/ML platform\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"VP of Sales\", \"VP of Marketing\", \"business development lead\"],\n  \"pain_points\": [\n    \"Reaching Fortune 500 engineering and analytics teams through gatekeepers\",\n    \"Building qualified pipeline for complex enterprise deals against well-funded competitors\",\n    \"Educating market on ML capabilities while differentiating from DataRobot and H2O2O\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Enterprise software company selling to Fortune 500 customers needs efficient outbound lead generation and sales development to compete with well-funded rivals and accelerate pipeline growth.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "haiku_output": {
+        "industry": "metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "VP of Sales",
+          "Sales Manager",
+          "Business Development Manager"
+        ],
+        "pain_points": [
+          "Quote turnaround takes 5 days while competitors respond faster",
+          "Losing automotive and aerospace OEM deals to competitors with quicker response times",
+          "Limited customer acquisition despite ISO 9001 certification and proven manufacturing capability"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Mid-market B2B manufacturer with clear sales velocity pain, but manufacturing clients require specialized OEM/industrial expertise outside typical GTM scope."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"metal fabrication\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"VP of Sales\", \"Sales Manager\", \"Business Development Manager\"],\n  \"pain_points\": [\n    \"Quote turnaround takes 5 days while competitors respond faster\",\n    \"Losing automotive and aerospace OEM deals to competitors with quicker response times\",\n    \"Limited customer acquisition despite ISO 9001 certification and proven manufacturing capability\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Mid-market B2B manufacturer with clear sales velocity pain, but manufacturing clients require specialized OEM/industrial expertise outside typical GTM scope.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "haiku_output": {
+        "industry": "commercial cleaning",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "Operations Manager",
+          "Sales Manager",
+          "Owner"
+        ],
+        "pain_points": [
+          "Quality assurance process struggling to scale with 340-person headcount",
+          "Operational complexity managing three facility types simultaneously (corporate, medical, industrial)",
+          "Need for larger enterprise-scale contracts to grow revenue beyond $28M baseline"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market service company with proven operations (340 employees, $28M revenue) is at the ideal size for outbound lead gen to land larger corporate and medical facility contracts."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"commercial cleaning\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"Operations Manager\", \"Sales Manager\", \"Owner\"],\n  \"pain_points\": [\n    \"Quality assurance process struggling to scale with 340-person headcount\",\n    \"Operational complexity managing three facility types simultaneously (corporate, medical, industrial)\",\n    \"Need for larger enterprise-scale contracts to grow revenue beyond $28M baseline\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Mid-market service company with proven operations (340 employees, $28M revenue) is at the ideal size for outbound lead gen to land larger corporate and medical facility contracts.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "haiku_output": {
+        "industry": "automotive marketing tech",
+        "company_size": "SMB",
+        "decision_makers": [
+          "CEO",
+          "VP sales",
+          "marketing director"
+        ],
+        "pain_points": [
+          "competing against larger entrenched competitors (Dealer.com, CDK) with more resources",
+          "limited in-house sales capacity (45 employees) for a national market",
+          "scaling customer acquisition beyond current 300+ dealerships"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "B2B SaaS company with clear customer acquisition challenges and tight sales resources, but SaaS buying models typically differ from LeadGrow's outbound service company focus."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"automotive marketing tech\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"CEO\", \"VP sales\", \"marketing director\"],\n  \"pain_points\": [\"competing against larger entrenched competitors (Dealer.com, CDK) with more resources\", \"limited in-house sales capacity (45 employees) for a national market\", \"scaling customer acquisition beyond current 300+ dealerships\"],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"B2B SaaS company with clear customer acquisition challenges and tight sales resources, but SaaS buying models typically differ from LeadGrow's outbound service company focus.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "sales manager",
+          "ops director",
+          "business development lead"
+        ],
+        "pain_points": [
+          "lead tracking in spreadsheets instead of CRM",
+          "sales processes not scaling with 20% YoY growth",
+          "limited pipeline generation for law firm and financial services verticals"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Growing B2B services provider with manual sales infrastructure, vertical expertise, and clear need for systematic lead generation and sales operations."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"office services\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"sales manager\", \"ops director\", \"business development lead\"],\n  \"pain_points\": [\"lead tracking in spreadsheets instead of CRM\", \"sales processes not scaling with 20% YoY growth\", \"limited pipeline generation for law firm and financial services verticals\"],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Growing B2B services provider with manual sales infrastructure, vertical expertise, and clear need for systematic lead generation and sales operations.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "fleet electrification",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "sales directors",
+          "business development managers",
+          "marketing leads"
+        ],
+        "pain_points": [
+          "long RFP cycles and procurement timelines for fleet conversion projects",
+          "difficulty reaching decision makers at municipalities and large fleet operators",
+          "need to build early pipeline awareness for complex multi-stakeholder sales"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Large B2B fleet solutions provider with heavy RFP processes selling to government and commercial accounts is an ideal prospect for outbound lead gen to accelerate pipeline and engage procurement teams early in their buying cycle."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"fleet electrification\",\n  \"company_size\": \"enterprise\",\n  \"decision_makers\": [\"sales directors\", \"business development managers\", \"marketing leads\"],\n  \"pain_points\": [\"long RFP cycles and procurement timelines for fleet conversion projects\", \"difficulty reaching decision makers at municipalities and large fleet operators\", \"need to build early pipeline awareness for complex multi-stakeholder sales\"],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Large B2B fleet solutions provider with heavy RFP processes selling to government and commercial accounts is an ideal prospect for outbound lead gen to accelerate pipeline and engage procurement teams early in their buying cycle.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "education consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "Founder/CEO",
+          "Head of Sales"
+        ],
+        "pain_points": [
+          "No dedicated sales function – founder manually prospecting across 3 states",
+          "Struggling to systematically reach new school districts and identify the right decision makers",
+          "Need to scale beyond 40 districts but lack sales infrastructure and systematic lead generation"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B service company selling to K-12 districts with acute sales gap and founder doing manual outbound – exactly the profile we solve."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"education consulting\",\n  \"company_size\": \"startup\",\n  \"decision_makers\": [\"Founder/CEO\", \"Head of Sales\"],\n  \"pain_points\": [\n    \"No dedicated sales function – founder manually prospecting across 3 states\",\n    \"Struggling to systematically reach new school districts and identify the right decision makers\",\n    \"Need to scale beyond 40 districts but lack sales infrastructure and systematic lead generation\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"B2B service company selling to K-12 districts with acute sales gap and founder doing manual outbound – exactly the profile we solve.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "commercial HVAC services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "operations manager",
+          "sales manager",
+          "owner"
+        ],
+        "pain_points": [
+          "Losing 12-15% of scheduled follow-ups due to manual dispatching gaps",
+          "Legacy ERP creating coordination challenges across 6 metro service areas",
+          "Revenue leakage from missed preventive maintenance contract renewals"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "SMB field services company with clear operational constraints and revenue loss from dispatch inefficiencies makes it a strong target for lead generation services."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"commercial HVAC services\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"operations manager\", \"sales manager\", \"owner\"],\n  \"pain_points\": [\n    \"Losing 12-15% of scheduled follow-ups due to manual dispatching gaps\",\n    \"Legacy ERP creating coordination challenges across 6 metro service areas\",\n    \"Revenue leakage from missed preventive maintenance contract renewals\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"SMB field services company with clear operational constraints and revenue loss from dispatch inefficiencies makes it a strong target for lead generation services.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "injection molding",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "owner",
+          "sales director",
+          "business development"
+        ],
+        "pain_points": [
+          "turning away orders due to capacity constraints",
+          "relies entirely on word-of-mouth and trade shows for B2B customer acquisition",
+          "no structured sales pipeline or outbound strategy"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Right size and industry for B2B outbound, but capacity constraints mean they can't convert more leads until operations optimize."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"injection molding\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"owner\", \"sales director\", \"business development\"],\n  \"pain_points\": [\"turning away orders due to capacity constraints\", \"relies entirely on word-of-mouth and trade shows for B2B customer acquisition\", \"no structured sales pipeline or outbound strategy\"],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Right size and industry for B2B outbound, but capacity constraints mean they can't convert more leads until operations optimize.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    }
+  ],
+  "summary": {
+    "total_inputs": 9,
+    "successful_parses": 9,
+    "parse_failures": 0,
+    "missing_field_count": 0
+  }
+}
