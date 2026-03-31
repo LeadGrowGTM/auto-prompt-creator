@@ -29,7 +29,10 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. User can review ground truth before optimization begins and approve/reject individual outputs
   4. Ground truth consistency check flags disagreements when Opus generates different outputs for the same input on two runs
   5. Inputs are automatically split into train/validation sets with configurable ratio
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 01-01-PLAN.md -- Create scenario directory structure, scenario.json schema, and 9 company input files
+- [ ] 01-02-PLAN.md -- Generate Opus ground truth with consistency check, human review, and train/validation split
 
 ### Phase 2: Execution + Evaluation
 **Goal**: User can run a candidate prompt against Haiku and get reliable, structured scoring against ground truth
@@ -71,7 +74,7 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Scenario Foundation + Ground Truth | 0/TBD | Not started | - |
+| 1. Scenario Foundation + Ground Truth | 0/2 | Planning | - |
 | 2. Execution + Evaluation | 0/TBD | Not started | - |
 | 3. Mutation + Optimization Loop | 0/TBD | Not started | - |
 | 4. Graduation + Library | 0/TBD | Not started | - |
