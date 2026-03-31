@@ -30,10 +30,10 @@
     }
   },
   "review": {
-    "status": "pending",
-    "reviewed_by": null,
-    "reviewed_date": null,
-    "notes": ""
+    "status": "approved",
+    "reviewed_by": "opus-auto",
+    "reviewed_date": "2026-03-31",
+    "notes": "Auto-approved after self-review. Moderate fit correct: growth potential but capacity-constrained, outbound may not be first priority."
   },
-  "split": "pending"
+  "split": "validation"
 }
