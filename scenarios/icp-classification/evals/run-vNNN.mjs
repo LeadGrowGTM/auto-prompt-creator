@@ -1,0 +1,145 @@
+// Usage: bun run-vNNN.mjs [base_path] [version]
+// Example: bun evals/run-vNNN.mjs . v002
+// Outputs: evals/v002-raw.json
+
+import { readFileSync, writeFileSync, readdirSync, mkdtempSync, unlinkSync } from 'fs';
+import { execSync } from 'child_process';
+import { join } from 'path';
+import { tmpdir } from 'os';
+
+const BASE = process.argv[2] || 'C:/Users/mitch/Everything_CC/auto-prompt-creator/scenarios/icp-classification';
+const VERSION = process.argv[3] || 'v001';
+const PROMPT_FILE = join(BASE, `prompts/${VERSION}.md`);
+const GT_DIR = join(BASE, 'ground-truth');
+const OUT_FILE = join(BASE, `evals/${VERSION}-raw.json`);
+
+const promptTemplate = readFileSync(PROMPT_FILE, 'utf8');
+
+// Token estimation
+const wordCount = promptTemplate.split(/\s+/).length;
+const estimatedTokens = Math.ceil(wordCount * 1.3);
+console.log(`Token estimate: ${estimatedTokens} (${wordCount} words * 1.3)`);
+if (estimatedTokens >= 700) console.log('WARNING: CONSOLIDATION TRIGGER (700+ tokens)');
+if (estimatedTokens >= 800) console.log('ERROR: TOKEN BUDGET EXCEEDED (800+ tokens)');
+
+// Get all ground truth files, sorted alphabetically
+const gtFiles = readdirSync(GT_DIR)
+  .filter(f => f.endsWith('.json'))
+  .sort();
+
+console.log(`Processing ${gtFiles.length} inputs...`);
+
+const results = [];
+let successCount = 0;
+let failCount = 0;
+let missingFieldTotal = 0;
+
+const REQUIRED_FIELDS = ['industry', 'company_size', 'decision_makers', 'pain_points', 'icp_fit', 'reasoning'];
+
+// Create a temp directory for prompt files
+const tmpDir = mkdtempSync(join(tmpdir(), 'haiku-'));
+
+for (const file of gtFiles) {
+  const gt = JSON.parse(readFileSync(join(GT_DIR, file), 'utf8'));
+  const inputId = gt.id;
+  const split = gt.split;
+  const input = gt.input;
+
+  // Build the full prompt
+  const fullPrompt = `${promptTemplate}\n\n${input.company_name}: ${input.company_description}`;
+
+  console.log(`\n--- Processing: ${inputId} (${split}) ---`);
+
+  let rawResponse = '';
+  let haikuOutput = null;
+  let parseFailure = false;
+  let missingFields = [];
+
+  try {
+    // Write prompt to a temp file to avoid shell escaping issues (pipe chars, quotes)
+    const tmpFile = join(tmpDir, `${inputId}.txt`);
+    writeFileSync(tmpFile, fullPrompt);
+
+    // Call Haiku via claude CLI, piping prompt from file to avoid shell escaping
+    const bashPath = 'C:\\Program Files\\Git\\usr\\bin\\bash.exe';
+    rawResponse = execSync(
+      `cat "${tmpFile.replace(/\\/g, '/')}" | claude --print --model haiku --allowedTools ""`,
+      { encoding: 'utf8', timeout: 120000, maxBuffer: 1024 * 1024, shell: bashPath }
+    ).trim();
+
+    console.log(`Raw response (first 200 chars): ${rawResponse.substring(0, 200)}`);
+
+    // Clean up response - strip code fences if present
+    let cleaned = rawResponse;
+    cleaned = cleaned.replace(/```json\s*/g, '').replace(/```\s*/g, '');
+    cleaned = cleaned.trim();
+
+    // Try to extract JSON from the response
+    const jsonMatch = cleaned.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      cleaned = jsonMatch[0];
+    }
+
+    try {
+      haikuOutput = JSON.parse(cleaned);
+
+      // Validate fields
+      for (const field of REQUIRED_FIELDS) {
+        if (!(field in haikuOutput)) {
+          missingFields.push(field);
+        }
+      }
+
+      if (missingFields.length > 0) {
+        console.log(`  Missing fields: ${missingFields.join(', ')}`);
+        missingFieldTotal += missingFields.length;
+      }
+
+      parseFailure = false;
+      successCount++;
+      console.log(`  Parsed successfully. icp_fit: ${haikuOutput.icp_fit}`);
+    } catch (parseErr) {
+      console.log(`  Parse failure: ${parseErr.message}`);
+      parseFailure = true;
+      haikuOutput = null;
+      failCount++;
+    }
+  } catch (execErr) {
+    console.log(`  Agent error: ${execErr.message}`);
+    rawResponse = `AGENT_ERROR: ${execErr.message}`;
+    parseFailure = true;
+    haikuOutput = null;
+    failCount++;
+  }
+
+  results.push({
+    input_id: inputId,
+    split: split,
+    haiku_output: haikuOutput,
+    raw_response: rawResponse,
+    parse_failure: parseFailure,
+    missing_fields: missingFields
+  });
+}
+
+const output = {
+  prompt_version: VERSION,
+  timestamp: new Date().toISOString(),
+  config: {
+    target_model: 'haiku',
+    prompt_file: `prompts/${VERSION}.md`
+  },
+  results: results,
+  summary: {
+    total_inputs: results.length,
+    successful_parses: successCount,
+    parse_failures: failCount,
+    missing_field_count: missingFieldTotal,
+    estimated_tokens: estimatedTokens
+  }
+};
+
+writeFileSync(OUT_FILE, JSON.stringify(output, null, 2));
+console.log(`\n=== COMPLETE ===`);
+console.log(`Total: ${results.length}, Success: ${successCount}, Failures: ${failCount}`);
+console.log(`Output written to: ${OUT_FILE}`);
