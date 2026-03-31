@@ -1,0 +1,39 @@
+{
+  "id": "title-one",
+  "input_ref": "title-one",
+  "input": {
+    "id": "title-one",
+    "company_name": "Title One",
+    "company_description": "Education services company providing Title I compliance consulting and intervention program design for K-12 school districts. 15 employees, fully remote. Works with about 40 districts across 3 states. Revenue under $2M. Founder-led with no dedicated sales function.",
+    "website_url": null
+  },
+  "expected_output": {
+    "industry": "education consulting",
+    "company_size": "startup",
+    "decision_makers": ["the founder", "lead consultants"],
+    "pain_points": [
+      "no dedicated sales function to grow beyond 40 districts",
+      "founder doing everything from delivery to business development",
+      "revenue under $2M limits budget for any meaningful marketing spend"
+    ],
+    "icp_fit": "weak",
+    "reasoning": "Tiny founder-led consultancy selling to school districts. No budget for outbound, no sales team to hand leads to, and government procurement cycles make cold outreach ineffective."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "f6a2b8",
+      "pass_2_hash": "c4d9e1",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

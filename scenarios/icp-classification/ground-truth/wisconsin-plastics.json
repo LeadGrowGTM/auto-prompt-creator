@@ -1,0 +1,39 @@
+{
+  "id": "wisconsin-plastics",
+  "input_ref": "wisconsin-plastics",
+  "input": {
+    "id": "wisconsin-plastics",
+    "company_name": "Wisconsin Plastics",
+    "company_description": "Custom injection molding and plastics manufacturing for consumer goods and medical device companies. 310 employees in a single plant outside Milwaukee. Capacity-constrained and turning away orders. Marketing is nonexistent beyond trade shows and word of mouth.",
+    "website_url": "https://wisconsinplastics.com"
+  },
+  "expected_output": {
+    "industry": "plastics manufacturing",
+    "company_size": "mid-market",
+    "decision_makers": ["VP of sales", "plant manager", "business development leads"],
+    "pain_points": [
+      "turning away orders due to capacity constraints at their single plant",
+      "zero marketing infrastructure beyond trade shows and referrals",
+      "no pipeline visibility to prioritize high-margin orders over low-margin ones"
+    ],
+    "icp_fit": "moderate",
+    "reasoning": "Mid-market manufacturer with growth potential, but capacity constraints mean they need to optimize existing demand rather than generate new leads. Marketing gap is real but outbound may not be the first priority."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "c9d3e7",
+      "pass_2_hash": "f2a6b1",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

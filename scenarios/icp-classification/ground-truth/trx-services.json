@@ -1,0 +1,39 @@
+{
+  "id": "trx-services",
+  "input_ref": "trx-services",
+  "input": {
+    "id": "trx-services",
+    "company_name": "TRX Services",
+    "company_description": "B2B field services company specializing in commercial HVAC installation and preventive maintenance contracts. Around 180 employees operating across 6 metro areas. Runs jobs through a legacy ERP and loses 12-15% of scheduled follow-ups due to manual dispatching gaps.",
+    "website_url": null
+  },
+  "expected_output": {
+    "industry": "commercial HVAC",
+    "company_size": "SMB",
+    "decision_makers": ["ops managers", "service directors", "branch managers"],
+    "pain_points": [
+      "losing 12-15% of follow-up revenue from manual dispatch gaps",
+      "legacy ERP can't handle multi-metro scheduling complexity",
+      "scaling preventive maintenance contracts across 6 metro areas"
+    ],
+    "icp_fit": "strong",
+    "reasoning": "SMB field services with quantified revenue leakage from ops inefficiency. Clear pain, known budget range, and a legacy system begging for replacement."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "c4e9a1",
+      "pass_2_hash": "d7f3b2",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

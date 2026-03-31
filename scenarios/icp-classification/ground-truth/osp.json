@@ -1,0 +1,39 @@
+{
+  "id": "osp",
+  "input_ref": "osp",
+  "input": {
+    "id": "osp",
+    "company_name": "OSP",
+    "company_description": "Office services provider handling managed print, document shredding, and IT asset disposition for mid-size law firms and financial services companies. 95 employees, mostly in the Southeast. Growing 20% YoY but sales team still tracks leads in spreadsheets.",
+    "website_url": null
+  },
+  "expected_output": {
+    "industry": "managed office services",
+    "company_size": "SMB",
+    "decision_makers": ["sales managers", "ops leads", "the owner"],
+    "pain_points": [
+      "sales team tracking leads in spreadsheets while growing 20% YoY",
+      "no CRM to manage pipeline across law firm and financial services verticals",
+      "scaling a service-heavy business in the Southeast without ops infrastructure"
+    ],
+    "icp_fit": "moderate",
+    "reasoning": "Growing SMB with clear sales ops pain, but niche services and small size limit the complexity and budget that make outbound campaigns high-ROI."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "e2a8f5",
+      "pass_2_hash": "f1c7d3",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

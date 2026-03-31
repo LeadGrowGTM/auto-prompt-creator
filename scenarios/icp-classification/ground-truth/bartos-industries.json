@@ -1,0 +1,39 @@
+{
+  "id": "bartos-industries",
+  "input_ref": "bartos-industries",
+  "input": {
+    "id": "bartos-industries",
+    "company_name": "Bartos Industries",
+    "company_description": "Precision metal fabrication and CNC machining shop supplying automotive and aerospace OEMs. 420 employees across two plants in Ohio. ISO 9001 certified but struggling with quoting speed. Average quote turnaround is 5 days and they lose deals to faster competitors.",
+    "website_url": "https://bartosindustries.com"
+  },
+  "expected_output": {
+    "industry": "precision manufacturing",
+    "company_size": "mid-market",
+    "decision_makers": ["VP of sales", "plant managers", "quoting team leads"],
+    "pain_points": [
+      "5-day quote turnaround losing deals to faster competitors",
+      "quoting complexity across automotive and aerospace specs",
+      "scaling sales across two plants without a streamlined quote-to-order process"
+    ],
+    "icp_fit": "strong",
+    "reasoning": "Mid-market manufacturer with a quantified sales bottleneck (5-day quotes). Two plants, OEM relationships, and ISO certification signal budget and sophistication."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "a7b3c9",
+      "pass_2_hash": "d1e5f8",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

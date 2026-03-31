@@ -1,0 +1,39 @@
+{
+  "id": "dealer-teamwork",
+  "input_ref": "dealer-teamwork",
+  "input": {
+    "id": "dealer-teamwork",
+    "company_name": "Dealer Teamwork",
+    "company_description": "AI-powered digital marketing platform built specifically for automotive dealerships. Automates Google Ads, social media, and inventory-based landing pages. 45 employees in Minneapolis. Serves 300+ dealership rooftops. Competes with Dealer.com and CDK Digital Marketing.",
+    "website_url": "https://dealerteamwork.com"
+  },
+  "expected_output": {
+    "industry": "automotive marketing SaaS",
+    "company_size": "SMB",
+    "decision_makers": ["CEO", "sales directors", "marketing leads"],
+    "pain_points": [
+      "competing against Dealer.com and CDK who bundle with DMS platforms",
+      "scaling from 300 rooftops in a market dominated by platform incumbents",
+      "proving ROI of AI-driven ad automation to dealership GMs who are skeptical of tech"
+    ],
+    "icp_fit": "weak",
+    "reasoning": "Vertical SaaS selling to car dealerships is a niche market with specialized dynamics. Not a service business, not the right buyer persona, and dealership outbound requires industry-specific channels."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "e3f7a9",
+      "pass_2_hash": "b1c5d8",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

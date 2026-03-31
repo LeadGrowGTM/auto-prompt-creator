@@ -1,0 +1,39 @@
+{
+  "id": "dbs-building-solutions",
+  "input_ref": "dbs-building-solutions",
+  "input": {
+    "id": "dbs-building-solutions",
+    "company_name": "DBS Building Solutions",
+    "company_description": "Commercial cleaning and facility maintenance company serving corporate offices, medical facilities, and industrial sites across the Midwest. 340 employees, $28M revenue. Uses ServiceTitan for dispatch and has struggled to scale their quality assurance process.",
+    "website_url": "https://dbsbuildingsolutions.com"
+  },
+  "expected_output": {
+    "industry": "commercial cleaning",
+    "company_size": "mid-market",
+    "decision_makers": ["ops directors", "facility managers", "regional managers"],
+    "pain_points": [
+      "scaling QA across corporate, medical, and industrial site types",
+      "ServiceTitan dispatch limitations as they grow across the Midwest",
+      "maintaining consistent service standards across 340+ field staff"
+    ],
+    "icp_fit": "strong",
+    "reasoning": "Mid-market field services company with multi-vertical complexity, ops-heavy workflows, and clear pain around scaling. Has budget ($28M) and tech awareness (ServiceTitan)."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "a3f1c7",
+      "pass_2_hash": "b8d2e4",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

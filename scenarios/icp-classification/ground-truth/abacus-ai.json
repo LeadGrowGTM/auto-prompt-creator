@@ -1,0 +1,39 @@
+{
+  "id": "abacus-ai",
+  "input_ref": "abacus-ai",
+  "input": {
+    "id": "abacus-ai",
+    "company_name": "Abacus AI",
+    "company_description": "Enterprise AI platform enabling companies to build and deploy custom machine learning models without dedicated data science teams. 85 employees, Series B funded, based in San Francisco. Competes with DataRobot and H2O.ai. Sells to Fortune 500 engineering and analytics teams.",
+    "website_url": "https://abacus.ai"
+  },
+  "expected_output": {
+    "industry": "AI/ML platform",
+    "company_size": "SMB",
+    "decision_makers": ["CTOs", "engineering leads", "data team managers"],
+    "pain_points": [
+      "competing with well-funded incumbents like DataRobot and H2O.ai",
+      "long enterprise sales cycles selling to Fortune 500 buyers",
+      "convincing teams they don't need dedicated data scientists with the platform"
+    ],
+    "icp_fit": "weak",
+    "reasoning": "VC-backed SaaS selling to Fortune 500 is a completely different motion than the service-business outbound this ICP targets. Wrong industry, wrong buyer profile, wrong sales cycle."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "d5e1f4",
+      "pass_2_hash": "a8b2c6",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}

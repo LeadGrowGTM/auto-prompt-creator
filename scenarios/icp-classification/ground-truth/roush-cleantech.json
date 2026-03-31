@@ -1,0 +1,39 @@
+{
+  "id": "roush-cleantech",
+  "input_ref": "roush-cleantech",
+  "input": {
+    "id": "roush-cleantech",
+    "company_name": "ROUSH CleanTech",
+    "company_description": "Alternative fuel vehicle systems integrator building propane autogas and electric vehicle solutions for commercial fleets. Division of Roush Enterprises with 2,800+ employees across the parent org. Sells to municipalities, school districts, and logistics companies. Long sales cycles with heavy RFP processes.",
+    "website_url": "https://roushcleantech.com"
+  },
+  "expected_output": {
+    "industry": "clean energy vehicles",
+    "company_size": "enterprise",
+    "decision_makers": ["fleet directors", "procurement managers", "sustainability leads"],
+    "pain_points": [
+      "long RFP-driven sales cycles with municipalities and school districts",
+      "competing on government contracts where lowest bid often wins",
+      "educating buyers on propane autogas vs EV tradeoffs for fleet conversion"
+    ],
+    "icp_fit": "moderate",
+    "reasoning": "Enterprise-scale division with budget, but government/RFP sales cycles and public-sector buyers make outbound campaigns less effective than relationship-based selling."
+  },
+  "generation": {
+    "model": "opus",
+    "timestamp": "2026-03-31T17:06:24Z",
+    "consistency_check": {
+      "pass_1_hash": "b4c8d2",
+      "pass_2_hash": "e6f1a3",
+      "agreement": true,
+      "disagreements": []
+    }
+  },
+  "review": {
+    "status": "pending",
+    "reviewed_by": null,
+    "reviewed_date": null,
+    "notes": ""
+  },
+  "split": "pending"
+}
