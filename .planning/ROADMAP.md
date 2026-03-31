@@ -44,7 +44,10 @@ Plans:
   3. Opus judges Haiku output against ground truth using multi-dimension rubric with per-input and per-dimension scores
   4. Multi-run voting (3 judge runs, median) produces stable scores for the same prompt
   5. Each prompt version is stored as an immutable file (prompts/v001.md) and mutations are logged in append-only mutations.log
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 02-01-PLAN.md -- Create v001 candidate prompt, execute against Haiku for all 9 inputs, store raw outputs
+- [ ] 02-02-PLAN.md -- Build Opus judge with calibration anchors, multi-run voting, score aggregation, eval results
 
 ### Phase 3: Mutation + Optimization Loop
 **Goal**: The system iteratively improves prompts through failure-driven mutation until accuracy threshold is met or convergence is detected
@@ -75,6 +78,6 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Scenario Foundation + Ground Truth | 2/2 | Complete   | 2026-03-31 |
-| 2. Execution + Evaluation | 0/TBD | Not started | - |
+| 2. Execution + Evaluation | 0/2 | Planning complete | - |
 | 3. Mutation + Optimization Loop | 0/TBD | Not started | - |
 | 4. Graduation + Library | 0/TBD | Not started | - |
