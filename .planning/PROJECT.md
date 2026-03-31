@@ -19,13 +19,12 @@ A prompt produced by this system makes a cheap model (Haiku) produce outputs ind
 - [x] Track prompt iterations with scores, failure patterns, and mutations applied — Validated in Phase 2
 - [x] Dynamic schema per scenario — fields are part of what the prompt defines, not hardcoded — Validated in Phase 1
 
-### Active
+### Validated
 
-
-- [ ] Prompt mutation engine: analyze failures, generate targeted prompt improvements
-- [ ] Anneal loop: iterate until 92%+ accuracy or max iterations
-- [ ] Version control prompt iterations (git-tracked, diffable)
-- [ ] Output format uses normalized casual language (LeadGrow-native labels)
+- [x] Prompt mutation engine: analyze failures, generate targeted prompt improvements — Validated in Phase 3
+- [x] Anneal loop: iterate until 92%+ accuracy or max iterations — Validated in Phase 3 (iteration 1 complete, v001→v002)
+- [x] Version control prompt iterations (git-tracked, diffable) — Validated in Phase 3
+- [x] Output format uses normalized casual language (LeadGrow-native labels) — Validated in Phase 1
 
 ### Out of Scope
 
@@ -75,4 +74,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-31 after Phase 2 completion — execution engine + evaluation framework validated*
+*Last updated: 2026-03-31 after Phase 3 completion — mutation engine + anneal loop validated, iteration 1 ran (v001 0.6403 → v002 0.6236, accuracy 0.472 → 0.500)*
