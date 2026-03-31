@@ -29,7 +29,7 @@
 - [ ] **MUT-01**: Failure-driven mutation — analyze what went wrong across test cases, generate targeted prompt improvements (SIMBA-style)
 - [ ] **MUT-02**: Failure taxonomy — categorize failures into named patterns (e.g., "formal-language-regression", "missing-field", "hallucinated-data")
 - [ ] **MUT-03**: Mutations include both additive (add instructions) and subtractive (remove/simplify instructions)
-- [ ] **MUT-04**: Token budget enforcement — prompt length capped (default 800 tokens for Haiku) with consolidation passes when approaching limit
+- [x] **MUT-04**: Token budget enforcement — prompt length capped (default 800 tokens for Haiku) with consolidation passes when approaching limit
 
 ### Loop Control
 - [ ] **LOOP-01**: Anneal loop runs until accuracy >= threshold (default 92%) or max iterations (default 15)
@@ -40,7 +40,7 @@
 ### Tracking
 - [x] **TRACK-01**: Each prompt version stored as an immutable file (prompts/v001.md, v002.md, etc.)
 - [x] **TRACK-02**: Mutations logged in append-only mutations.log with: what changed, why, which failure pattern targeted, score delta
-- [ ] **TRACK-03**: All prompt iterations and evaluations are git-committed for diffable lineage
+- [x] **TRACK-03**: All prompt iterations and evaluations are git-committed for diffable lineage
 
 ### Graduation
 - [ ] **GRAD-01**: Prompts hitting the accuracy threshold graduate to library/ as named, portable files
@@ -87,11 +87,11 @@
 | MUT-01 | Phase 3 | Pending |
 | MUT-02 | Phase 3 | Pending |
 | MUT-03 | Phase 3 | Pending |
-| MUT-04 | Phase 3 | Pending |
+| MUT-04 | Phase 3 | Complete |
 | LOOP-01 | Phase 3 | Pending |
 | LOOP-02 | Phase 3 | Pending |
 | LOOP-03 | Phase 3 | Pending |
 | LOOP-04 | Phase 3 | Pending |
-| TRACK-03 | Phase 3 | Pending |
+| TRACK-03 | Phase 3 | Complete |
 | GRAD-01 | Phase 4 | Pending |
 | GRAD-02 | Phase 4 | Pending |

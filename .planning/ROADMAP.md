@@ -61,7 +61,7 @@ Plans:
   5. All iterations are git-committed for diffable prompt lineage
 **Plans:** 3 plans
 Plans:
-- [ ] 03-01-PLAN.md -- Parameterized execution script (run-vNNN.mjs) and loop-state.json initialization
+- [x] 03-01-PLAN.md -- Parameterized execution script (run-vNNN.mjs) and loop-state.json initialization
 - [ ] 03-02-PLAN.md -- Failure analysis prompt and mutation instruction prompt templates
 - [ ] 03-03-PLAN.md -- Anneal loop SKILL.md + execute iteration 1 to validate pipeline end-to-end
 
