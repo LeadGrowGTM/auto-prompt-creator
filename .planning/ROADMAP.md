@@ -46,7 +46,7 @@ Plans:
   5. Each prompt version is stored as an immutable file (prompts/v001.md) and mutations are logged in append-only mutations.log
 **Plans:** 2 plans
 Plans:
-- [ ] 02-01-PLAN.md -- Create v001 candidate prompt, execute against Haiku for all 9 inputs, store raw outputs
+- [x] 02-01-PLAN.md -- Create v001 candidate prompt, execute against Haiku for all 9 inputs, store raw outputs
 - [ ] 02-02-PLAN.md -- Build Opus judge with calibration anchors, multi-run voting, score aggregation, eval results
 
 ### Phase 3: Mutation + Optimization Loop

@@ -15,9 +15,9 @@
 - [x] **GT-05**: Inputs are split into train/validation sets (configurable ratio, default 60/40) to detect overfitting
 
 ### Execution
-- [ ] **EXEC-01**: Candidate prompts are executed against Haiku via CC agent spawning
-- [ ] **EXEC-02**: Raw Haiku output is captured and parsed into structured form
-- [ ] **EXEC-03**: Parse failures are handled gracefully (logged, scored as 0, not crash)
+- [x] **EXEC-01**: Candidate prompts are executed against Haiku via CC agent spawning
+- [x] **EXEC-02**: Raw Haiku output is captured and parsed into structured form
+- [x] **EXEC-03**: Parse failures are handled gracefully (logged, scored as 0, not crash)
 
 ### Evaluation
 - [ ] **EVAL-01**: Opus judges Haiku output against ground truth using a multi-dimension rubric (accuracy, completeness, style)
@@ -38,8 +38,8 @@
 - [ ] **LOOP-04**: Semantic drift check every 3-5 iterations — verify prompt still aligns with original task intent
 
 ### Tracking
-- [ ] **TRACK-01**: Each prompt version stored as an immutable file (prompts/v001.md, v002.md, etc.)
-- [ ] **TRACK-02**: Mutations logged in append-only mutations.log with: what changed, why, which failure pattern targeted, score delta
+- [x] **TRACK-01**: Each prompt version stored as an immutable file (prompts/v001.md, v002.md, etc.)
+- [x] **TRACK-02**: Mutations logged in append-only mutations.log with: what changed, why, which failure pattern targeted, score delta
 - [ ] **TRACK-03**: All prompt iterations and evaluations are git-committed for diffable lineage
 
 ### Graduation
@@ -75,15 +75,15 @@
 | GT-03 | Phase 1 | Complete |
 | GT-04 | Phase 1 | Complete |
 | GT-05 | Phase 1 | Complete |
-| EXEC-01 | Phase 2 | Pending |
-| EXEC-02 | Phase 2 | Pending |
-| EXEC-03 | Phase 2 | Pending |
+| EXEC-01 | Phase 2 | Complete |
+| EXEC-02 | Phase 2 | Complete |
+| EXEC-03 | Phase 2 | Complete |
 | EVAL-01 | Phase 2 | Pending |
 | EVAL-02 | Phase 2 | Pending |
 | EVAL-03 | Phase 2 | Pending |
 | EVAL-04 | Phase 2 | Pending |
-| TRACK-01 | Phase 2 | Pending |
-| TRACK-02 | Phase 2 | Pending |
+| TRACK-01 | Phase 2 | Complete |
+| TRACK-02 | Phase 2 | Complete |
 | MUT-01 | Phase 3 | Pending |
 | MUT-02 | Phase 3 | Pending |
 | MUT-03 | Phase 3 | Pending |
