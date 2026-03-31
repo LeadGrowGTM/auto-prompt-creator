@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: executing
-stopped_at: Plan 03-03 Task 1 complete, Task 2 not started (Opus rate limit)
-last_updated: "2026-03-31T20:34:47.885Z"
+status: verifying
+stopped_at: Completed 03-03-PLAN.md
+last_updated: "2026-03-31T20:57:55.855Z"
 last_activity: 2026-03-31
 progress:
   total_phases: 4
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 7
-  completed_plans: 6
+  completed_plans: 7
   percent: 50
 ---
 
@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-03-31)
 
 Phase: 03 (mutation-optimization-loop) — EXECUTING
 Plan: 3 of 3
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-03-31
 
 Progress: [█████░░░░░] 50%
@@ -57,6 +57,7 @@ Progress: [█████░░░░░] 50%
 | Phase 02 P02 | 5m | 2 tasks | 3 files |
 | Phase 03 P01 | 2m | 2 tasks | 2 files |
 | Phase 03-mutation-optimization-loop P02 | 3 | 2 tasks | 2 files |
+| Phase 03 P03 | 9 | 2 tasks | 7 files |
 
 ## Accumulated Context
 
@@ -80,6 +81,8 @@ Recent decisions affecting current work:
 - [Phase 03]: Token estimation uses 1.3x word count multiplier with 700/800 threshold warnings
 - [Phase 03-mutation-optimization-loop]: Failure analysis uses severity tiers tied to rubric weights (critical = accuracy dimension in 3+ inputs)
 - [Phase 03-mutation-optimization-loop]: ICP Fit Guidance and Label Normalization Guidance pre-built into mutation prompt for the two known v001 failure patterns
+- [Phase 03]: v002 additive mutation targeted strong-fit-bias with 5 blocking factors -- accuracy improved 0.472->0.5 but overall dipped due to overcorrection on trx-services
+- [Phase 03]: Per-version compute-scores scripts (compute-scores-vNNN.py) pattern established for judge data
 
 ### Pending Todos
 
@@ -93,6 +96,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-03-31T20:34:47.881Z
-Stopped at: Plan 03-03 Task 1 complete, Task 2 not started (Opus rate limit)
-Resume file: .planning/HANDOFF.md
+Last session: 2026-03-31T20:57:55.852Z
+Stopped at: Completed 03-03-PLAN.md
+Resume file: None

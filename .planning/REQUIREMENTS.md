@@ -32,10 +32,10 @@
 - [x] **MUT-04**: Token budget enforcement — prompt length capped (default 800 tokens for Haiku) with consolidation passes when approaching limit
 
 ### Loop Control
-- [ ] **LOOP-01**: Anneal loop runs until accuracy >= threshold (default 92%) or max iterations (default 15)
-- [ ] **LOOP-02**: Convergence detection — halt if score delta < min_gain for 3 consecutive iterations
-- [ ] **LOOP-03**: Train vs validation accuracy tracked separately — halt if gap exceeds 8% (overfitting signal)
-- [ ] **LOOP-04**: Semantic drift check every 3-5 iterations — verify prompt still aligns with original task intent
+- [x] **LOOP-01**: Anneal loop runs until accuracy >= threshold (default 92%) or max iterations (default 15)
+- [x] **LOOP-02**: Convergence detection — halt if score delta < min_gain for 3 consecutive iterations
+- [x] **LOOP-03**: Train vs validation accuracy tracked separately — halt if gap exceeds 8% (overfitting signal)
+- [x] **LOOP-04**: Semantic drift check every 3-5 iterations — verify prompt still aligns with original task intent
 
 ### Tracking
 - [x] **TRACK-01**: Each prompt version stored as an immutable file (prompts/v001.md, v002.md, etc.)
@@ -88,10 +88,10 @@
 | MUT-02 | Phase 3 | Complete |
 | MUT-03 | Phase 3 | Complete |
 | MUT-04 | Phase 3 | Complete |
-| LOOP-01 | Phase 3 | Pending |
-| LOOP-02 | Phase 3 | Pending |
-| LOOP-03 | Phase 3 | Pending |
-| LOOP-04 | Phase 3 | Pending |
+| LOOP-01 | Phase 3 | Complete |
+| LOOP-02 | Phase 3 | Complete |
+| LOOP-03 | Phase 3 | Complete |
+| LOOP-04 | Phase 3 | Complete |
 | TRACK-03 | Phase 3 | Complete |
 | GRAD-01 | Phase 4 | Pending |
 | GRAD-02 | Phase 4 | Pending |
