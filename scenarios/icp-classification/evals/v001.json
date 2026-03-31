@@ -1,0 +1,629 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-03-31T17:59:25Z",
+  "config": {
+    "target_model": "haiku",
+    "judge_model": "opus",
+    "judge_runs": 3,
+    "rubric_version": 1,
+    "normalization": "(score - 1) / 4"
+  },
+  "aggregate": {
+    "overall_score": 0.6403,
+    "train_score": 0.655,
+    "validation_score": 0.6219,
+    "dimension_averages": {
+      "accuracy": 0.4722,
+      "label_normalization": 0.6111,
+      "completeness": 0.9722,
+      "specificity": 0.6944
+    },
+    "inputs_evaluated": 9,
+    "parse_failures": 0
+  },
+  "per_input": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "weighted_score": 0.5,
+      "dimensions": {
+        "accuracy": {
+          "median": 2,
+          "runs": [
+            2,
+            2,
+            2
+          ],
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            4
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "AI/ML platform",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP of Sales",
+          "VP of Marketing",
+          "business development lead"
+        ],
+        "pain_points": [
+          "Reaching Fortune 500 engineering and analytics teams through gatekeepers",
+          "Building qualified pipeline for complex enterprise deals against well-funded competitors",
+          "Educating market on ML capabilities while differentiating from DataRobot and H2O2O"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Enterprise software company selling to Fortune 500 customers needs efficient outbound lead generation and sales development to compete with well-funded rivals and accelerate pipeline growth."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "Industry and company size correct (AI/ML platform, SMB), but icp_fit is opposite (strong vs weak) and decision makers target wrong persona (sales/marketing vs technical leads).",
+        "label_normalization": "Industry label matches well. VP of Sales and VP of Marketing lean formal compared to ground truth casual CTOs, engineering leads.",
+        "completeness": "All 6 required fields present with substantive, multi-item arrays.",
+        "specificity": "Pain points reference company-specific details (DataRobot, Fortune 500, enterprise deals) but miss the core insight about wrong buyer persona for ICP."
+      }
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "weighted_score": 0.6375,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "VP of Sales",
+          "Sales Manager",
+          "Business Development Manager"
+        ],
+        "pain_points": [
+          "Quote turnaround takes 5 days while competitors respond faster",
+          "Losing automotive and aerospace OEM deals to competitors with quicker response times",
+          "Limited customer acquisition despite ISO 9001 certification and proven manufacturing capability"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Mid-market B2B manufacturer with clear sales velocity pain, but manufacturing clients require specialized OEM/industrial expertise outside typical GTM scope."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (moderate vs strong). Industry metal fabrication close to precision manufacturing but less specific. DMs partially overlap but miss plant managers and quoting leads.",
+        "label_normalization": "Business Development Manager is too formal. Metal fabrication is casual but less precise than ground truth precision manufacturing.",
+        "completeness": "All fields present with substantive values throughout.",
+        "specificity": "Excellent company-specific details: 5-day quote turnaround, automotive/aerospace OEMs, ISO 9001 certification."
+      }
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "weighted_score": 0.7375,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            5
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "commercial cleaning",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "Operations Manager",
+          "Sales Manager",
+          "Owner"
+        ],
+        "pain_points": [
+          "Quality assurance process struggling to scale with 340-person headcount",
+          "Operational complexity managing three facility types simultaneously (corporate, medical, industrial)",
+          "Need for larger enterprise-scale contracts to grow revenue beyond $28M baseline"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market service company with proven operations (340 employees, $28M revenue) is at the ideal size for outbound lead gen to land larger corporate and medical facility contracts."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong), industry exact match (commercial cleaning), size correct (mid-market). DMs are plausible but different roles than ground truth.",
+        "label_normalization": "Title-cased Operations Manager, Sales Manager are more formal than ground truth ops directors, facility managers.",
+        "completeness": "All fields present with substantive, detailed values.",
+        "specificity": "Highly specific: references 340-person headcount, three facility types, ServiceTitan dispatch, and $28M revenue baseline."
+      }
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "weighted_score": 0.7,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            3
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "automotive marketing tech",
+        "company_size": "SMB",
+        "decision_makers": [
+          "CEO",
+          "VP sales",
+          "marketing director"
+        ],
+        "pain_points": [
+          "competing against larger entrenched competitors (Dealer.com, CDK) with more resources",
+          "limited in-house sales capacity (45 employees) for a national market",
+          "scaling customer acquisition beyond current 300+ dealerships"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "B2B SaaS company with clear customer acquisition challenges and tight sales resources, but SaaS buying models typically differ from LeadGrow's outbound service company focus."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (moderate vs weak). Industry label similar but slightly different. CEO matches, other DMs are close but not exact.",
+        "label_normalization": "Good casual style: lowercase VP sales, concise automotive marketing tech industry label.",
+        "completeness": "All 6 fields present with substantive values.",
+        "specificity": "References specific competitors (Dealer.com, CDK), 300+ dealerships, 45-employee team. Company-specific."
+      }
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "weighted_score": 0.7,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "sales manager",
+          "ops director",
+          "business development lead"
+        ],
+        "pain_points": [
+          "lead tracking in spreadsheets instead of CRM",
+          "sales processes not scaling with 20% YoY growth",
+          "limited pipeline generation for law firm and financial services verticals"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Growing B2B services provider with manual sales infrastructure, vertical expertise, and clear need for systematic lead generation and sales operations."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (strong vs moderate). Industry close but less precise (office services vs managed office services). DMs partially overlap.",
+        "label_normalization": "Lowercase casual titles throughout. Simple, direct industry label.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Mentions specific pain points: spreadsheet lead tracking, 20% YoY growth, law firm and financial services verticals."
+      }
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "weighted_score": 0.5,
+      "dimensions": {
+        "accuracy": {
+          "median": 2,
+          "runs": [
+            2,
+            2,
+            3
+          ],
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "fleet electrification",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "sales directors",
+          "business development managers",
+          "marketing leads"
+        ],
+        "pain_points": [
+          "long RFP cycles and procurement timelines for fleet conversion projects",
+          "difficulty reaching decision makers at municipalities and large fleet operators",
+          "need to build early pipeline awareness for complex multi-stakeholder sales"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Large B2B fleet solutions provider with heavy RFP processes selling to government and commercial accounts is an ideal prospect for outbound lead gen to accelerate pipeline and engage procurement teams early in their buying cycle."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (strong vs moderate). Industry focuses on electrification vs broader clean energy. DMs list sales-side roles vs ground truth buyer-side roles.",
+        "label_normalization": "Business development managers is too formal. Other labels reasonable but not as casual as ground truth.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Mentions RFP cycles and municipalities but misses the core dynamic about government procurement making outbound less effective."
+      }
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "weighted_score": 0.35,
+      "dimensions": {
+        "accuracy": {
+          "median": 1,
+          "runs": [
+            1,
+            1,
+            2
+          ],
+          "normalized": 0.0
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "education consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "Founder/CEO",
+          "Head of Sales"
+        ],
+        "pain_points": [
+          "No dedicated sales function \u00e2\u20ac\u201c founder manually prospecting across 3 states",
+          "Struggling to systematically reach new school districts and identify the right decision makers",
+          "Need to scale beyond 40 districts but lack sales infrastructure and systematic lead generation"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B service company selling to K-12 districts with acute sales gap and founder doing manual outbound \u00e2\u20ac\u201c exactly the profile we solve."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit completely opposite (strong vs weak). Head of Sales fabricated -- the company has no sales function. Only industry label matches.",
+        "label_normalization": "Founder/CEO and Head of Sales are formal title-case. Ground truth uses casual the founder, lead consultants.",
+        "completeness": "All fields present but decision_makers has only 2 entries, thinner than typical.",
+        "specificity": "References real details (3 states, 40 districts) but draws completely wrong conclusion about fit."
+      }
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "weighted_score": 0.8375,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            4
+          ],
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "industry": "commercial HVAC services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "operations manager",
+          "sales manager",
+          "owner"
+        ],
+        "pain_points": [
+          "Losing 12-15% of scheduled follow-ups due to manual dispatching gaps",
+          "Legacy ERP creating coordination challenges across 6 metro service areas",
+          "Revenue leakage from missed preventive maintenance contract renewals"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "SMB field services company with clear operational constraints and revenue loss from dispatch inefficiencies makes it a strong target for lead generation services."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong). Industry very close (commercial HVAC services vs commercial HVAC). DMs partially overlap with ops manager.",
+        "label_normalization": "Lowercase casual throughout. Industry label slightly verbose but natural.",
+        "completeness": "All fields present with substantive, detailed values.",
+        "specificity": "Highly specific: 12-15% follow-up loss, 6 metro areas, legacy ERP coordination challenges, preventive maintenance renewals."
+      }
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "weighted_score": 0.8,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            3
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "injection molding",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "owner",
+          "sales director",
+          "business development"
+        ],
+        "pain_points": [
+          "turning away orders due to capacity constraints",
+          "relies entirely on word-of-mouth and trade shows for B2B customer acquisition",
+          "no structured sales pipeline or outbound strategy"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Right size and industry for B2B outbound, but capacity constraints mean they can't convert more leads until operations optimize."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (moderate). Industry injection molding is a valid narrower synonym of plastics manufacturing. DMs partially overlap.",
+        "label_normalization": "Good casual style: lowercase, concise labels. Injection molding and business development are natural.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Company-specific: capacity constraints, word-of-mouth/trade show reliance, no structured pipeline."
+      }
+    }
+  ],
+  "failure_patterns": []
+}
