@@ -1,0 +1,629 @@
+{
+  "prompt_version": "v002",
+  "timestamp": "2026-03-31T20:55:26Z",
+  "config": {
+    "target_model": "haiku",
+    "judge_model": "opus",
+    "judge_runs": 3,
+    "rubric_version": 1,
+    "normalization": "(score - 1) / 4"
+  },
+  "aggregate": {
+    "overall_score": 0.6236,
+    "train_score": 0.64,
+    "validation_score": 0.6031,
+    "dimension_averages": {
+      "accuracy": 0.5,
+      "label_normalization": 0.5278,
+      "completeness": 1.0,
+      "specificity": 0.6111
+    },
+    "inputs_evaluated": 9,
+    "parse_failures": 0
+  },
+  "per_input": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "weighted_score": 0.6375,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 2,
+          "runs": [
+            2,
+            3,
+            2
+          ],
+          "normalized": 0.25
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "machine learning platforms",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP of Engineering",
+          "Director of Analytics"
+        ],
+        "pain_points": [
+          "Can't justify hiring dedicated data science teams",
+          "Building custom ML models requires specialized expertise they lack",
+          "Deploying ML models to production without ML engineers"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS software with technical buyers (engineers, analytics) at enterprise; procurement-driven buying motion doesn't respond to cold outbound."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (weak). Industry 'machine learning platforms' close to GT 'AI/ML platform'. DMs VP of Engineering/Director of Analytics are reasonable tech buyer roles but more formal than GT CTOs/engineering leads.",
+        "label_normalization": "VP of Engineering and Director of Analytics are formal title-case. GT uses casual CTOs, engineering leads, data team managers.",
+        "completeness": "All 6 required fields present with substantive values.",
+        "specificity": "Pain points are reasonable but miss key competitive details (DataRobot, Fortune 500 selling motion). More generic than GT."
+      }
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "weighted_score": 0.7,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            3
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "precision metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "sales VP",
+          "operations VP",
+          "plant manager"
+        ],
+        "pain_points": [
+          "5-day quote turnaround losing deals to faster competitors",
+          "Quote process bottleneck slowing deal closure",
+          "Sales velocity limited by manual quoting process"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "B2B manufacturing with commercial OEM buyers and sales infrastructure, but their core pain (quote speed) is operational not pipeline-driven\u00e2\u20ac\u201dlead gen is secondary to fixing their quoting process."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (moderate vs strong). Industry precision metal fabrication close to GT precision manufacturing. DMs partially overlap (plant manager matches). Reasoning about operational pain being primary is a reasonable misread.",
+        "label_normalization": "Good casual lowercase style: sales VP, operations VP, plant manager. Natural labels.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Good specific details: 5-day quote turnaround, competitor speed pressure. But narrowly focused on quoting, missing two-plant scaling."
+      }
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "weighted_score": 0.7,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            4,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "commercial cleaning and facility maintenance",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "sales director",
+          "regional manager",
+          "owner"
+        ],
+        "pain_points": [
+          "struggling to scale quality assurance as customer base grows",
+          "limited sales bandwidth to expand beyond existing Midwest regions",
+          "need for consistent new customer pipeline to support revenue growth"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market B2B service company with $28M revenue and proven sales infrastructure serving commercial buyers through standard vendor selection processes. Growth challenges indicate strong need for lead gen."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong). Industry commercial cleaning and facility maintenance close to GT commercial cleaning. DMs partial overlap: regional manager matches, but sales director and owner differ from GT ops directors/facility managers.",
+        "label_normalization": "Industry label slightly verbose ('and facility maintenance'). Titles are casual. Mostly good.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Pain points are directionally right but more generic than GT. Misses ServiceTitan mention and 340-person headcount specifics."
+      }
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "weighted_score": 0.6,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            4
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "automotive dealership software",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP Sales",
+          "Head of Marketing",
+          "Founder/CEO"
+        ],
+        "pain_points": [
+          "dealership customer acquisition costs",
+          "market share against larger competitors like Dealer.com and CDK",
+          "efficiently reaching dealer principals and GMs"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "SaaS company with proven traction in automotive; while dealerships do respond to cold outreach, software companies typically win through product-led and inbound-first motions, and Dealer Teamwork's growth to 300+ customers suggests working sales infrastructure."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (moderate vs weak). Closer than v001 but still not matching GT weak classification. DMs partially match GT CEO, but Head of Marketing and Founder/CEO are formal.",
+        "label_normalization": "Head of Marketing and Founder/CEO are formal title-case. VP Sales is borderline casual.",
+        "completeness": "All 6 fields present with substantive values.",
+        "specificity": "Mentions Dealer.com, CDK competitors and 300+ dealerships. Company-specific."
+      }
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "weighted_score": 0.5625,
+      "dimensions": {
+        "accuracy": {
+          "median": 2,
+          "runs": [
+            2,
+            2,
+            3
+          ],
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "office manager",
+          "operations director",
+          "compliance officer"
+        ],
+        "pain_points": [
+          "managing print services and costs across multiple locations",
+          "ensuring HIPAA/SOX-compliant document destruction",
+          "secure IT asset handling for clients in regulated industries"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B services company with an established sales team, clear commercial buyers at target customers, and revenue growth outpacing their current lead pipeline \u00e2\u20ac\u201d textbook fit for outbound lead generation."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (strong vs moderate). DMs are wrong personas: office manager and compliance officer are buyer-side roles, not company-side sales roles. GT has sales managers, ops leads, the owner.",
+        "label_normalization": "Good casual lowercase throughout. Direct industry label.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Pain points focus on service delivery (print, HIPAA compliance) rather than the sales/growth challenge that GT highlights."
+      }
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "weighted_score": 0.6625,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "fleet vehicle systems",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "fleet managers",
+          "procurement directors",
+          "sustainability officers"
+        ],
+        "pain_points": [
+          "rising fuel costs for large fleet operations",
+          "regulatory pressure to reduce vehicle emissions",
+          "complex infrastructure requirements for electrification transitions"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "Government and school district buyers procure through formal RFP processes with long cycles, making cold outbound structurally misaligned with their buying motion."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit overcorrected (weak vs moderate). GT says moderate because there's still some outbound potential, just limited. Reasoning about RFP processes is correct but conclusion too harsh. DMs very close to GT.",
+        "label_normalization": "Good casual style: fleet managers, procurement directors, sustainability officers. Close to GT fleet directors, procurement managers, sustainability leads.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Pain points are generic fleet/emissions concerns. Misses specific government contract dynamics and propane autogas vs EV education challenge."
+      }
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "weighted_score": 0.6375,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "school consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "federal programs directors",
+          "superintendents",
+          "education directors"
+        ],
+        "pain_points": [
+          "managing Title I compliance across multiple districts",
+          "designing intervention programs that scale across 3 states",
+          "growing revenue without a dedicated sales team"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "School districts use formal RFP procurement processes not cold outreach, and the founder-led model with no sales function means there's no infrastructure to receive and close inbound leads."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (weak). Industry school consulting close to GT education consulting. DMs are buyer-side (federal programs directors, superintendents) not company-side (the founder, lead consultants).",
+        "label_normalization": "Titles are reasonable but don't match GT casual style. Federal programs directors is natural though.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Good specifics: Title I compliance, 3 states, no sales team. Reasoning is strong."
+      }
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "weighted_score": 0.475,
+      "dimensions": {
+        "accuracy": {
+          "median": 2,
+          "runs": [
+            2,
+            2,
+            2
+          ],
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "median": 2,
+          "runs": [
+            2,
+            3,
+            2
+          ],
+          "normalized": 0.25
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            5,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "commercial HVAC services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "Owner",
+          "Service Manager",
+          "Sales Manager"
+        ],
+        "pain_points": [
+          "Losing 12-15% of scheduled follow-ups due to manual dispatching gaps",
+          "Managing crew scheduling and service delivery across 6 metro areas with legacy ERP",
+          "Sourcing new maintenance contracts efficiently across 6 metros despite operational constraints"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "B2B service company with established sales infrastructure and multi-metro growth, but primary pain is operational efficiency\u00e2\u20ac\u201dlead gen could help offset dispatch losses but isn't their core need."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong and regressed (moderate vs strong). This was correct in v001 (strong). The blocking factor rules caused overcaution. DMs partial overlap but formal title-case.",
+        "label_normalization": "Owner, Service Manager, Sales Manager are title-case formal. GT uses lowercase ops managers, service directors, branch managers.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Excellent specificity: 12-15% follow-up loss, 6 metro areas, legacy ERP. Company-specific."
+      }
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "weighted_score": 0.6375,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            3
+          ],
+          "normalized": 0.5
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "injection molding",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "owner/founder",
+          "operations manager",
+          "business development manager"
+        ],
+        "pain_points": [
+          "Turning away customer orders due to production capacity constraints",
+          "Minimal sales and marketing infrastructure beyond trade shows and referrals",
+          "Limited systematic visibility into demand pipeline or growth opportunities"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "Already at capacity with existing demand; more leads won't help until they solve the production bottleneck."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit overcorrected (weak vs moderate). Capacity constraint rule triggered too aggressively. GT says moderate because the growth potential is real despite constraints. DMs partial overlap.",
+        "label_normalization": "owner/founder OK, but operations manager and business development manager are formal title-case. GT uses VP of sales, plant manager, business development leads.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Good specifics: capacity constraints, trade show reliance, pipeline visibility gap."
+      }
+    }
+  ],
+  "failure_patterns": []
+}

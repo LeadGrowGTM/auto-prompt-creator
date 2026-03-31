@@ -3,3 +3,11 @@ Created: 2026-03-31T17:47:21Z
 Source: Manual baseline prompt
 Train score: 0.655
 Validation score: 0.622
+
+## v001 -> v002 (2026-03-31T20:53:09Z)
+Target: strong-fit-bias (5/9 inputs affected)
+Type: additive
+Mutation: Added "ICP Fit Decision Rules" section with 5 explicit blocking factors (government procurement, SaaS model, capacity constraints, no sales infrastructure, wrong buyer persona) and a concrete example (education consulting company selling to K-12 districts). Appended after the existing ## Rules section.
+Token count: v001=267 -> v002=569
+Score delta: 0.6403 -> 0.6236
+Train: 0.6550 -> 0.6400 | Validation: 0.6219 -> 0.6031
