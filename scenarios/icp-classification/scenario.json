@@ -1,0 +1,80 @@
+{
+  "name": "icp-classification",
+  "description": "Classify companies into ICP segments from company descriptions using casual, normalized business language",
+  "created": "2026-03-30",
+  "version": 1,
+  "config": {
+    "target_model": "haiku",
+    "accuracy_threshold": 0.92,
+    "max_iterations": 15,
+    "token_budget": 800,
+    "train_validation_split": 0.6,
+    "split_seed": "icp-classification"
+  },
+  "input_schema": {
+    "company_name": { "type": "string", "required": true },
+    "company_description": { "type": "string", "required": true },
+    "website_url": { "type": "string", "required": false }
+  },
+  "output_schema": {
+    "industry": {
+      "type": "string",
+      "description": "Casual industry label (e.g., 'commercial cleaning' not 'janitorial services')"
+    },
+    "company_size": {
+      "type": "string",
+      "description": "Casual size label",
+      "allowed_values": ["startup", "SMB", "mid-market", "enterprise"]
+    },
+    "decision_makers": {
+      "type": "string[]",
+      "description": "Casual titles (e.g., 'CMOs' not 'Chief Marketing Officers')"
+    },
+    "pain_points": {
+      "type": "string[]",
+      "description": "Specific to this company, not generic"
+    },
+    "icp_fit": {
+      "type": "string",
+      "allowed_values": ["strong", "moderate", "weak"]
+    },
+    "reasoning": {
+      "type": "string",
+      "description": "One sentence explaining the fit classification"
+    }
+  },
+  "rubric": {
+    "dimensions": {
+      "accuracy": {
+        "weight": 0.4,
+        "description": "Fields are factually correct given the input. Industry matches, size is right, decision makers are plausible."
+      },
+      "label_normalization": {
+        "weight": 0.25,
+        "description": "Uses casual, normalized business language. No corporate jargon, no full title expansions, no formal industry taxonomy."
+      },
+      "completeness": {
+        "weight": 0.2,
+        "description": "All required fields present with substantive values. No 'N/A' or placeholder answers."
+      },
+      "specificity": {
+        "weight": 0.15,
+        "description": "Pain points and reasoning are specific to this company, not generic filler."
+      }
+    },
+    "scoring": "1-5 per dimension, weighted average normalized to 0-1. 5 = indistinguishable from Opus output. 1 = wrong or missing."
+  },
+  "label_definitions": {
+    "company_size": {
+      "startup": "Pre-revenue or <20 employees, early stage",
+      "SMB": "20-200 employees, established but not scaled",
+      "mid-market": "200-2000 employees, multiple departments",
+      "enterprise": "2000+ employees, complex org structure"
+    },
+    "icp_fit": {
+      "strong": "Matches target ICP on industry, size, and pain points",
+      "moderate": "Matches on 1-2 dimensions, unclear on others",
+      "weak": "Does not match target ICP on key dimensions"
+    }
+  }
+}
