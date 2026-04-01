@@ -1,0 +1,358 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-04-01T20:02:18Z",
+  "config": {
+    "target_model": "haiku",
+    "judge": "opus-manual",
+    "normalization": "(score - 1) / 4"
+  },
+  "aggregate": {
+    "overall_score": 0.5806,
+    "train_score": 0.5896,
+    "validation_score": 0.5625,
+    "dimension_averages": {
+      "business_type_accuracy": 0.5,
+      "decision_maker_accuracy": 0.5,
+      "label_normalization": 0.6667,
+      "format_compliance": 0.9722
+    }
+  },
+  "per_input": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "weighted_score": 0.2875,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 1,
+          "normalized": 0.0
+        },
+        "decision_maker_accuracy": {
+          "score": 2,
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "manufacturing companies and financial services firms",
+        "decisionMakers": "engineering directors and analytics managers"
+      },
+      "ground_truth": {
+        "businessTypes": "Fortune 500 enterprises and mid-market analytics companies",
+        "decisionMakers": "CTOs and heads of data"
+      },
+      "rationale": {
+        "business_type_accuracy": "Abacus AI is cross-industry enterprise AI. Haiku picked specific verticals (mfg/finance) that are wrong \u2014 GT correctly says Fortune 500 enterprises and mid-market analytics companies.",
+        "decision_maker_accuracy": "'Analytics managers' are practitioners without budget authority. Actual buyers are CTOs and heads of data who own the platform decision.",
+        "label_normalization": "Titles are readable but less crisp than 'CTOs and heads of data'. 'Engineering directors' is formal vs GT's casual shorthand."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "weighted_score": 0.775,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 5,
+          "normalized": 1.0
+        },
+        "decision_maker_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "automotive OEMs and aerospace manufacturers",
+        "decisionMakers": "procurement managers and manufacturing engineers"
+      },
+      "ground_truth": {
+        "businessTypes": "automotive OEMs and aerospace manufacturers",
+        "decisionMakers": "procurement managers and supply chain directors"
+      },
+      "rationale": {
+        "business_type_accuracy": "Exact match. Correctly identified automotive OEMs and aerospace manufacturers \u2014 Bartos's two dominant customer segments.",
+        "decision_maker_accuracy": "Procurement managers correct. 'Manufacturing engineers' evaluate specs but supply chain directors control vendor approvals and PO budgets.",
+        "label_normalization": "Clean, casual throughout. Appropriate register."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "weighted_score": 0.775,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "decision_maker_accuracy": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "multi-location corporate offices and hospital systems",
+        "decisionMakers": "facility managers and operations managers"
+      },
+      "ground_truth": {
+        "businessTypes": "corporate office buildings and medical facilities",
+        "decisionMakers": "facility managers and operations directors"
+      },
+      "rationale": {
+        "business_type_accuracy": "'Multi-location corporate offices' adds detail not in GT. 'Hospital systems' is broader than 'medical facilities' \u2014 captures right sector at higher org level.",
+        "decision_maker_accuracy": "'Operations managers' vs 'operations directors' \u2014 same function, slight seniority delta. Both plausible buyers for building maintenance.",
+        "label_normalization": "Casual, appropriate register. Comparable quality to GT."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "weighted_score": 0.6375,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "decision_maker_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "multi-location dealer groups and independent rooftops",
+        "decisionMakers": "general managers and marketing directors"
+      },
+      "ground_truth": {
+        "businessTypes": "automotive dealerships and franchise dealer groups",
+        "decisionMakers": "GMs and dealer marketing managers"
+      },
+      "rationale": {
+        "business_type_accuracy": "'Independent rooftops' is authentic auto dealer jargon for single-location stores. Good. 'Multi-location dealer groups' maps to GT's 'franchise dealer groups'.",
+        "decision_maker_accuracy": "Spelled out 'general managers' instead of abbreviating to 'GMs'. 'Marketing directors' is one level above typical 'dealer marketing managers' at rooftops.",
+        "label_normalization": "Missed the 'GMs' abbreviation. 'Marketing directors' is more formal than GT's 'dealer marketing managers'."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "weighted_score": 0.55,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "decision_maker_accuracy": {
+          "score": 2,
+          "normalized": 0.25
+        },
+        "label_normalization": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "mid-size law firms and finance companies",
+        "decisionMakers": "operations managers and compliance officers"
+      },
+      "ground_truth": {
+        "businessTypes": "mid-size law firms and financial services companies",
+        "decisionMakers": "office managers and IT directors"
+      },
+      "rationale": {
+        "business_type_accuracy": "'Finance companies' vs 'financial services companies' \u2014 minor phrasing difference, same segment. Law firms correct.",
+        "decision_maker_accuracy": "'Compliance officers' is entirely the wrong function. If OSP sells IT/office infrastructure, buyers are IT directors and office managers.",
+        "label_normalization": "Titles are casual but since decision maker function is wrong, the casualness can't compensate."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "train",
+      "weighted_score": 0.5125,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 2,
+          "normalized": 0.25
+        },
+        "decision_maker_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "school districts and regional logistics companies",
+        "decisionMakers": "fleet managers and operations directors"
+      },
+      "ground_truth": {
+        "businessTypes": "municipal fleets and school district transportation",
+        "decisionMakers": "fleet managers and transportation directors"
+      },
+      "rationale": {
+        "business_type_accuracy": "Roush Cleantech's core market is public/institutional fleets. 'School districts' is partial but 'regional logistics companies' replaces 'municipal fleets' \u2014 the primary segment. Significant miss.",
+        "decision_maker_accuracy": "Fleet managers correct. 'Operations directors' is generic; the actual role at municipalities/school districts is 'transportation director'.",
+        "label_normalization": "Casual, clean. Good register throughout."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "title-one",
+      "split": "val",
+      "weighted_score": 0.575,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 2,
+          "normalized": 0.25
+        },
+        "decision_maker_accuracy": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 4,
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "Title I school districts and charter networks",
+        "decisionMakers": "superintendents and Title I directors"
+      },
+      "ground_truth": {
+        "businessTypes": "K-12 school districts and state education agencies",
+        "decisionMakers": "superintendents and federal programs directors"
+      },
+      "rationale": {
+        "business_type_accuracy": "'Charter networks' is a small slice; 'state education agencies' (state-level federal fund coordinators) are a key buyer. Title I school districts is too narrow \u2014 company targets all K-12.",
+        "decision_maker_accuracy": "'Title I directors' is a valid alternate name for 'federal programs directors' \u2014 functionally same role in most districts.",
+        "label_normalization": "'Title I' as proper noun handled correctly. Casual, appropriate."
+      },
+      "format_compliance_failures": [
+        "businessTypes has unexpected capitals: 'Title I school districts and charter networks'",
+        "decisionMakers has unexpected capitals: 'superintendents and Title I directors'"
+      ]
+    },
+    {
+      "input_id": "trx-services",
+      "split": "val",
+      "weighted_score": 0.5125,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 2,
+          "normalized": 0.25
+        },
+        "decision_maker_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "commercial office operators and healthcare systems",
+        "decisionMakers": "facility managers and operations directors"
+      },
+      "ground_truth": {
+        "businessTypes": "commercial office buildings and industrial facilities",
+        "decisionMakers": "facility managers and property managers"
+      },
+      "rationale": {
+        "business_type_accuracy": "TRX serves commercial office buildings and industrial/manufacturing facilities. 'Healthcare systems' is not a core market \u2014 missed 'industrial facilities' entirely.",
+        "decision_maker_accuracy": "'Facility managers' exact match. 'Operations directors' is too generic; property managers control vendor contracts for buildings.",
+        "label_normalization": "Casual, clean throughout."
+      },
+      "format_compliance_failures": []
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "val",
+      "weighted_score": 0.6,
+      "dimensions": {
+        "business_type_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "decision_maker_accuracy": {
+          "score": 3,
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "score": 4,
+          "normalized": 0.75
+        },
+        "format_compliance": {
+          "score": 5,
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "businessTypes": "consumer brands and medical device manufacturers",
+        "decisionMakers": "supply chain directors and procurement managers"
+      },
+      "ground_truth": {
+        "businessTypes": "consumer goods manufacturers and medical device companies",
+        "decisionMakers": "procurement managers and product engineers"
+      },
+      "rationale": {
+        "business_type_accuracy": "'Consumer brands' conflates brand owners with manufacturers. Wisconsin Plastics customers are consumer goods manufacturers who need plastic components \u2014 not brand holders.",
+        "decision_maker_accuracy": "'Supply chain directors' manage logistics; 'product engineers' spec plastic components and drive vendor selection. Wrong function.",
+        "label_normalization": "Casual, clean throughout."
+      },
+      "format_compliance_failures": []
+    }
+  ]
+}

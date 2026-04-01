@@ -1,12 +1,31 @@
 {
   "scenario": "prospect-identification",
-  "current_iteration": 1,
-  "best_version": "v001",
-  "best_validation_score": 0,
-  "score_history": [],
+  "current_iteration": 2,
+  "best_version": "v002",
+  "best_validation_score": 0.5833,
+  "score_history": [
+    {
+      "version": "v001",
+      "overall": 0.5806,
+      "train": 0.5896,
+      "val": 0.5625,
+      "tokens": 364,
+      "halt_checked": true,
+      "timestamp": "2026-04-01T00:00:00Z"
+    },
+    {
+      "version": "v002",
+      "overall": 0.6389,
+      "train": 0.6667,
+      "val": 0.5833,
+      "tokens": 420,
+      "halt_checked": true,
+      "timestamp": "2026-04-01T01:00:00Z"
+    }
+  ],
   "consecutive_plateaus": 0,
-  "last_mutation_type": null,
-  "halt_reason": null,
+  "last_mutation_type": "additive",
+  "halt_reason": "overfitting",
   "config": {
     "accuracy_threshold": 0.92,
     "max_iterations": 15,

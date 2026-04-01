@@ -1,0 +1,125 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-04-01T18:19:49.008Z",
+  "config": {
+    "target_model": "haiku",
+    "prompt_file": "prompts/v001.md"
+  },
+  "results": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "manufacturing companies and financial services firms",
+        "decisionMakers": "engineering directors and analytics managers"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"manufacturing companies and financial services firms\",\n  \"decisionMakers\": \"engineering directors and analytics managers\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "automotive OEMs and aerospace manufacturers",
+        "decisionMakers": "procurement managers and manufacturing engineers"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"automotive OEMs and aerospace manufacturers\",\n  \"decisionMakers\": \"procurement managers and manufacturing engineers\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "multi-location corporate offices and hospital systems",
+        "decisionMakers": "facility managers and operations managers"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"multi-location corporate offices and hospital systems\",\n  \"decisionMakers\": \"facility managers and operations managers\"\n}\n```\n\n**Why this works:**\n\nDBS cleans corporate and medical facilities at scale. Their ideal targets are businesses that:\n1. Have multiple locations (more revenue potential, ongoing contracts)\n2. Need high-quality facility maintenance (corporate offices and hospitals are both budget-conscious AND quality-focused)\n\nThe decision makers who actually cut checks for facility services are:\n- **Facility managers** — know what they need, handle vendors day-to-day\n- **Operations managers** — control the budget, own facility performance metrics\n\nThese are the people DBS books calls with who can actually say yes.",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "multi-location dealer groups and independent rooftops",
+        "decisionMakers": "general managers and marketing directors"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"multi-location dealer groups and independent rooftops\",\n  \"decisionMakers\": \"general managers and marketing directors\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "mid-size law firms and finance companies",
+        "decisionMakers": "operations managers and compliance officers"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"mid-size law firms and finance companies\",\n  \"decisionMakers\": \"operations managers and compliance officers\"\n}\n```\n\nHere's my thinking:\n\n**Business types:** Law firms and financial services are already dialed in from your OSP's focus. Mid-size is the sweet spot because they're big enough to have dedicated roles but small enough that decisions move faster than enterprise. Finance companies is just the punchier version of \"financial services companies.\"\n\n**Decision makers:** \n- **Operations managers** — they're the ones managing vendor relationships and operational budgets for these services. They care about efficiency and cost. In both law and finance, ops owns the managed services stack.\n- **Compliance officers** — in regulated industries like law and finance, document shredding isn't just convenience, it's mandate. Compliance owns the vendor approval process for disposal services. They're also the person who cares most about your IT asset disposition piece.\n\nThis combo gives you both the day-to-day operator (ops) and the gatekeeper (compliance). Both exist at mid-size firms and both have budget influence.",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "train",
+      "haiku_output": {
+        "businessTypes": "school districts and regional logistics companies",
+        "decisionMakers": "fleet managers and operations directors"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"school districts and regional logistics companies\",\n  \"decisionMakers\": \"fleet managers and operations directors\"\n}\n```\n\n**Why this lands:**\n\n**School districts + regional logistics companies** cover ROUSH's sweet spot — public sector with standardized procurement (school districts, RFP-heavy) and private commercial fleets (logistics, volume-driven, cost-conscious). Both have sizable vehicle operations where a fleet vehicle system replacement is a major capex decision.\n\n**Fleet managers + operations directors** are the people actually making the call. Fleet managers own \"what we need operationally,\" operations directors own \"can we fund this and does it fit our strategy.\" Both exist across school districts, municipalities, and logistics orgs. They're the qualified leads worth dialing.",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "title-one",
+      "split": "val",
+      "haiku_output": {
+        "businessTypes": "Title I school districts and charter networks",
+        "decisionMakers": "superintendents and Title I directors"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"Title I school districts and charter networks\",\n  \"decisionMakers\": \"superintendents and Title I directors\"\n}\n```\n\n**Why this lands:**\n\nYou're selling compliance solutions to districts that *have* to deal with Title I regs but often don't have the expertise in-house. Superintendents are the check-signers, but Title I directors are the ones feeling the pain—they're already in the weeds with federal requirements and know they need help. Charter networks are the same problem at scale.\n\nThose are your two calls: the superintendent who approves the spend, and the Title I director who says \"yes, we desperately need this.\"",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "trx-services",
+      "split": "val",
+      "haiku_output": {
+        "businessTypes": "commercial office operators and healthcare systems",
+        "decisionMakers": "facility managers and operations directors"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"commercial office operators and healthcare systems\",\n  \"decisionMakers\": \"facility managers and operations directors\"\n}\n```\n\n**Why this works:**\nTRX's sweet spot is multisite, complex-HVAC-heavy operations. Office buildings and hospital networks both have lots of equipment, care about preventive maintenance (recurring contracts = stable revenue), and have geographically dispersed locations (perfect for their 6-metro footprint). \n\nThe FM handles day-to-day operations and maintenance vendor selection. The ops director controls budget and strategic relationships. That's who you call to book.",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "val",
+      "haiku_output": {
+        "businessTypes": "consumer brands and medical device manufacturers",
+        "decisionMakers": "supply chain directors and procurement managers"
+      },
+      "raw_response": "```json\n{\n  \"businessTypes\": \"consumer brands and medical device manufacturers\",\n  \"decisionMakers\": \"supply chain directors and procurement managers\"\n}\n```\n\n**Why this works for Wisconsin Plastics:**\n\nThey're capacity-constrained and turning away work, so they need customers who value quality over price. Consumer brands protect their rep, so they'll pay for reliable molding. Medical device makers are regulated and will pay premium for a trustworthy partner. \n\nSupply chain directors and procurement managers are the ones actually choosing manufacturing partners—they're the meetings you want.",
+      "parse_failure": false,
+      "missing_fields": [],
+      "word_count_warnings": []
+    }
+  ],
+  "summary": {
+    "total_inputs": 9,
+    "successful_parses": 9,
+    "parse_failures": 0,
+    "missing_field_count": 0,
+    "word_count_violations": 0
+  }
+}
