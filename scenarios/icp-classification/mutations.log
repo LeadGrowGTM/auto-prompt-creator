@@ -11,3 +11,19 @@ Mutation: Added "ICP Fit Decision Rules" section with 5 explicit blocking factor
 Token count: v001=267 -> v002=569
 Score delta: 0.6403 -> 0.6236
 Train: 0.6550 -> 0.6400 | Validation: 0.6219 -> 0.6031
+
+## v002 -> v003 (2026-04-01T19:55:00Z)
+Target: overcorrected-blocking-factors (4/9 inputs affected)
+Type: additive
+Mutation: Restructured ICP Fit section into two-step classification: Step 1 checks positive strong-fit criteria (B2B service/manufacturer + quantified pain + sales infrastructure + commercial buyers) before Step 2 applies disqualifying factors. Added explicit note that operational pain confirms budget, doesn't disqualify. Added Moderate vs Weak decision examples.
+Token count: v002=569 -> v003=652
+Score delta: 0.6236 -> 0.6403
+Train: 0.6400 -> 0.6400 | Validation: 0.6031 -> 0.6406
+
+## v003 -> v004 (2026-04-01T20:00:00Z)
+Target: persistent-formal-titles (5/9 inputs) + strong-fit-overreach (2/9 inputs)
+Type: consolidation
+Mutation: Full prompt rewrite for conciseness. Added explicit DO/DON'T examples for decision_maker titles. Added moderate-fit guardrails: SMB under 100 employees with sales pain = moderate not strong; manufacturer at capacity = moderate. Consolidated ICP fit into single ordered section (strong/moderate/weak) with tighter criteria. Added mid-market (200+) or SMB with $5M+ revenue as size floor for strong.
+Token count: v003=652 -> v004=~450 (estimated)
+Score delta: 0.6403 -> TBD
+Train: TBD | Validation: TBD

@@ -1,0 +1,222 @@
+{
+  "prompt_version": "v003",
+  "timestamp": "2026-04-01T19:40:44.196Z",
+  "config": {
+    "target_model": "haiku",
+    "prompt_file": "prompts/v003.md"
+  },
+  "results": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "haiku_output": {
+        "industry": "AI/ML platforms",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP of Sales",
+          "VP of Marketing",
+          "Sales Development Manager"
+        ],
+        "pain_points": [
+          "Selling to Fortune 500 enterprises through formal procurement RFPs, not receptive to cold outreach",
+          "Long-cycle sales (6-12 months) with multiple stakeholders reduces outbound campaign ROI",
+          "Competing against well-funded rivals (DataRobot, H2O.ai) in crowded ML platform market"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS software product company selling to Fortune 500 enterprises through formal procurement—outbound lead generation is fundamentally misaligned with this buying motion and business model."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"AI/ML platforms\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"VP of Sales\", \"VP of Marketing\", \"Sales Development Manager\"],\n  \"pain_points\": [\n    \"Selling to Fortune 500 enterprises through formal procurement RFPs, not receptive to cold outreach\",\n    \"Long-cycle sales (6-12 months) with multiple stakeholders reduces outbound campaign ROI\",\n    \"Competing against well-funded rivals (DataRobot, H2O.ai) in crowded ML platform market\"\n  ],\n  \"icp_fit\": \"weak\",\n  \"reasoning\": \"SaaS software product company selling to Fortune 500 enterprises through formal procurement—outbound lead generation is fundamentally misaligned with this buying motion and business model.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "haiku_output": {
+        "industry": "metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "VP Sales",
+          "Operations Manager",
+          "CEO"
+        ],
+        "pain_points": [
+          "Quote turnaround averages 5 days, losing deals to faster OEM suppliers",
+          "Quoting speed bottleneck creates sales velocity disadvantage vs competitors",
+          "Slow RFQ response time reduces win rate in competitive OEM bidding"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market B2B manufacturer with quantified operational pain (5-day quotes losing deals), existing sales infrastructure, and clear commercial buyer base—classic outbound customer."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"metal fabrication\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"VP Sales\", \"Operations Manager\", \"CEO\"],\n  \"pain_points\": [\n    \"Quote turnaround averages 5 days, losing deals to faster OEM suppliers\",\n    \"Quoting speed bottleneck creates sales velocity disadvantage vs competitors\",\n    \"Slow RFQ response time reduces win rate in competitive OEM bidding\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Mid-market B2B manufacturer with quantified operational pain (5-day quotes losing deals), existing sales infrastructure, and clear commercial buyer base—classic outbound customer.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "haiku_output": {
+        "industry": "commercial cleaning and facility maintenance",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "Sales VP",
+          "Regional Manager",
+          "Operations Director"
+        ],
+        "pain_points": [
+          "Quality assurance process hasn't scaled beyond manual oversight as headcount grew to 340+",
+          "Territory expansion limited by difficulty replicating service standards in new markets",
+          "Revenue growth constrained by operational bottlenecks that prevent scaling customer acquisition"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Strong B2B services company in the right size range with commercial buyer base, but primary identified pain is operational (QA scaling) rather than sales-related, limiting immediate fit for outbound lead gen."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"commercial cleaning and facility maintenance\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"Sales VP\", \"Regional Manager\", \"Operations Director\"],\n  \"pain_points\": [\n    \"Quality assurance process hasn't scaled beyond manual oversight as headcount grew to 340+\",\n    \"Territory expansion limited by difficulty replicating service standards in new markets\",\n    \"Revenue growth constrained by operational bottlenecks that prevent scaling customer acquisition\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Strong B2B services company in the right size range with commercial buyer base, but primary identified pain is operational (QA scaling) rather than sales-related, limiting immediate fit for outbound lead gen.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "haiku_output": {
+        "industry": "dealer marketing platform",
+        "company_size": "SMB",
+        "decision_makers": [
+          "VP Sales",
+          "Sales Development Director",
+          "CMO"
+        ],
+        "pain_points": [
+          "Competing with much larger established platforms like Dealer.com and CDK Digital Marketing",
+          "Customer acquisition among dealerships already using entrenched competitors",
+          "Scaling sales and customer growth with limited resources vs larger rivals"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS products have product-led and inbound-driven sales motions incompatible with traditional B2B outbound lead gen campaigns."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"dealer marketing platform\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"VP Sales\", \"Sales Development Director\", \"CMO\"],\n  \"pain_points\": [\"Competing with much larger established platforms like Dealer.com and CDK Digital Marketing\", \"Customer acquisition among dealerships already using entrenched competitors\", \"Scaling sales and customer growth with limited resources vs larger rivals\"],\n  \"icp_fit\": \"weak\",\n  \"reasoning\": \"SaaS products have product-led and inbound-driven sales motions incompatible with traditional B2B outbound lead gen campaigns.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "Sales Manager",
+          "Operations Director"
+        ],
+        "pain_points": [
+          "No CRM or pipeline management – leads tracked in spreadsheets",
+          "Lack of structured lead qualification creating follow-up gaps",
+          "Sales team capacity not scaling with 20% YoY growth"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B services company with proven revenue, existing sales team, clear commercial buyer base, and quantified ops gap (spreadsheet-based lead tracking) – textbook outbound prospect."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"office services\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"Sales Manager\", \"Operations Director\"],\n  \"pain_points\": [\n    \"No CRM or pipeline management – leads tracked in spreadsheets\",\n    \"Lack of structured lead qualification creating follow-up gaps\",\n    \"Sales team capacity not scaling with 20% YoY growth\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"B2B services company with proven revenue, existing sales team, clear commercial buyer base, and quantified ops gap (spreadsheet-based lead tracking) – textbook outbound prospect.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "fleet vehicle tech",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "sales directors",
+          "business development managers",
+          "account executives"
+        ],
+        "pain_points": [
+          "Long RFP cycles extending timelines for fleet electrification and alternative fuel conversion projects",
+          "Multiple buyer segment dynamics (municipalities, schools, logistics) requiring different engagement strategies",
+          "Early engagement challenge with fleet operators before formal RFP procurement processes begin"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "B2B manufacturer with commercial fleet potential, but heavy government/RFP buyer mix limits outbound lead gen ROI."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"fleet vehicle tech\",\n  \"company_size\": \"enterprise\",\n  \"decision_makers\": [\"sales directors\", \"business development managers\", \"account executives\"],\n  \"pain_points\": [\n    \"Long RFP cycles extending timelines for fleet electrification and alternative fuel conversion projects\",\n    \"Multiple buyer segment dynamics (municipalities, schools, logistics) requiring different engagement strategies\",\n    \"Early engagement challenge with fleet operators before formal RFP procurement processes begin\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"B2B manufacturer with commercial fleet potential, but heavy government/RFP buyer mix limits outbound lead gen ROI.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "education consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "superintendent",
+          "curriculum director",
+          "assistant superintendent"
+        ],
+        "pain_points": [
+          "Meeting Title I federal compliance requirements and audit standards",
+          "Designing effective student intervention programs",
+          "Limited in-house capacity for specialized compliance and instructional consulting"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "Government buyers (school districts) with RFP-driven procurement + founder-dependent sales infrastructure + no sales team make outbound lead gen ineffective."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"education consulting\",\n  \"company_size\": \"startup\",\n  \"decision_makers\": [\"superintendent\", \"curriculum director\", \"assistant superintendent\"],\n  \"pain_points\": [\"Meeting Title I federal compliance requirements and audit standards\", \"Designing effective student intervention programs\", \"Limited in-house capacity for specialized compliance and instructional consulting\"],\n  \"icp_fit\": \"weak\",\n  \"reasoning\": \"Government buyers (school districts) with RFP-driven procurement + founder-dependent sales infrastructure + no sales team make outbound lead gen ineffective.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "commercial HVAC",
+        "company_size": "SMB",
+        "decision_makers": [
+          "Sales Manager",
+          "Operations Manager"
+        ],
+        "pain_points": [
+          "Loses 12-15% of scheduled maintenance follow-ups due to manual dispatch gaps",
+          "Limited visibility into pipeline and customer opportunity management with legacy ERP",
+          "Struggles to coordinate upsell opportunities between installation and maintenance teams across 6 metro areas"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Meets all strong-fit criteria: B2B service provider with quantified pipeline loss, established sales/ops infrastructure across 6 markets, commercial buyer procurement, and clear fixable sales gap in follow-up and coordination."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"commercial HVAC\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"Sales Manager\", \"Operations Manager\"],\n  \"pain_points\": [\n    \"Loses 12-15% of scheduled maintenance follow-ups due to manual dispatch gaps\",\n    \"Limited visibility into pipeline and customer opportunity management with legacy ERP\",\n    \"Struggles to coordinate upsell opportunities between installation and maintenance teams across 6 metro areas\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Meets all strong-fit criteria: B2B service provider with quantified pipeline loss, established sales/ops infrastructure across 6 markets, commercial buyer procurement, and clear fixable sales gap in follow-up and coordination.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "plastics manufacturing",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "Owner/CEO",
+          "Sales Director",
+          "Operations Manager"
+        ],
+        "pain_points": [
+          "Turning away orders due to capacity constraints, losing revenue",
+          "No systematic sales or marketing function beyond trade shows and word of mouth",
+          "Unable to strategically qualify or prioritize incoming opportunities for margin optimization"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market B2B manufacturer with quantified growth constraints, clear sales infrastructure gap, commercial buyers, and demonstrated ability to close deals at capacity."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"plastics manufacturing\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"Owner/CEO\", \"Sales Director\", \"Operations Manager\"],\n  \"pain_points\": [\n    \"Turning away orders due to capacity constraints, losing revenue\",\n    \"No systematic sales or marketing function beyond trade shows and word of mouth\",\n    \"Unable to strategically qualify or prioritize incoming opportunities for margin optimization\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Mid-market B2B manufacturer with quantified growth constraints, clear sales infrastructure gap, commercial buyers, and demonstrated ability to close deals at capacity.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    }
+  ],
+  "summary": {
+    "total_inputs": 9,
+    "successful_parses": 9,
+    "parse_failures": 0,
+    "missing_field_count": 0,
+    "estimated_tokens": 652
+  }
+}
