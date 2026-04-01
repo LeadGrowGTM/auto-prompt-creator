@@ -1,0 +1,12 @@
+{
+  "id": "dbs-building-solutions",
+  "split": "train",
+  "input": {
+    "company_name": "DBS Building Solutions",
+    "company_description": "Commercial cleaning and facility maintenance company serving corporate offices, medical facilities, and industrial sites across the Midwest. 340 employees, $28M revenue. Uses ServiceTitan for dispatch and has struggled to scale their quality assurance process."
+  },
+  "ground_truth": {
+    "businessTypes": "corporate office buildings and medical facilities",
+    "decisionMakers": "facility managers and operations directors"
+  }
+}

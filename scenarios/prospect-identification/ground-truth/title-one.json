@@ -1,0 +1,12 @@
+{
+  "id": "title-one",
+  "split": "val",
+  "input": {
+    "company_name": "Title One",
+    "company_description": "Education services company providing Title I compliance consulting and intervention program design for K-12 school districts. 15 employees, fully remote. Works with about 40 districts across 3 states. Revenue under $2M. Founder-led with no dedicated sales function."
+  },
+  "ground_truth": {
+    "businessTypes": "K-12 school districts and state education agencies",
+    "decisionMakers": "superintendents and federal programs directors"
+  }
+}

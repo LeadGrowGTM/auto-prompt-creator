@@ -1,0 +1,12 @@
+{
+  "id": "osp",
+  "split": "train",
+  "input": {
+    "company_name": "OSP",
+    "company_description": "Office services provider handling managed print, document shredding, and IT asset disposition for mid-size law firms and financial services companies. 95 employees, mostly in the Southeast. Growing 20% YoY but sales team still tracks leads in spreadsheets."
+  },
+  "ground_truth": {
+    "businessTypes": "mid-size law firms and financial services companies",
+    "decisionMakers": "office managers and IT directors"
+  }
+}
