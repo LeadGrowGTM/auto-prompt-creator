@@ -1,0 +1,629 @@
+{
+  "prompt_version": "v004",
+  "timestamp": "2026-04-01T20:59:12Z",
+  "config": {
+    "target_model": "haiku",
+    "judge_model": "opus",
+    "judge_runs": 3,
+    "rubric_version": 1,
+    "normalization": "(score - 1) / 4"
+  },
+  "aggregate": {
+    "overall_score": 0.9194,
+    "train_score": 0.915,
+    "validation_score": 0.925,
+    "dimension_averages": {
+      "accuracy": 0.8889,
+      "label_normalization": 0.9722,
+      "completeness": 1.0,
+      "specificity": 0.8056
+    },
+    "inputs_evaluated": 9,
+    "parse_failures": 0
+  },
+  "per_input": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "weighted_score": 0.8625,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            3,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "AI/ML platform",
+        "company_size": "startup",
+        "decision_makers": [
+          "engineering directors",
+          "data science leaders",
+          "analytics directors"
+        ],
+        "pain_points": [
+          "don't have in-house data scientists",
+          "can't build custom ML models fast enough",
+          "competing with DataRobot and H2O for Fortune 500 deals"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS selling to Fortune 500 technical procurement teams via RFPs; outbound lead gen fails in procurement-heavy segments with established competitors."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (weak). Industry matches GT exactly. company_size wrong (startup vs SMB -- 85 employees is SMB). DMs close to GT in casual style.",
+        "label_normalization": "Excellent casual lowercase: engineering directors, data science leaders, analytics directors. Very close to GT style.",
+        "completeness": "All 6 required fields present with substantive values.",
+        "specificity": "DataRobot/H2O competition, Fortune 500 deals, custom ML models. Company-specific."
+      }
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "weighted_score": 0.9625,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            3,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "sales leads",
+          "operations directors",
+          "plant managers"
+        ],
+        "pain_points": [
+          "5-day quote turnaround losing deals to faster competitors",
+          "Quoting bottleneck limiting sales velocity with OEM buyers",
+          "Production capacity utilization constrained by slow deal closure"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market manufacturer with quantified sales leak (5-day quotes losing OEM deals) and clear decision-makers with budget\u00e2\u20ac\u201dmeets all strong-fit criteria."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong). Industry close to GT. DMs excellent overlap. Reasoning captures quantified pain correctly.",
+        "label_normalization": "Perfect casual: sales leads, operations directors, plant managers.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "5-day quotes, OEM buyers. Good but three pain points overlap on quoting theme."
+      }
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "weighted_score": 0.925,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        }
+      },
+      "haiku_output": {
+        "industry": "commercial cleaning",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "ops directors",
+          "sales leads",
+          "service directors"
+        ],
+        "pain_points": [
+          "scaling QA without hiring more overhead",
+          "managing standards across diverse account types",
+          "growing revenue per employee"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market service provider with $28M revenue and commercial buyer base, quantified ops infrastructure, and clear operational bottleneck suggesting budget and growth appetite"
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong). Fixed from v003. Industry matches GT. DMs reasonable overlap. Reasoning captures budget signal.",
+        "label_normalization": "Perfect casual: ops directors, sales leads, service directors.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "QA scaling, diverse accounts. But lighter than GT -- misses ServiceTitan, 340 employees, Midwest geography."
+      }
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "weighted_score": 0.8625,
+      "dimensions": {
+        "accuracy": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            3
+          ],
+          "normalized": 0.75
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            3,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "auto dealer tech",
+        "company_size": "startup",
+        "decision_makers": [
+          "sales directors",
+          "growth leads",
+          "the founder"
+        ],
+        "pain_points": [
+          "need to acquire more dealership customers to compete",
+          "competing against well-funded players like Dealer.com and CDK",
+          "limited sales team relative to market opportunity"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS platform selling to a niche vertical (auto dealers) where acquisition typically happens through partnerships and integrations, not cold B2B outbound."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (weak). company_size wrong (startup vs SMB -- 45 employees is SMB). Industry reasonable. Reasoning captures SaaS niche market issue.",
+        "label_normalization": "Excellent casual: sales directors, growth leads, the founder.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Dealer.com, CDK competitors. Company-specific but pain points somewhat generic."
+      }
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "weighted_score": 0.9625,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            4
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            5
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "sales leads",
+          "ops directors",
+          "the founder"
+        ],
+        "pain_points": [
+          "leads scattered in spreadsheets with no tracking system",
+          "manual follow-up processes eating sales team time",
+          "growth scaling faster than sales infrastructure can handle"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Strong service company selling to commercial buyers with quantified sales pain, but 95 employees and unconfirmed revenue puts it below the typical strong outbound threshold."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (moderate). Fixed from v003 (was strong). DMs very close to GT. Reasoning nails the 'too small' nuance.",
+        "label_normalization": "Perfect casual: sales leads, ops directors, the founder. Near-identical to GT style.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Spreadsheet tracking, manual follow-up, growth outpacing infrastructure. Excellent company-specific."
+      }
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "weighted_score": 1.0,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "industry": "fleet electrification",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "fleet directors",
+          "ops managers",
+          "procurement leads"
+        ],
+        "pain_points": [
+          "government RFP cycles slowing fleet modernization projects",
+          "rising fuel costs and emissions regulations forcing vehicle conversions",
+          "limited integrators offering unified propane and EV fleet solutions"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Enterprise-backed with real regulatory/cost drivers, but municipalities and school districts dominate buyer base with RFP procurement that neutralizes outbound advantage."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (moderate). DMs very close to GT. Industry close. Reasoning captures government/RFP limitation.",
+        "label_normalization": "All lowercase casual: fleet directors, ops managers, procurement leads. Excellent.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Government RFPs, propane and EV solutions, municipalities/school districts. Excellent."
+      }
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "weighted_score": 0.8,
+      "dimensions": {
+        "accuracy": {
+          "median": 3,
+          "runs": [
+            3,
+            3,
+            2
+          ],
+          "normalized": 0.5
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            4
+          ],
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "industry": "education consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "the founder",
+          "ops lead"
+        ],
+        "pain_points": [
+          "No dedicated sales function while manually managing relationships across 40 school districts",
+          "Limited geographic reach to only 3 states despite having a scalable intervention model",
+          "Founder handling both operations and sales creates bottleneck for growth"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Real sales pain and untapped market, but government procurement cycles and micro-size ($2M revenue, 15 employees) create structural limits for high-ROI outbound"
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit wrong (moderate vs weak GT). Company is 15 employees, under $2M, government buyers, no sales function -- textbook weak. DMs excellent match to GT.",
+        "label_normalization": "Excellent casual: the founder, ops lead. Very close to GT.",
+        "completeness": "All fields present. 2 DMs appropriate for company size.",
+        "specificity": "40 districts, 3 states, no sales function, founder bottleneck. Excellent company-specific."
+      }
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "weighted_score": 1.0,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        }
+      },
+      "haiku_output": {
+        "industry": "HVAC contractor",
+        "company_size": "SMB",
+        "decision_makers": [
+          "service directors",
+          "operations leads",
+          "sales leads"
+        ],
+        "pain_points": [
+          "Loses 12-15% of maintenance follow-ups to dispatch gaps",
+          "Manual scheduling across 6 regions causes coordination breakdowns",
+          "Legacy ERP limits preventive contract follow-up execution"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B field services with quantified operational pain (12-15% follow-up loss), established customer relationships, multi-region ops, and commercial buyers. Operational pain confirms budget and urgency."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (strong). Industry close to GT. DMs excellent overlap. Reasoning perfect -- captures quantified pain and commercial buyers.",
+        "label_normalization": "Perfect casual: service directors, operations leads, sales leads.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "12-15% follow-ups, 6 regions, legacy ERP. Excellent, near-GT quality."
+      }
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "weighted_score": 0.9,
+      "dimensions": {
+        "accuracy": {
+          "median": 5,
+          "runs": [
+            5,
+            4,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "label_normalization": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        },
+        "completeness": {
+          "median": 5,
+          "runs": [
+            5,
+            5,
+            5
+          ],
+          "normalized": 1.0
+        },
+        "specificity": {
+          "median": 4,
+          "runs": [
+            4,
+            4,
+            4
+          ],
+          "normalized": 0.75
+        }
+      },
+      "haiku_output": {
+        "industry": "plastics manufacturing",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "founder",
+          "operations director",
+          "biz dev lead"
+        ],
+        "pain_points": [
+          "turning away orders due to production capacity limits",
+          "zero formal sales team or marketing infrastructure",
+          "reliant on trade shows and word-of-mouth for customer acquisition"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Mid-market B2B manufacturer with proven demand and budget, but capacity constraints make traditional lead gen counterproductive\u00e2\u20ac\u201dthey need production scaling before sales scaling."
+      },
+      "parse_failure": false,
+      "judge_skipped": false,
+      "judge_rationales": {
+        "accuracy": "icp_fit correct (moderate). Fixed from v003. Industry matches GT. DMs reasonable. Reasoning nails capacity constraint nuance.",
+        "label_normalization": "Mostly casual: founder, biz dev lead good. 'operations director' slightly formal but acceptable.",
+        "completeness": "All fields present with substantive values.",
+        "specificity": "Capacity constraints, trade shows, word-of-mouth. Good company-specific."
+      }
+    }
+  ],
+  "failure_patterns": []
+}

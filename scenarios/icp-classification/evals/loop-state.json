@@ -1,8 +1,8 @@
 {
   "scenario": "icp-classification",
-  "current_iteration": 3,
-  "best_version": "v001",
-  "best_validation_score": 0.6219,
+  "current_iteration": 4,
+  "best_version": "v004",
+  "best_validation_score": 0.925,
   "score_history": [
     {
       "version": "v001",
@@ -30,11 +30,20 @@
       "tokens": 652,
       "halt_checked": true,
       "timestamp": "2026-04-01T19:55:00Z"
+    },
+    {
+      "version": "v004",
+      "overall": 0.9194,
+      "train": 0.915,
+      "val": 0.925,
+      "tokens": 388,
+      "halt_checked": true,
+      "timestamp": "2026-04-01T21:10:00Z"
     }
   ],
-  "consecutive_plateaus": 2,
-  "last_mutation_type": "additive",
-  "halt_reason": null,
+  "consecutive_plateaus": 0,
+  "last_mutation_type": "consolidation",
+  "halt_reason": "threshold-reached",
   "config": {
     "accuracy_threshold": 0.9,
     "max_iterations": 15,

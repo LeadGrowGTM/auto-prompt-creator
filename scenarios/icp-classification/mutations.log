@@ -25,5 +25,5 @@ Target: persistent-formal-titles (5/9 inputs) + strong-fit-overreach (2/9 inputs
 Type: consolidation
 Mutation: Full prompt rewrite for conciseness. Added explicit DO/DON'T examples for decision_maker titles. Added moderate-fit guardrails: SMB under 100 employees with sales pain = moderate not strong; manufacturer at capacity = moderate. Consolidated ICP fit into single ordered section (strong/moderate/weak) with tighter criteria. Added mid-market (200+) or SMB with $5M+ revenue as size floor for strong.
 Token count: v003=652 -> v004=~450 (estimated)
-Score delta: 0.6403 -> TBD
-Train: TBD | Validation: TBD
+Score delta: 0.6403 -> 0.9194
+Train: 0.6400 -> 0.9150 | Validation: 0.6406 -> 0.9250

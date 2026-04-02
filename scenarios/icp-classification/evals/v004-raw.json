@@ -1,0 +1,223 @@
+{
+  "prompt_version": "v004",
+  "timestamp": "2026-04-01T20:57:47.313Z",
+  "config": {
+    "target_model": "haiku",
+    "prompt_file": "prompts/v004.md"
+  },
+  "results": [
+    {
+      "input_id": "abacus-ai",
+      "split": "train",
+      "haiku_output": {
+        "industry": "AI/ML platform",
+        "company_size": "startup",
+        "decision_makers": [
+          "engineering directors",
+          "data science leaders",
+          "analytics directors"
+        ],
+        "pain_points": [
+          "don't have in-house data scientists",
+          "can't build custom ML models fast enough",
+          "competing with DataRobot and H2O for Fortune 500 deals"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS selling to Fortune 500 technical procurement teams via RFPs; outbound lead gen fails in procurement-heavy segments with established competitors."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"AI/ML platform\",\n  \"company_size\": \"startup\",\n  \"decision_makers\": [\"engineering directors\", \"data science leaders\", \"analytics directors\"],\n  \"pain_points\": [\"don't have in-house data scientists\", \"can't build custom ML models fast enough\", \"competing with DataRobot and H2O for Fortune 500 deals\"],\n  \"icp_fit\": \"weak\",\n  \"reasoning\": \"SaaS selling to Fortune 500 technical procurement teams via RFPs; outbound lead gen fails in procurement-heavy segments with established competitors.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "bartos-industries",
+      "split": "train",
+      "haiku_output": {
+        "industry": "metal fabrication",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "sales leads",
+          "operations directors",
+          "plant managers"
+        ],
+        "pain_points": [
+          "5-day quote turnaround losing deals to faster competitors",
+          "Quoting bottleneck limiting sales velocity with OEM buyers",
+          "Production capacity utilization constrained by slow deal closure"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market manufacturer with quantified sales leak (5-day quotes losing OEM deals) and clear decision-makers with budget—meets all strong-fit criteria."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"metal fabrication\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"sales leads\", \"operations directors\", \"plant managers\"],\n  \"pain_points\": [\n    \"5-day quote turnaround losing deals to faster competitors\",\n    \"Quoting bottleneck limiting sales velocity with OEM buyers\",\n    \"Production capacity utilization constrained by slow deal closure\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Mid-market manufacturer with quantified sales leak (5-day quotes losing OEM deals) and clear decision-makers with budget—meets all strong-fit criteria.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dbs-building-solutions",
+      "split": "train",
+      "haiku_output": {
+        "industry": "commercial cleaning",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "ops directors",
+          "sales leads",
+          "service directors"
+        ],
+        "pain_points": [
+          "scaling QA without hiring more overhead",
+          "managing standards across diverse account types",
+          "growing revenue per employee"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "Mid-market service provider with $28M revenue and commercial buyer base, quantified ops infrastructure, and clear operational bottleneck suggesting budget and growth appetite"
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"commercial cleaning\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"ops directors\", \"sales leads\", \"service directors\"],\n  \"pain_points\": [\"scaling QA without hiring more overhead\", \"managing standards across diverse account types\", \"growing revenue per employee\"],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"Mid-market service provider with $28M revenue and commercial buyer base, quantified ops infrastructure, and clear operational bottleneck suggesting budget and growth appetite\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "dealer-teamwork",
+      "split": "train",
+      "haiku_output": {
+        "industry": "auto dealer tech",
+        "company_size": "startup",
+        "decision_makers": [
+          "sales directors",
+          "growth leads",
+          "the founder"
+        ],
+        "pain_points": [
+          "need to acquire more dealership customers to compete",
+          "competing against well-funded players like Dealer.com and CDK",
+          "limited sales team relative to market opportunity"
+        ],
+        "icp_fit": "weak",
+        "reasoning": "SaaS platform selling to a niche vertical (auto dealers) where acquisition typically happens through partnerships and integrations, not cold B2B outbound."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"auto dealer tech\",\n  \"company_size\": \"startup\",\n  \"decision_makers\": [\"sales directors\", \"growth leads\", \"the founder\"],\n  \"pain_points\": [\"need to acquire more dealership customers to compete\", \"competing against well-funded players like Dealer.com and CDK\", \"limited sales team relative to market opportunity\"],\n  \"icp_fit\": \"weak\",\n  \"reasoning\": \"SaaS platform selling to a niche vertical (auto dealers) where acquisition typically happens through partnerships and integrations, not cold B2B outbound.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "osp",
+      "split": "train",
+      "haiku_output": {
+        "industry": "office services",
+        "company_size": "SMB",
+        "decision_makers": [
+          "sales leads",
+          "ops directors",
+          "the founder"
+        ],
+        "pain_points": [
+          "leads scattered in spreadsheets with no tracking system",
+          "manual follow-up processes eating sales team time",
+          "growth scaling faster than sales infrastructure can handle"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Strong service company selling to commercial buyers with quantified sales pain, but 95 employees and unconfirmed revenue puts it below the typical strong outbound threshold."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"office services\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"sales leads\", \"ops directors\", \"the founder\"],\n  \"pain_points\": [\n    \"leads scattered in spreadsheets with no tracking system\",\n    \"manual follow-up processes eating sales team time\",\n    \"growth scaling faster than sales infrastructure can handle\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Strong service company selling to commercial buyers with quantified sales pain, but 95 employees and unconfirmed revenue puts it below the typical strong outbound threshold.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "roush-cleantech",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "fleet electrification",
+        "company_size": "enterprise",
+        "decision_makers": [
+          "fleet directors",
+          "ops managers",
+          "procurement leads"
+        ],
+        "pain_points": [
+          "government RFP cycles slowing fleet modernization projects",
+          "rising fuel costs and emissions regulations forcing vehicle conversions",
+          "limited integrators offering unified propane and EV fleet solutions"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Enterprise-backed with real regulatory/cost drivers, but municipalities and school districts dominate buyer base with RFP procurement that neutralizes outbound advantage."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"fleet electrification\",\n  \"company_size\": \"enterprise\",\n  \"decision_makers\": [\"fleet directors\", \"ops managers\", \"procurement leads\"],\n  \"pain_points\": [\"government RFP cycles slowing fleet modernization projects\", \"rising fuel costs and emissions regulations forcing vehicle conversions\", \"limited integrators offering unified propane and EV fleet solutions\"],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Enterprise-backed with real regulatory/cost drivers, but municipalities and school districts dominate buyer base with RFP procurement that neutralizes outbound advantage.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "title-one",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "education consulting",
+        "company_size": "startup",
+        "decision_makers": [
+          "the founder",
+          "ops lead"
+        ],
+        "pain_points": [
+          "No dedicated sales function while manually managing relationships across 40 school districts",
+          "Limited geographic reach to only 3 states despite having a scalable intervention model",
+          "Founder handling both operations and sales creates bottleneck for growth"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Real sales pain and untapped market, but government procurement cycles and micro-size ($2M revenue, 15 employees) create structural limits for high-ROI outbound"
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"education consulting\",\n  \"company_size\": \"startup\",\n  \"decision_makers\": [\"the founder\", \"ops lead\"],\n  \"pain_points\": [\n    \"No dedicated sales function while manually managing relationships across 40 school districts\",\n    \"Limited geographic reach to only 3 states despite having a scalable intervention model\",\n    \"Founder handling both operations and sales creates bottleneck for growth\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Real sales pain and untapped market, but government procurement cycles and micro-size ($2M revenue, 15 employees) create structural limits for high-ROI outbound\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "trx-services",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "HVAC contractor",
+        "company_size": "SMB",
+        "decision_makers": [
+          "service directors",
+          "operations leads",
+          "sales leads"
+        ],
+        "pain_points": [
+          "Loses 12-15% of maintenance follow-ups to dispatch gaps",
+          "Manual scheduling across 6 regions causes coordination breakdowns",
+          "Legacy ERP limits preventive contract follow-up execution"
+        ],
+        "icp_fit": "strong",
+        "reasoning": "B2B field services with quantified operational pain (12-15% follow-up loss), established customer relationships, multi-region ops, and commercial buyers. Operational pain confirms budget and urgency."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"HVAC contractor\",\n  \"company_size\": \"SMB\",\n  \"decision_makers\": [\"service directors\", \"operations leads\", \"sales leads\"],\n  \"pain_points\": [\n    \"Loses 12-15% of maintenance follow-ups to dispatch gaps\",\n    \"Manual scheduling across 6 regions causes coordination breakdowns\",\n    \"Legacy ERP limits preventive contract follow-up execution\"\n  ],\n  \"icp_fit\": \"strong\",\n  \"reasoning\": \"B2B field services with quantified operational pain (12-15% follow-up loss), established customer relationships, multi-region ops, and commercial buyers. Operational pain confirms budget and urgency.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    },
+    {
+      "input_id": "wisconsin-plastics",
+      "split": "validation",
+      "haiku_output": {
+        "industry": "plastics manufacturing",
+        "company_size": "mid-market",
+        "decision_makers": [
+          "founder",
+          "operations director",
+          "biz dev lead"
+        ],
+        "pain_points": [
+          "turning away orders due to production capacity limits",
+          "zero formal sales team or marketing infrastructure",
+          "reliant on trade shows and word-of-mouth for customer acquisition"
+        ],
+        "icp_fit": "moderate",
+        "reasoning": "Mid-market B2B manufacturer with proven demand and budget, but capacity constraints make traditional lead gen counterproductive—they need production scaling before sales scaling."
+      },
+      "raw_response": "```json\n{\n  \"industry\": \"plastics manufacturing\",\n  \"company_size\": \"mid-market\",\n  \"decision_makers\": [\"founder\", \"operations director\", \"biz dev lead\"],\n  \"pain_points\": [\n    \"turning away orders due to production capacity limits\",\n    \"zero formal sales team or marketing infrastructure\",\n    \"reliant on trade shows and word-of-mouth for customer acquisition\"\n  ],\n  \"icp_fit\": \"moderate\",\n  \"reasoning\": \"Mid-market B2B manufacturer with proven demand and budget, but capacity constraints make traditional lead gen counterproductive—they need production scaling before sales scaling.\"\n}\n```",
+      "parse_failure": false,
+      "missing_fields": []
+    }
+  ],
+  "summary": {
+    "total_inputs": 9,
+    "successful_parses": 9,
+    "parse_failures": 0,
+    "missing_field_count": 0,
+    "estimated_tokens": 388
+  }
+}
