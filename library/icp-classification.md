@@ -1,38 +1,57 @@
 ---
 scenario: icp-classification
-graduated: 2026-03-31
+graduated: 2026-04-02
 accuracy:
-  overall: 0.6403
-  train: 0.655
-  validation: 0.6219
+  overall: 0.9194
+  train: 0.915
+  validation: 0.925
 threshold: 0.92
-iterations: 2
-best_version: v001
+iterations: 4
+best_version: v004
 target_model: haiku
 test_set_size: 9
-tokens: 267
+tokens: 388
 ---
-You are classifying a company into ICP segments. Given a company description, analyze the company and produce a structured JSON classification.
-
-## Output Format
-
-Return ONLY a JSON object with these exact fields. No other text, no markdown code fences, no explanation before or after:
+Classify this company for B2B outbound lead gen fit. Return ONLY a JSON object, no other text:
 
 {
-  "industry": "casual industry label (e.g. 'commercial cleaning' not 'janitorial services')",
+  "industry": "casual label (e.g. 'commercial cleaning' not 'janitorial services')",
   "company_size": "startup | SMB | mid-market | enterprise",
   "decision_makers": ["casual title 1", "casual title 2"],
-  "pain_points": ["specific pain 1", "specific pain 2", "specific pain 3"],
+  "pain_points": ["company-specific pain 1", "pain 2", "pain 3"],
   "icp_fit": "strong | moderate | weak",
-  "reasoning": "One sentence explaining the classification"
+  "reasoning": "One sentence explaining the fit"
 }
 
 ## Rules
 
-- Use casual business language. Write "CMOs" not "Chief Marketing Officers". Write "commercial cleaning" not "janitorial services and facility management solutions".
-- company_size: startup = pre-revenue or <20 employees. SMB = 20-200 employees. mid-market = 200-2000 employees. enterprise = 2000+ employees.
-- pain_points must reference specific details from the company description, not generic statements like "needs better marketing".
-- icp_fit: strong = matches on industry + size + pain points for B2B service outbound. moderate = matches 1-2 dimensions. weak = does not match key dimensions.
-- decision_makers should be 2-3 casual titles of people who would buy outbound lead gen services at this company.
+- Casual business language throughout. No corporate jargon, no formal titles.
+- decision_makers: 2-3 titles of people who'd buy lead gen at THIS company.
+  - DO: "sales leads", "ops directors", "the founder", "biz dev leads", "service directors", "plant managers", "marketing directors"
+  - DON'T: "VP of Sales", "Operations Manager", "Business Development Manager", "Founder/CEO", "Sales Director", "Head of Marketing"
+- company_size: startup (<20), SMB (20-200), mid-market (200-2000), enterprise (2000+)
+- pain_points: reference specific details from the description, not generic filler.
 
-## Company to Classify
+## ICP Fit (classify in order)
+
+**Strong** -- ALL of these:
+- B2B service company or manufacturer (not SaaS/software)
+- Quantified revenue, ops, or sales pain (dollar figures, percentages, bottlenecks)
+- Sales infrastructure exists OR clear fixable sales gap
+- Sells to commercial buyers (not government/RFP, not technical procurement)
+- Mid-market (200+ employees) OR SMB with $5M+ revenue
+
+Operational pain (dispatch gaps, quoting delays, QA scaling) confirms budget and urgency. It does NOT disqualify.
+
+**Moderate** -- has outbound potential but structural limits:
+- Government/public-sector buyers with long RFP cycles (even if otherwise strong)
+- SMB under 100 employees with sales pain but too small for high-ROI outbound
+- Manufacturer at capacity turning away work (needs demand optimization, not more leads)
+
+**Weak** -- fundamentally doesn't fit:
+- SaaS/software selling to niche vertical markets
+- Tiny consultancy with no sales team, no budget, and government buyers
+- VC-backed enterprise SaaS with procurement-driven sales cycles
+
+## Company
+
