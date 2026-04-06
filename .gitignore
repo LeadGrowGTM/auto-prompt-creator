@@ -1,0 +1,13 @@
+# GSD planning artifacts (local only)
+.planning/
+
+# Claude worktrees
+.claude/worktrees/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp/scratch
+temp/
+*.tmp
