@@ -1,8 +1,16 @@
 {
   "scenario": "prospect-identification",
-  "current_iteration": 2,
-  "best_version": "v002",
-  "best_validation_score": 0.5833,
+  "current_iteration": 9,
+  "best_version": "v009",
+  "best_validation_score": 0.9281,
+  "last_mutation_type": "consolidation",
+  "halt_reason": "threshold-reached",
+  "config": {
+    "accuracy_threshold": 0.92,
+    "max_iterations": 15,
+    "token_budget": 800,
+    "overfitting_threshold": 0.10
+  },
   "score_history": [
     {
       "version": "v001",
@@ -10,8 +18,8 @@
       "train": 0.5896,
       "val": 0.5625,
       "tokens": 364,
-      "halt_checked": true,
-      "timestamp": "2026-04-01T00:00:00Z"
+      "mutation_type": "baseline",
+      "timestamp": "2026-04-01T10:00:00Z"
     },
     {
       "version": "v002",
@@ -19,21 +27,71 @@
       "train": 0.6667,
       "val": 0.5833,
       "tokens": 420,
-      "halt_checked": true,
-      "timestamp": "2026-04-01T01:00:00Z"
+      "mutation_type": "additive",
+      "timestamp": "2026-04-01T11:00:00Z"
+    },
+    {
+      "version": "v003",
+      "overall": 0.6153,
+      "train": 0.5925,
+      "val": 0.6438,
+      "tokens": 467,
+      "mutation_type": "consolidation",
+      "timestamp": "2026-04-02T12:00:00Z"
+    },
+    {
+      "version": "v004",
+      "overall": 0.7153,
+      "train": 0.6150,
+      "val": 0.8406,
+      "tokens": 509,
+      "mutation_type": "targeted",
+      "timestamp": "2026-04-06T12:00:00Z"
+    },
+    {
+      "version": "v005",
+      "overall": 0.8139,
+      "train": 0.8300,
+      "val": 0.7937,
+      "tokens": 604,
+      "mutation_type": "additive",
+      "timestamp": "2026-04-06T13:00:00Z"
+    },
+    {
+      "version": "v006",
+      "overall": 0.8361,
+      "train": 0.8600,
+      "val": 0.8062,
+      "tokens": 668,
+      "mutation_type": "targeted",
+      "timestamp": "2026-04-06T14:00:00Z"
+    },
+    {
+      "version": "v007",
+      "overall": 0.8653,
+      "train": 0.8675,
+      "val": 0.8625,
+      "tokens": 695,
+      "mutation_type": "targeted",
+      "timestamp": "2026-04-06T15:00:00Z"
+    },
+    {
+      "version": "v008",
+      "overall": 0.8694,
+      "train": 0.8400,
+      "val": 0.9062,
+      "tokens": 683,
+      "mutation_type": "targeted",
+      "timestamp": "2026-04-06T16:00:00Z"
+    },
+    {
+      "version": "v009",
+      "overall": 0.8625,
+      "train": 0.8100,
+      "val": 0.9281,
+      "tokens": 648,
+      "mutation_type": "consolidation",
+      "timestamp": "2026-04-06T17:00:00Z"
     }
-  ],
-  "consecutive_plateaus": 0,
-  "last_mutation_type": "additive",
-  "halt_reason": "overfitting",
-  "config": {
-    "accuracy_threshold": 0.92,
-    "max_iterations": 15,
-    "token_budget": 800,
-    "consolidation_trigger": 700,
-    "min_gain": 0.02,
-    "plateau_limit": 3,
-    "overfit_gap_limit": 0.08,
-    "semantic_drift_interval": 3
-  }
+  ]
 }

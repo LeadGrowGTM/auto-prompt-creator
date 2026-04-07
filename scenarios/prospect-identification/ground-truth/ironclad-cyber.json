@@ -1,0 +1,12 @@
+{
+  "id": "ironclad-cyber",
+  "split": "val",
+  "input": {
+    "company_name": "Ironclad Cyber",
+    "company_description": "Ironclad Cyber offers managed detection and response (MDR) cybersecurity services and SOC-as-a-service for mid-market financial services firms and credit unions."
+  },
+  "ground_truth": {
+    "businessTypes": "mid-market financial services firms and credit unions",
+    "decisionMakers": "CISOs and IT directors"
+  }
+}

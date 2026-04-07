@@ -1,0 +1,12 @@
+{
+  "id": "tidewater-logistics",
+  "split": "val",
+  "input": {
+    "company_name": "Tidewater Logistics",
+    "company_description": "Tidewater Logistics provides cold chain logistics and temperature-controlled warehousing for pharmaceutical distributors and biotech firms."
+  },
+  "ground_truth": {
+    "businessTypes": "pharmaceutical distributors and biotech firms",
+    "decisionMakers": "supply chain VPs and logistics directors"
+  }
+}

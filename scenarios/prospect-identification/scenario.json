@@ -1,49 +1,43 @@
 {
   "name": "prospect-identification",
-  "description": "Given a company description, identify the two most precise business types to prospect into and two decision maker titles most likely to book meetings",
-  "created": "2026-04-01",
-  "version": 1,
-  "config": {
-    "target_model": "haiku",
-    "accuracy_threshold": 0.92,
-    "max_iterations": 15,
-    "token_budget": 800,
-    "train_validation_split": 0.6,
-    "split_seed": "prospect-identification"
-  },
-  "input_schema": {
-    "company_name": { "type": "string", "required": true },
-    "company_description": { "type": "string", "required": true }
-  },
-  "output_schema": {
-    "businessTypes": {
-      "type": "string",
-      "description": "Two types or stages of businesses separated by 'and', max 7 words, lowercase"
-    },
-    "decisionMakers": {
-      "type": "string",
-      "description": "Two plural decision maker job titles separated by 'and', max 6 words, lowercase, must be plural"
-    }
-  },
+  "description": "Given a company name and description, identify their ideal customer business types and decision maker titles",
+  "model": "claude-haiku",
   "rubric": {
     "dimensions": {
-      "business_type_accuracy": {
+      "biz_type_accuracy": {
         "weight": 0.35,
-        "description": "The two business types accurately represent who this company sells to. Specific and precise, not generic. Matches actual ICP for this company."
+        "description": "Does the output correctly identify the company's CUSTOMERS (not the company's own industry)?"
       },
-      "decision_maker_accuracy": {
+      "dm_accuracy": {
         "weight": 0.35,
-        "description": "The two DM titles are the actual buyers for this company's product. Recognizable titles, not obscure. Right level of seniority."
+        "description": "Are the decision maker titles correct for the identified business type?"
       },
-      "label_normalization": {
+      "label_norm": {
         "weight": 0.20,
-        "description": "Language is casual and natural. No formal titles spelled out (CMOs not Chief Marketing Officers). Lowercase unless acronym. Like talking to a friend."
+        "description": "Are labels crisp, lowercase, using common abbreviations?"
       },
-      "format_compliance": {
+      "format_comp": {
         "weight": 0.10,
-        "description": "businessTypes ≤7 words. decisionMakers ≤6 words. Both use plural titles. Separated by 'and'. No capitals except acronyms."
+        "description": "Format compliance: word counts, plural, 'and' separator, lowercase"
       }
-    },
-    "scoring": "1-5 per dimension, weighted average normalized to 0-1. 5 = indistinguishable from expert prospector output. 1 = wrong or missing."
-  }
+    }
+  },
+  "accuracy_threshold": 0.92,
+  "max_iterations": 15,
+  "token_budget": 800,
+  "overfitting_threshold": 0.12,
+  "default_iterations": 10,
+  "data_split": {
+    "train": 0.60,
+    "validation": 0.30,
+    "holdout": 0.10,
+    "min_examples": 12,
+    "recommended_examples": 15
+  },
+  "mutation_phases": {
+    "bootstrap": [1, 3],
+    "generalize": [4, 7],
+    "polish": [8, 10]
+  },
+  "example_cap_per_concept": 4
 }

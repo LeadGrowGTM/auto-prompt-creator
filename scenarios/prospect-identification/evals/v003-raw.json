@@ -1,0 +1,101 @@
+[
+  {
+    "id": "bartos-industries",
+    "company": "Bartos Industries",
+    "split": "train",
+    "output": "Let me break this down:\n- They SELL: Precision metal stamped components\n- Who would BUY high-volume metal stampings?\n\n- Business Types: automotive manufacturers and industrial equipment makers\n- Decision Makers: procurement directors and engineering VPs\n\nReasoning:\n- \"Automotive applications\" means they sell to car/truck manufacturers and their tier-1 suppliers\n- \"Industrial applications\" suggests selling to heavy machinery, construction equipment, and industrial equipment manufacturers\n- Complex technical components require engineering and procurement leadership to approve purchases",
+    "tokens": 476,
+    "groundTruth": {
+      "businessTypes": "automotive OEMs and tier-1 suppliers",
+      "decisionMakers": "procurement directors and engineering VPs"
+    }
+  },
+  {
+    "id": "brightpath-learning",
+    "company": "BrightPath Learning",
+    "split": "val",
+    "output": "- Business Types: hospitals and medical groups\n- Decision Makers: chief learning officers and hr directors\n\nReasoning:\n- BrightPath SELLS: adaptive learning management systems and compliance training platforms\n- BUYERS are healthcare organizations that need training/compliance solutions\n- Key decision makers would be those responsible for staff development and regulatory compliance in healthcare settings",
+    "tokens": 428,
+    "groundTruth": {
+      "businessTypes": "healthcare organizations and hospital networks",
+      "decisionMakers": "chief learning officers and compliance VPs"
+    }
+  },
+  {
+    "id": "clearview-analytics",
+    "company": "Clearview Analytics",
+    "split": "train",
+    "output": "Let's break this down systematically:\n\nWhat do they SELL? \n- Business intelligence software\n- Data visualization tools\n\nWho would BUY these?\n- Mid-market retail companies\n- Mid-market e-commerce companies\n\nWho decides on this purchase?\n- Executives responsible for data-driven decision making\n\nTherefore:\n\n- Business Types: mid-market retailers and e-commerce companies\n- Decision Makers: CTOs and GMs",
+    "tokens": 452,
+    "groundTruth": {
+      "businessTypes": "mid-market retailers and e-commerce brands",
+      "decisionMakers": "VPs of analytics and CIOs"
+    }
+  },
+  {
+    "id": "forgepoint-capital",
+    "company": "ForgePoint Capital",
+    "split": "val",
+    "output": "Let's analyze this carefully:\n\nWhat do they SELL?\n- M&A advisory services\n- Sell-side transaction expertise for mid-market companies\n\nWho would BUY these services?\n\n- Business Types: mid-market manufacturers and distributors\n- Decision Makers: CEOs and business owners\n\nThe reasoning:\n- They help manufacturing and distribution companies sell their businesses\n- The primary decision makers for a company sale would be the top executives who own or lead the business\n- Specifically targeting mid-market firms in manufacturing and distribution sectors who are considering strategic exits or sale transactions",
+    "tokens": 486,
+    "groundTruth": {
+      "businessTypes": "mid-market manufacturing and distribution companies",
+      "decisionMakers": "CEOs and CFOs"
+    }
+  },
+  {
+    "id": "ironclad-cyber",
+    "company": "Ironclad Cyber",
+    "split": "val",
+    "output": "Let's analyze this systematically:\n\nWhat they SELL:\n- Managed detection and response (MDR) cybersecurity services\n- SOC-as-a-service (Security Operations Center)\n\nWho BUYS these services:\n- Financial services firms specifically need robust cybersecurity\n- Credit unions have sensitive financial data to protect\n\nWho DECIDES on purchasing:\n\n- Business Types: mid-market financial institutions and credit unions\n- Decision Makers: CTOs and CISOs\n\nReasoning breakdown:\n- Financial services and credit unions require specialized cybersecurity\n- Technical leadership (CTOs) and security leadership (CISOs) typically control cybersecurity budgets\n- \"Mid-market\" suggests these are not tiny banks or massive enterprises, but substantial organizations needing professional security services",
+    "tokens": 544,
+    "groundTruth": {
+      "businessTypes": "mid-market financial services firms and credit unions",
+      "decisionMakers": "CISOs and IT directors"
+    }
+  },
+  {
+    "id": "nextera-staffing",
+    "company": "NextEra Staffing",
+    "split": "train",
+    "output": "- Business Types: series b startups and growth-stage tech companies\n- Decision Makers: CTOs and VPs of engineering",
+    "tokens": 396,
+    "groundTruth": {
+      "businessTypes": "growth-stage tech companies and series B+ startups",
+      "decisionMakers": "VPs of engineering and CTOs"
+    }
+  },
+  {
+    "id": "packright-solutions",
+    "company": "PackRight Solutions",
+    "split": "train",
+    "output": "Let's break this down:\n- They SELL: Custom corrugated packaging and shipping containers\n- Who NEEDS this? Companies that ship food and beverage products\n- Who DECIDES on packaging purchases?\n\n- Business Types: food manufacturers and beverage producers\n- Decision Makers: procurement managers and logistics directors",
+    "tokens": 419,
+    "groundTruth": {
+      "businessTypes": "food and beverage manufacturers",
+      "decisionMakers": "supply chain directors and operations GMs"
+    }
+  },
+  {
+    "id": "summit-coatings",
+    "company": "Summit Coatings",
+    "split": "train",
+    "output": "Let's analyze this systematically:\n\nWhat do they SELL?\n- Industrial protective coatings\n- Corrosion-resistant finishes\n\nWho BUYS these?\n- Oil and gas pipeline companies who need pipeline protection\n- Marine transportation companies who need vessel protection\n\nWho DECIDES on these purchases?\n\n- Business Types: pipeline operators and marine transportation companies\n- Decision Makers: engineering directors and procurement VPs\n\nMy reasoning:\n- The product is specialized industrial coating\n- Buyers need protection for expensive infrastructure\n- Large capital projects require senior technical and procurement leadership to approve\n- Engineering leaders evaluate technical specifications\n- Procurement leaders manage vendor selection and budget\n\nThe response follows the exact specified format, focuses on the BUYERS, uses specific industry labels, and provides titles that would control such purchasing decisions.",
+    "tokens": 537,
+    "groundTruth": {
+      "businessTypes": "oil and gas pipeline operators and marine vessel companies",
+      "decisionMakers": "maintenance VPs and asset integrity directors"
+    }
+  },
+  {
+    "id": "tidewater-logistics",
+    "company": "Tidewater Logistics",
+    "split": "val",
+    "output": "- Business Types: pharmaceutical distributors and biotech manufacturers\n- Decision Makers: GMs and supply chain VPs\n\nReasoning:\n- They SELL: cold chain logistics and temperature-controlled warehousing\n- Industries that NEED precise temperature management for sensitive products\n- Pharmaceutical and biotech companies require specialized shipping/storage\n- Decision makers who control logistics and distribution budgets would evaluate this service\n\nThe key is identifying WHO BUYS the cold chain logistics service, not describing Tidewater's own operations.",
+    "tokens": 471,
+    "groundTruth": {
+      "businessTypes": "pharmaceutical distributors and biotech firms",
+      "decisionMakers": "supply chain VPs and logistics directors"
+    }
+  }
+]

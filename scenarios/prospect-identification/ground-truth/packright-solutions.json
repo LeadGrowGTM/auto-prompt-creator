@@ -1,0 +1,12 @@
+{
+  "id": "packright-solutions",
+  "split": "train",
+  "input": {
+    "company_name": "PackRight Solutions",
+    "company_description": "PackRight Solutions manufactures custom corrugated packaging and shipping containers for food and beverage companies."
+  },
+  "ground_truth": {
+    "businessTypes": "food and beverage manufacturers",
+    "decisionMakers": "supply chain directors and operations GMs"
+  }
+}

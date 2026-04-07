@@ -1,0 +1,12 @@
+{
+  "id": "nextera-staffing",
+  "split": "train",
+  "input": {
+    "company_name": "NextEra Staffing",
+    "company_description": "NextEra Staffing is a technical recruiting firm that places software engineers and DevOps specialists at Series B+ startups and growth-stage tech companies."
+  },
+  "ground_truth": {
+    "businessTypes": "growth-stage tech companies and series B+ startups",
+    "decisionMakers": "VPs of engineering and CTOs"
+  }
+}

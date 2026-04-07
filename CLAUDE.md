@@ -123,13 +123,74 @@ A prompt optimization system that runs inside Claude Code sessions. Takes source
 <!-- GSD:conventions-start source:CONVENTIONS.md -->
 ## Conventions
 
-Conventions not yet established. Will populate as patterns emerge during development.
+### File Naming
+- Prompt versions: `vNNN` zero-padded to 3 digits (v001, v002, ..., v015)
+- Ground truth files: `{company-slug}.json` (lowercase, hyphenated)
+- Raw outputs: `vNNN-raw.json` in `evals/`
+- Scored results: `vNNN.json` in `evals/`
+- Score templates: `vNNN-scores-template.json` in `evals/`
+
+### Directory Structure
+- `prompts/` — prompt versions (vNNN.md). NOT in evals/.
+- `evals/` — runner, judge, loop state, raw outputs, scored results
+- `ground-truth/` — expert reference outputs with train/val/holdout splits
+- `inputs/` — staging area for raw inputs before ground truth generation
+- `library/` — graduated prompts with YAML frontmatter metadata
+
+### Ground Truth Format
+```json
+{
+  "id": "slug",
+  "split": "train|val|holdout",
+  "input": { ... },
+  "ground_truth": { ... }
+}
+```
+
+### Scoring
+- Dimensions scored 1-5 (1=wrong, 5=exact match)
+- Normalization: `(score - 1) / 4` maps 1-5 to 0-1
+- Weighted average across dimensions per rubric weights
+- Split naming: "train", "val", "holdout" (not "validation")
+
+### Mutation Types
+- `additive` — add instructions or examples
+- `structural` — reframe reasoning approach
+- `targeted` — fix one specific failure
+- `consolidation` — merge/tighten, reduce tokens
+- `subtractive` — remove instructions, test if score holds
 <!-- GSD:conventions-end -->
 
 <!-- GSD:architecture-start source:ARCHITECTURE.md -->
 ## Architecture
 
-Architecture not yet mapped. Follow existing patterns found in the codebase.
+### System Components
+
+| Component | Implementation | Purpose |
+|---|---|---|
+| Scenario setup | `setup.mjs` | Scaffolds directories, config, runner, judge |
+| Prompt execution | `evals/run-eval.mjs` per scenario | Runs prompt against inputs via Haiku CLI |
+| Scoring | `evals/judge.mjs` per scenario | Semi-auto: format check + score template. `--auto` for Opus judge |
+| Loop state | `evals/loop-state.json` | Tracks iterations, scores, halt conditions, mutation history |
+| Methodology | `METHODOLOGY.md` | Mutation diversity rules, phase constraints, generalization safeguards |
+| Skill | `.claude/skills/anneal-prompt/SKILL.md` | Claude Code skill for guided/autonomous optimization |
+| Library | `library/*.md` | Graduated prompts with accuracy metadata |
+
+### Data Flow
+
+```
+inputs/ -> ground-truth/ (Opus generates, human validates)
+prompts/v001.md -> run-eval.mjs -> evals/v001-raw.json
+evals/v001-raw.json -> judge.mjs -> evals/v001.json
+evals/v001.json -> failure analysis -> prompts/v002.md (mutation)
+... repeat until halt ...
+prompts/vNNN.md -> library/{scenario}.md (graduation)
+```
+
+### Runtime
+- Bun 1.0+ (no Node.js)
+- Claude CLI for model calls (`claude --print --model haiku|opus`)
+- No external dependencies, no API keys beyond Claude Code session
 <!-- GSD:architecture-end -->
 
 <!-- GSD:workflow-start source:GSD defaults -->

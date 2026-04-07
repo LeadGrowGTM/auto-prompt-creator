@@ -1,0 +1,12 @@
+{
+  "id": "forgepoint-capital",
+  "split": "val",
+  "input": {
+    "company_name": "ForgePoint Capital",
+    "company_description": "ForgePoint Capital is a boutique M&A advisory firm specializing in sell-side transactions for mid-market manufacturing and distribution companies."
+  },
+  "ground_truth": {
+    "businessTypes": "mid-market manufacturing and distribution companies",
+    "decisionMakers": "CEOs and CFOs"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "summit-coatings",
+  "split": "train",
+  "input": {
+    "company_name": "Summit Coatings",
+    "company_description": "Summit Coatings develops and applies industrial protective coatings and corrosion-resistant finishes for oil and gas pipeline operators and marine vessel companies."
+  },
+  "ground_truth": {
+    "businessTypes": "oil and gas pipeline operators and marine vessel companies",
+    "decisionMakers": "maintenance VPs and asset integrity directors"
+  }
+}

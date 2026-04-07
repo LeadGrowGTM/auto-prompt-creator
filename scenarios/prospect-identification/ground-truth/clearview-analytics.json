@@ -1,0 +1,12 @@
+{
+  "id": "clearview-analytics",
+  "split": "train",
+  "input": {
+    "company_name": "Clearview Analytics",
+    "company_description": "Clearview Analytics provides business intelligence and data visualization software for mid-market retail and e-commerce companies."
+  },
+  "ground_truth": {
+    "businessTypes": "mid-market retailers and e-commerce brands",
+    "decisionMakers": "VPs of analytics and CIOs"
+  }
+}

@@ -1,0 +1,101 @@
+[
+  {
+    "id": "bartos-industries",
+    "company": "Bartos Industries",
+    "split": "train",
+    "output": "- Business Types: automotive OEMs and industrial manufacturers\n- Decision Makers: procurement VPs and engineering directors",
+    "tokens": 510,
+    "groundTruth": {
+      "businessTypes": "automotive OEMs and tier-1 suppliers",
+      "decisionMakers": "procurement directors and engineering VPs"
+    }
+  },
+  {
+    "id": "brightpath-learning",
+    "company": "BrightPath Learning",
+    "split": "val",
+    "output": "- Business Types: hospitals and healthcare providers\n- Decision Makers: chief learning officers and compliance VPs",
+    "tokens": 501,
+    "groundTruth": {
+      "businessTypes": "healthcare organizations and hospital networks",
+      "decisionMakers": "chief learning officers and compliance VPs"
+    }
+  },
+  {
+    "id": "clearview-analytics",
+    "company": "Clearview Analytics",
+    "split": "train",
+    "output": "- Business Types: retailers and e-commerce platforms\n- Decision Makers: GMs and chief analytics officers",
+    "tokens": 502,
+    "groundTruth": {
+      "businessTypes": "mid-market retailers and e-commerce brands",
+      "decisionMakers": "VPs of analytics and CIOs"
+    }
+  },
+  {
+    "id": "forgepoint-capital",
+    "company": "ForgePoint Capital",
+    "split": "val",
+    "output": "- Business Types: mid-market manufacturers and distributors\n- Decision Makers: CEOs and GMs",
+    "tokens": 509,
+    "groundTruth": {
+      "businessTypes": "mid-market manufacturing and distribution companies",
+      "decisionMakers": "CEOs and CFOs"
+    }
+  },
+  {
+    "id": "ironclad-cyber",
+    "company": "Ironclad Cyber",
+    "split": "val",
+    "output": "- Business Types: financial services firms and credit unions\n- Decision Makers: CISOs and IT directors",
+    "tokens": 521,
+    "groundTruth": {
+      "businessTypes": "mid-market financial services firms and credit unions",
+      "decisionMakers": "CISOs and IT directors"
+    }
+  },
+  {
+    "id": "nextera-staffing",
+    "company": "NextEra Staffing",
+    "split": "train",
+    "output": "- Business Types: tech startups and enterprise software companies\n- Decision Makers: CTOs and hiring managers",
+    "tokens": 515,
+    "groundTruth": {
+      "businessTypes": "growth-stage tech companies and series B+ startups",
+      "decisionMakers": "VPs of engineering and CTOs"
+    }
+  },
+  {
+    "id": "packright-solutions",
+    "company": "PackRight Solutions",
+    "split": "train",
+    "output": "- Business Types: food manufacturers and beverage producers\n- Decision Makers: procurement VPs and logistics directors",
+    "tokens": 499,
+    "groundTruth": {
+      "businessTypes": "food and beverage manufacturers",
+      "decisionMakers": "supply chain directors and operations GMs"
+    }
+  },
+  {
+    "id": "summit-coatings",
+    "company": "Summit Coatings",
+    "split": "train",
+    "output": "- Business Types: oil and gas operators and marine transportation companies\n- Decision Makers: asset integrity directors and maintenance VPs",
+    "tokens": 516,
+    "groundTruth": {
+      "businessTypes": "oil and gas pipeline operators and marine vessel companies",
+      "decisionMakers": "maintenance VPs and asset integrity directors"
+    }
+  },
+  {
+    "id": "tidewater-logistics",
+    "company": "Tidewater Logistics",
+    "split": "val",
+    "output": "- Business Types: pharmaceutical distributors and biotechnology companies\n- Decision Makers: supply chain VPs and logistics directors",
+    "tokens": 510,
+    "groundTruth": {
+      "businessTypes": "pharmaceutical distributors and biotech firms",
+      "decisionMakers": "supply chain VPs and logistics directors"
+    }
+  }
+]

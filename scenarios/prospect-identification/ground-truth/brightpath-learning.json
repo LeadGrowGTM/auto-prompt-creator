@@ -1,0 +1,12 @@
+{
+  "id": "brightpath-learning",
+  "split": "val",
+  "input": {
+    "company_name": "BrightPath Learning",
+    "company_description": "BrightPath Learning creates adaptive learning management systems and compliance training platforms for healthcare organizations and hospital networks."
+  },
+  "ground_truth": {
+    "businessTypes": "healthcare organizations and hospital networks",
+    "decisionMakers": "chief learning officers and compliance VPs"
+  }
+}

@@ -3,10 +3,10 @@
   "split": "train",
   "input": {
     "company_name": "Bartos Industries",
-    "company_description": "Precision metal fabrication and CNC machining shop supplying automotive and aerospace OEMs. 420 employees across two plants in Ohio. ISO 9001 certified but struggling with quoting speed. Average quote turnaround is 5 days and they lose deals to faster competitors."
+    "company_description": "Bartos Industries is a precision metal stamping and fabrication company specializing in high-volume stamped components for automotive and industrial applications."
   },
   "ground_truth": {
-    "businessTypes": "automotive OEMs and aerospace manufacturers",
-    "decisionMakers": "procurement managers and supply chain directors"
+    "businessTypes": "automotive OEMs and tier-1 suppliers",
+    "decisionMakers": "procurement directors and engineering VPs"
   }
 }

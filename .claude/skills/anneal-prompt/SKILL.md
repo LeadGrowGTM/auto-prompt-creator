@@ -115,7 +115,7 @@ Holdout must include at least 1 "hard" case that doesn't map to any worked examp
 
 ### Baseline Prompt
 
-Paste your current prompt into `scenarios/[name]/evals/v001.md`. This is the starting point.
+Paste your current prompt into `scenarios/[name]/prompts/v001.md`. This is the starting point.
 
 ## Step 3: Run Baseline (Human Reviews)
 
@@ -232,7 +232,7 @@ Key insight: 60% of mutations were example-based, which drove scores up but risk
 | `scenarios/[name]/scenario.json` | Rubric, thresholds, config |
 | `scenarios/[name]/inputs/*.json` | Test case inputs |
 | `scenarios/[name]/ground-truth/*.json` | Expert reference outputs with splits |
-| `scenarios/[name]/evals/vNNN.md` | Prompt versions |
+| `scenarios/[name]/prompts/vNNN.md` | Prompt versions |
 | `scenarios/[name]/evals/loop-state.json` | Loop tracking and score history |
 | `scenarios/[name]/evals/vNNN-raw.json` | Raw model outputs per iteration |
 | `scenarios/[name]/evals/vNNN.json` | Scored results per iteration |

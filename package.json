@@ -1,0 +1,14 @@
+{
+  "name": "auto-prompt-creator",
+  "version": "1.0.0",
+  "description": "Prompt optimization system for Claude Code. Iteratively improves prompts for cheap models to match expensive model quality.",
+  "scripts": {
+    "setup": "bun setup.mjs",
+    "eval": "echo 'Usage: bun scenarios/[name]/evals/run-eval.mjs --version vNNN'",
+    "judge": "echo 'Usage: bun scenarios/[name]/evals/judge.mjs --version vNNN'"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  },
+  "license": "MIT"
+}

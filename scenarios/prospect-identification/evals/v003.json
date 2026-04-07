@@ -1,0 +1,172 @@
+{
+  "version": "v003",
+  "overall": 0.6153,
+  "train": 0.5925,
+  "val": 0.6438,
+  "tokens": 467,
+  "train_val_gap": -0.0513,
+  "per_company": [
+    {
+      "id": "bartos-industries",
+      "split": "train",
+      "raw_scores": {
+        "biz_type_accuracy": 3,
+        "dm_accuracy": 5,
+        "label_norm": 3,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.5,
+        "dm_accuracy": 1.0,
+        "label_norm": 0.5,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.675,
+      "tokens": 476
+    },
+    {
+      "id": "clearview-analytics",
+      "split": "train",
+      "raw_scores": {
+        "biz_type_accuracy": 5,
+        "dm_accuracy": 1,
+        "label_norm": 4,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 1.0,
+        "dm_accuracy": 0.0,
+        "label_norm": 0.75,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.55,
+      "tokens": 452
+    },
+    {
+      "id": "packright-solutions",
+      "split": "train",
+      "raw_scores": {
+        "biz_type_accuracy": 4,
+        "dm_accuracy": 2,
+        "label_norm": 3,
+        "format_comp": 4
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.75,
+        "dm_accuracy": 0.25,
+        "label_norm": 0.5,
+        "format_comp": 0.75
+      },
+      "weighted_score": 0.525,
+      "tokens": 419
+    },
+    {
+      "id": "nextera-staffing",
+      "split": "train",
+      "raw_scores": {
+        "biz_type_accuracy": 4,
+        "dm_accuracy": 5,
+        "label_norm": 4,
+        "format_comp": 4
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.75,
+        "dm_accuracy": 1.0,
+        "label_norm": 0.75,
+        "format_comp": 0.75
+      },
+      "weighted_score": 0.8375,
+      "tokens": 396
+    },
+    {
+      "id": "summit-coatings",
+      "split": "train",
+      "raw_scores": {
+        "biz_type_accuracy": 3,
+        "dm_accuracy": 1,
+        "label_norm": 4,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.5,
+        "dm_accuracy": 0.0,
+        "label_norm": 0.75,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.375,
+      "tokens": 537
+    },
+    {
+      "id": "brightpath-learning",
+      "split": "val",
+      "raw_scores": {
+        "biz_type_accuracy": 3,
+        "dm_accuracy": 3,
+        "label_norm": 3,
+        "format_comp": 4
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.5,
+        "dm_accuracy": 0.5,
+        "label_norm": 0.5,
+        "format_comp": 0.75
+      },
+      "weighted_score": 0.525,
+      "tokens": 428
+    },
+    {
+      "id": "forgepoint-capital",
+      "split": "val",
+      "raw_scores": {
+        "biz_type_accuracy": 5,
+        "dm_accuracy": 3,
+        "label_norm": 4,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 1.0,
+        "dm_accuracy": 0.5,
+        "label_norm": 0.75,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.725,
+      "tokens": 486
+    },
+    {
+      "id": "ironclad-cyber",
+      "split": "val",
+      "raw_scores": {
+        "biz_type_accuracy": 4,
+        "dm_accuracy": 3,
+        "label_norm": 4,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.75,
+        "dm_accuracy": 0.5,
+        "label_norm": 0.75,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.6375,
+      "tokens": 544
+    },
+    {
+      "id": "tidewater-logistics",
+      "split": "val",
+      "raw_scores": {
+        "biz_type_accuracy": 4,
+        "dm_accuracy": 3,
+        "label_norm": 5,
+        "format_comp": 3
+      },
+      "normalized": {
+        "biz_type_accuracy": 0.75,
+        "dm_accuracy": 0.5,
+        "label_norm": 1.0,
+        "format_comp": 0.5
+      },
+      "weighted_score": 0.6875,
+      "tokens": 471
+    }
+  ]
+}

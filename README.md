@@ -42,10 +42,11 @@ This creates:
 ```
 scenarios/customer-classifier/
   scenario.json        # Rubric config (edit this)
-  inputs/              # Your test cases go here
+  inputs/              # Your test cases go here (staging before ground truth)
   ground-truth/        # Expert reference outputs
-  evals/
+  prompts/
     v001.md            # Paste your baseline prompt
+  evals/
     loop-state.json    # Auto-managed
 ```
 
@@ -75,7 +76,7 @@ Assign splits: 60% `train`, 30% `val`, 10% `holdout`. Holdout is never seen duri
 
 ### 3. Paste your baseline prompt
 
-Edit `scenarios/customer-classifier/evals/v001.md` with the prompt you want to optimize.
+Edit `scenarios/customer-classifier/prompts/v001.md` with the prompt you want to optimize.
 
 ### 4. Run the anneal loop
 
@@ -252,10 +253,12 @@ auto-prompt-creator/
       scenario.json          # Config: rubric, thresholds, mutation rules
       inputs/                # Test case JSON files
       ground-truth/          # Expert reference outputs with train/val/holdout splits
-      evals/
+      prompts/
         v001.md - vNNN.md    # Prompt versions (the thing being optimized)
+      evals/
         loop-state.json      # Iteration tracking, scores, halt state
-        run-eval.mjs         # Execution script (calls Haiku via Claude CLI)
+        run-eval.mjs         # Parameterized runner (calls Haiku via Claude CLI)
+        judge.mjs            # Semi-automated scorer (format check + score template)
         vNNN-raw.json        # Raw model outputs per version
         vNNN.json            # Scored results per version
   library/                   # Graduated prompts with accuracy metadata
