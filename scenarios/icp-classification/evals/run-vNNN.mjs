@@ -7,7 +7,7 @@ import { execSync } from 'child_process';
 import { join } from 'path';
 import { tmpdir } from 'os';
 
-const BASE = process.argv[2] || 'C:/Users/mitch/Everything_CC/auto-prompt-creator/scenarios/icp-classification';
+const BASE = process.argv[2] || join(import.meta.dir, '..');
 const VERSION = process.argv[3] || 'v001';
 const PROMPT_FILE = join(BASE, `prompts/${VERSION}.md`);
 const GT_DIR = join(BASE, 'ground-truth');
@@ -61,10 +61,9 @@ for (const file of gtFiles) {
     writeFileSync(tmpFile, fullPrompt);
 
     // Call Haiku via claude CLI, piping prompt from file to avoid shell escaping
-    const bashPath = 'C:\\Program Files\\Git\\usr\\bin\\bash.exe';
     rawResponse = execSync(
       `cat "${tmpFile.replace(/\\/g, '/')}" | claude --print --model haiku --allowedTools ""`,
-      { encoding: 'utf8', timeout: 120000, maxBuffer: 1024 * 1024, shell: bashPath }
+      { encoding: 'utf8', timeout: 120000, maxBuffer: 1024 * 1024, shell: true }
     ).trim();
 
     console.log(`Raw response (first 200 chars): ${rawResponse.substring(0, 200)}`);

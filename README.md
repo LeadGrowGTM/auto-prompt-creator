@@ -17,7 +17,7 @@ A prompt optimization system for Claude Code. Takes a prompt that doesn't perfor
 ### Installation
 
 ```bash
-git clone https://github.com/mitchkeller/auto-prompt-creator.git
+git clone https://github.com/MitchellkellerLG/auto-prompt-creator.git
 cd auto-prompt-creator
 ```
 
