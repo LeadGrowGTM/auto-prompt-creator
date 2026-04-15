@@ -196,7 +196,7 @@ for (const file of gtFiles) {
   try {
     const result = await $\`cat \${tmpFile} | claude --print --model haiku --allowedTools ""\`.text();
     results.push({
-      id,
+      input_id: id,
       company: input.company_name || input.name || id,
       split: gt.split || "train",
       output: result.trim(),
@@ -206,7 +206,7 @@ for (const file of gtFiles) {
     console.log("  Done: " + result.trim().substring(0, 80));
   } catch (err) {
     console.error("  FAILED: " + err.message);
-    results.push({ id, company: input.company_name || id, split: gt.split || "train", output: "ERROR", tokens: 0, groundTruth: gt.ground_truth });
+    results.push({ input_id: id, company: input.company_name || id, split: gt.split || "train", output: "ERROR", tokens: 0, groundTruth: gt.ground_truth });
   }
 }
 

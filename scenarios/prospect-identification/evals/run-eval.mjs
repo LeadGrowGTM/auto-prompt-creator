@@ -154,7 +154,7 @@ for (const file of gtFiles) {
   }
 
   results.push({
-    id: inputId,
+    input_id: inputId,
     company: input.company_name,
     split: split,
     output: haikuOutput ? JSON.stringify(haikuOutput) : rawResponse,
