@@ -1,0 +1,31 @@
+{
+  "name": "rendered-semantic-qa",
+  "description": "Per-row QA of rendered outbound email copy (subject + body + persona context). Catches null-variable collapse, pronoun/title/tense mismatch, AI-slop formulas, wrong EDP register, em-dashes, and spam triggers before copy ships to Bison.",
+  "target_model": "haiku",
+  "input_schema": {
+    "subject": "string — rendered email subject (no {{}} tokens should remain)",
+    "body": "string — rendered email body (no {{}} tokens should remain)",
+    "persona_context": "object — {resolved: {VARIABLE_NAME: value, ...}, missing: [VARIABLE_NAME, ...]}. `missing` lists variables referenced in the template but absent from the lead row.",
+    "edp_register": "string — segment EDPs joined as a text block; empty string if unavailable"
+  },
+  "output_schema": {
+    "pass": "boolean — true only if no high-severity findings",
+    "findings": "array<{severity: 'low'|'medium'|'high', category: string, message: string, excerpt: string}>"
+  },
+  "rubric_dimensions": {
+    "null_variable_collapse": 0.25,
+    "pronoun_title_tense_match": 0.15,
+    "ai_slop_formula_detection": 0.20,
+    "edp_register_fit": 0.15,
+    "grammatical_coherence": 0.10,
+    "em_dash_free": 0.05,
+    "spam_trigger_phrases": 0.10
+  },
+  "severity_blocks_on": "high",
+  "graduation_thresholds": {
+    "holdout_accuracy": 0.92,
+    "val_accuracy": 0.90
+  },
+  "provisional": true,
+  "provisional_reason": "Ships with 15 hand-authored synthetic examples. Real dogfood examples replace these in Phase 3.5 refinement."
+}
