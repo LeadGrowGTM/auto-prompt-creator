@@ -1,0 +1,36 @@
+{
+  "name": "skill-invoker",
+  "description": "Generic wrapper prompt that executes a LeadGrow skill (braun-copywriting, campaign-copywriting, etc.) against campaign brief inputs and emits variant-shaped copy output. One prompt serves both Stage 7 agents — prior_agent_output discriminates the Braun vs secondary role.",
+  "target_model": "sonnet",
+  "input_schema": {
+    "skill_name": "string — human-readable skill identifier (e.g. 'braun-copywriting')",
+    "skill_text": "string — full SKILL.md content as the operating instructions",
+    "companion_texts": "object — {filename: content} for skill companion files (variables.md, qa.md, etc.)",
+    "segment_name": "string — the target segment within the campaign",
+    "segment_edps": "array<string> — prospect-voice EDP bullets for this segment",
+    "brief_market": "string — market / ICP context from brief",
+    "brief_angles": "string — angle/hook guidance from brief",
+    "prior_agent_output": "object|null — {variant_01, variant_02} from a prior agent when running as challenger; null for first agent (Braun)",
+    "variant_count": "integer — default 2"
+  },
+  "output_schema": {
+    "variant_01": {"subject": "string", "body": "string"},
+    "variant_02": {"subject": "string", "body": "string"}
+  },
+  "rubric_dimensions": {
+    "follows_skill_structure": 0.30,
+    "uses_doublebrace_variables": 0.15,
+    "leverages_edps": 0.20,
+    "prospect_voice_anchor": 0.15,
+    "variant_diversity": 0.10,
+    "no_em_dashes": 0.05,
+    "no_ai_slop_formulas": 0.05
+  },
+  "severity_blocks_on": "high",
+  "graduation_thresholds": {
+    "holdout_accuracy": 0.90,
+    "val_accuracy": 0.88
+  },
+  "provisional": true,
+  "provisional_reason": "Hand-authored synthetic examples pending real Braun + campaign-copywriting dogfood runs in Phase 3.5."
+}
