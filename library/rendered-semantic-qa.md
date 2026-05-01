@@ -1,7 +1,7 @@
 ---
 name: rendered-semantic-qa
 version: 0.1.0
-target_model: haiku
+target_model: gpt-4.1-mini
 input_schema:
   subject: string
   body: string
