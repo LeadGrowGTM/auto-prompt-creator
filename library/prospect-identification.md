@@ -1,4 +1,5 @@
 ---
+target_model: gpt-4.1-mini
 scenario: prospect-identification
 graduated: 2026-04-06
 accuracy:
@@ -8,7 +9,6 @@ accuracy:
 threshold: 0.92
 iterations: 9
 best_version: v009
-target_model: gpt-4.1-mini
 test_set_size: 9
 tokens: 648
 ---

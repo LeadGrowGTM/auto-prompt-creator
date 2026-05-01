@@ -1,4 +1,5 @@
 ---
+target_model: gpt-4.1-mini
 scenario: icp-classification
 graduated: 2026-04-02
 accuracy:
@@ -8,7 +9,6 @@ accuracy:
 threshold: 0.92
 iterations: 4
 best_version: v004
-target_model: haiku
 test_set_size: 9
 tokens: 388
 ---
@@ -55,3 +55,6 @@ Operational pain (dispatch gaps, quoting delays, QA scaling) confirms budget and
 
 ## Company
 
+{name} | {employees} employees | {domain}
+
+{description}
