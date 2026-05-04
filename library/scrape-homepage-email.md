@@ -1,5 +1,5 @@
 ---
-target_model: gpt-4.1-mini
+target_model: gpt-4o-mini
 temperature: 0.1
 max_tokens: 1024
 max_concurrency: 25

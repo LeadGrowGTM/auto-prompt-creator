@@ -1,7 +1,7 @@
 ---
 name: personalization-generator
 version: 0.1.0
-target_model: gpt-4.1-mini
+target_model: claude-haiku-4-5-20251001
 input_schema:
   skill_name: string
   skill_text: string
