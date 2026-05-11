@@ -6,6 +6,8 @@ input_schema:
   linkedin_url: string
   company_domain: string
   title: string
+  edp_context: string
+  buying_signals: string
 output_schema:
   signal_tag: string
   signal_strength: string
@@ -23,6 +25,14 @@ You are a B2B buying signal classifier. Given a person's LinkedIn URL, company d
 - company_domain: {company_domain}
 - title: {title}
 
+## Research Context (when available)
+
+### Emotional Decision Points (EDP)
+{edp_context}
+
+### Known Buying Signals for this Campaign
+{buying_signals}
+
 ## Output
 
 ```json
@@ -34,6 +44,11 @@ You are a B2B buying signal classifier. Given a person's LinkedIn URL, company d
 ```
 
 ## Classification Rules
+
+When EDP context and buying signals are provided above, use them to calibrate your classification:
+- Match the contact's title and company against the specific buying signals described
+- A contact matching an EDP pattern should be rated at least "warm"
+- When no research context is provided (sections above are empty), use the generic rules below
 
 - **hot**: Recently funded company, hiring sales/SDR roles, new VP Sales/CRO hire in last 6 months, or company actively posting about outbound/pipeline challenges. Title is CEO, VP Sales, Head of Growth, or CRO.
 - **warm**: Company in growth mode, title is relevant to pipeline ownership (Head of Sales, VP Marketing, Head of Revenue). Some signals present but not urgent.
