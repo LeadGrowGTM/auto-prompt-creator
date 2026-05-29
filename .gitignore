@@ -4,6 +4,9 @@
 # Claude worktrees
 .claude/worktrees/
 
+# Auto-generated subagent context snapshot (ephemeral)
+.claude/agent-context/
+
 # OS files
 .DS_Store
 Thumbs.db
