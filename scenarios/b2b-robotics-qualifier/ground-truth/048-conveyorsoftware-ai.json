@@ -1,0 +1,13 @@
+{
+  "id": "048",
+  "domain": "conveyorsoftware.ai",
+  "split": "holdout",
+  "input": {
+    "description": "Conveyor Software offers an automated conveyor system designed to streamline operations for manufacturing and logistics. The software automates shipping, customs handling, and inventory management. Key features include customizable configurations, technology for detecting damaged goods, and 99% uptime rate."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 4,
+    "qualified": false
+  }
+}

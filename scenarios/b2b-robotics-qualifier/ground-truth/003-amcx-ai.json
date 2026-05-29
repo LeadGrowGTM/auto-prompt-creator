@@ -1,0 +1,13 @@
+{
+  "id": "003",
+  "domain": "amcx.ai",
+  "split": "train",
+  "input": {
+    "description": "AMC Robotics provides AI-powered robotics and automation solutions for various industries. Their main offerings include autonomous robots such as robotic dogs, intelligent arms, and robotic unloading systems designed to automate tasks like security inspections and material handling. The company also offers a cloud-native computing framework that integrates robotics, IoT, and AI."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

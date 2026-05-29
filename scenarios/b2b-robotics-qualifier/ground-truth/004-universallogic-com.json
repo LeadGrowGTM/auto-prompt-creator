@@ -1,0 +1,13 @@
+{
+  "id": "004",
+  "domain": "universallogic.com",
+  "split": "train",
+  "input": {
+    "description": "Universal Logic offers AI-driven robotic solutions for retail and distribution operations. Their main product, Neocortex, automates manual tasks such as pallet sorting, piece picking, and inspection to enhance efficiency and reduce labor turnover. Key features include integration with warehouse management systems, real-time control of operations, and custom applications tailored to specific business needs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 8,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "001",
+  "domain": "primerobotics.com",
+  "split": "train",
+  "input": {
+    "description": "Prime Robotics offers robotic solutions for warehouse automation across various industries, including logistics, retail, food and beverage, manufacturing, and e-commerce. Their technology includes automated case picking robots, goods-to-person handling systems, and customizable workstations that enhance operational efficiency in areas like material handling, storage, and cold chain logistics."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "029",
+  "domain": "righthandrobotics.com",
+  "split": "train",
+  "input": {
+    "description": "RightHand Robotics offers a robotic piece-picking system designed for order fulfillment across pharmaceuticals and e-commerce. The RightPick system automates picking of items with AI technology, allowing robots to autonomously fill orders and manage inventory. Key features include real-time operational visibility, customizable workflows, and 24/7 support. Handles wide range of unique item types."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

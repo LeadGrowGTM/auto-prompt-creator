@@ -1,0 +1,13 @@
+{
+  "id": "026",
+  "domain": "epicsysinc.com",
+  "split": "train",
+  "input": {
+    "description": "EPIC Systems Group is a system integrator specializing in industrial automation solutions for process manufacturers. Services include engineering and integration to enhance productivity through filling and packaging inspection, robotic kitting, and material handling. Key features include OCR technology, remote monitoring, IT integration, and custom automation plans tailored to specific industry needs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

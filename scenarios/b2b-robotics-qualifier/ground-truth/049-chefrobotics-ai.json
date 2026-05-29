@@ -1,0 +1,13 @@
+{
+  "id": "049",
+  "domain": "chefrobotics.ai",
+  "split": "holdout",
+  "input": {
+    "description": "Chef Robotics offers AI-enabled robots designed for the food industry, focusing on improving production efficiency and reducing labor costs. Their robotic systems automate food assembly, piece picking, and packaging for frozen prepared meals and direct-to-consumer products. Key features include flexible automation, real-time monitoring, and a flat yearly fee model without upfront costs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

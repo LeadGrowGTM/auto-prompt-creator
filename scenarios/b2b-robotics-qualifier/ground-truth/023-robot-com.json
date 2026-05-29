@@ -1,0 +1,13 @@
+{
+  "id": "023",
+  "domain": "robot.com",
+  "split": "train",
+  "input": {
+    "description": "Rob.com offers a range of robots designed for various industries, including delivery, logistics, advertising, and service operations. Their main functionality includes automating tasks such as delivering meals, moving cargo, running digital ads in high-traffic areas, and inspecting infrastructure. Key features include level 4 autonomy, 12-hour battery life, and scalable deployment. Serves Fortune 500 clients across multiple countries."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

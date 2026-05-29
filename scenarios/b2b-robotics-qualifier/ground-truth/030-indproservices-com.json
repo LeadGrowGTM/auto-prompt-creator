@@ -1,0 +1,13 @@
+{
+  "id": "030",
+  "domain": "indproservices.com",
+  "split": "train",
+  "input": {
+    "description": "IndPro specializes in automation and robotics integration for supply chain operations. They provide tailored solutions including automated storage systems, robotic picking operations, secure access partitions, and software integration to optimize logistics. Also offers design-build services and project management for various industries including retail, food and beverage, and e-commerce."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

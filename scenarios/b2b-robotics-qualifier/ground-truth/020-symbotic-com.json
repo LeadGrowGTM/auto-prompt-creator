@@ -1,0 +1,13 @@
+{
+  "id": "020",
+  "domain": "symbotic.com",
+  "split": "train",
+  "input": {
+    "description": "Symbotic specializes in warehouse automation using advanced robotics and AI technology. Their system optimizes operations to enhance efficiency, accuracy, and agility across retail, wholesale, and food distribution. Key features include mobile robots with vision and sensing, low-cost fulfillment solutions, and the ability to manage multiple warehouses efficiently."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 10,
+    "qualified": true
+  }
+}

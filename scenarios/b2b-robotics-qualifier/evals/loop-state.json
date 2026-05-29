@@ -1,0 +1,72 @@
+{
+  "scenario": "b2b-robotics-qualifier",
+  "current_iteration": 6,
+  "best_version": "v005",
+  "best_validation_score": 0.95,
+  "last_mutation_type": "structural",
+  "halt_reason": "threshold-reached",
+  "config": {
+    "accuracy_threshold": 0.92,
+    "max_iterations": 10,
+    "token_budget": 1200,
+    "overfitting_threshold": 0.12
+  },
+  "score_history": [
+    {
+      "version": "v001",
+      "overall": 0.9533,
+      "train": 0.9513,
+      "val": 0.9575,
+      "holdout": 0.83,
+      "tokens": 426,
+      "mutation_type": "baseline",
+      "phase": "bootstrap"
+    },
+    {
+      "version": "v002",
+      "overall": 0.9272,
+      "train": 0.9379,
+      "val": 0.9058,
+      "tokens": 652,
+      "mutation_type": "additive",
+      "phase": "bootstrap"
+    },
+    {
+      "version": "v003",
+      "overall": 0.9239,
+      "train": 0.9267,
+      "val": 0.9183,
+      "tokens": 571,
+      "mutation_type": "targeted",
+      "phase": "bootstrap"
+    },
+    {
+      "version": "v004",
+      "overall": 0.9247,
+      "train": 0.9279,
+      "val": 0.9183,
+      "tokens": 565,
+      "mutation_type": "structural",
+      "phase": "generalize"
+    },
+    {
+      "version": "v005",
+      "overall": 0.9483,
+      "train": 0.9475,
+      "val": 0.95,
+      "holdout": 0.9325,
+      "tokens": 515,
+      "mutation_type": "structural",
+      "phase": "generalize"
+    },
+    {
+      "version": "v006",
+      "overall": 0.9411,
+      "train": 0.9563,
+      "val": 0.9108,
+      "tokens": 563,
+      "mutation_type": "structural",
+      "phase": "generalize"
+    }
+  ]
+}

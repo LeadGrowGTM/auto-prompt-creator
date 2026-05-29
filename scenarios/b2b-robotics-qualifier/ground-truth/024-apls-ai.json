@@ -1,0 +1,13 @@
+{
+  "id": "024",
+  "domain": "apls.ai",
+  "split": "train",
+  "input": {
+    "description": "Apls.ai is a platform that provides AI-driven solutions for businesses to enhance efficiency through automation, analytics, and natural language processing. Main functionalities include custom machine learning development, robotic process automation (RPA), predictive analytics, chatbots, and computer vision services. Integrates with Slack and Google Drive to streamline operations across finance, healthcare, retail, and government."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 2,
+    "qualified": false
+  }
+}

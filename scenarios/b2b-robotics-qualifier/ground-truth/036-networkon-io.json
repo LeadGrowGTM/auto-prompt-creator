@@ -1,0 +1,13 @@
+{
+  "id": "036",
+  "domain": "networkon.io",
+  "split": "val",
+  "input": {
+    "description": "NetworkON is an AI-powered delivery management software designed to streamline service and operations. Main functionality includes managing orders, automating dispatch, and optimizing routes for faster deliveries. Key features include real-time fleet tracking, auto task assignment, customer notifications, and a centralized dashboard. Offers analytics, proof of delivery, and integration with other systems."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 1,
+    "qualified": false
+  }
+}

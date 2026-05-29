@@ -1,0 +1,41 @@
+{
+  "name": "b2b-robotics-qualifier",
+  "description": "Classify companies as B2B robotics equipment sellers from free-form descriptions. Output: is_b2b, robotics_equipment_score (1-10), qualified boolean, reasoning.",
+  "model": "gpt-4.1-mini",
+  "rubric": {
+    "dimensions": {
+      "qualified_accuracy": {
+        "weight": 0.40,
+        "description": "The qualified boolean matches expected. This is the filter decision."
+      },
+      "score_accuracy": {
+        "weight": 0.30,
+        "description": "robotics_equipment_score is within +/-1 of expected value."
+      },
+      "b2b_accuracy": {
+        "weight": 0.15,
+        "description": "is_b2b boolean matches expected."
+      },
+      "reasoning_quality": {
+        "weight": 0.15,
+        "description": "Reasoning references specific details from the description, not generic filler."
+      }
+    }
+  },
+  "accuracy_threshold": 0.92,
+  "max_iterations": 10,
+  "token_budget": 1200,
+  "overfitting_threshold": 0.12,
+  "default_iterations": 10,
+  "data_split": {
+    "train": "ids 1-30",
+    "val": "ids 31-45",
+    "holdout": "ids 46-50"
+  },
+  "mutation_phases": {
+    "bootstrap": [1, 3],
+    "generalize": [4, 7],
+    "polish": [8, 10]
+  },
+  "example_cap_per_concept": 4
+}

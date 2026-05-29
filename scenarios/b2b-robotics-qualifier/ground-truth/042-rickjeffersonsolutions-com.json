@@ -1,0 +1,13 @@
+{
+  "id": "042",
+  "domain": "rickjeffersonsolutions.com",
+  "split": "val",
+  "input": {
+    "description": "Rick Jefferson AI & Automation Solutions offers AI and automation services to help businesses improve efficiency across healthcare, construction, logistics, financial services, e-commerce, and real estate. Main functionality includes implementing AI solutions for customer service, project management, and operational processes. Key features include AI readiness assessment, custom recommendations, and ongoing maintenance."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 2,
+    "qualified": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "019",
+  "domain": "knapp.com",
+  "split": "train",
+  "input": {
+    "description": "KNAPP provides automation solutions for the entire value chain, focusing on improving logistics efficiency through robotics and artificial intelligence. Their offerings include automated transport, pallet sorting, and warehouse management software that integrates with existing ERP and CRM systems. Key features include intelligent robotic processes, real-time data analysis, and tailored solutions for healthcare, retail, food, and e-commerce."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "012",
+  "domain": "deusrobotics.com",
+  "split": "train",
+  "input": {
+    "description": "Deus Robotics offers a comprehensive automation system that combines robotics, AI, and software to enhance operational efficiency across various industries. The platform integrates with existing business systems to manage multiple robot fleets, including shelf-to-person robots, automated picking processes, and real-time monitoring. Key features include advanced obstacle detection, seamless ERP integration, and ability to reduce manual work by up to 70%."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "050",
+  "domain": "geekplus.com",
+  "split": "holdout",
+  "input": {
+    "description": "Geek+ offers robotics solutions for warehouse and logistics automation. Main functionality includes automating shelf-to-person picking, sorting, and transport across e-commerce, manufacturing, and healthcare. Key features include comprehensive software integrating with ERP systems, real-time inventory monitoring, and advanced security measures. 501-1000 employees."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "prompt_version": "v005",
+  "timestamp": "2026-04-20T15:14:20.031Z",
+  "model": "gpt-4.1-mini",
+  "estimated_tokens": 515,
+  "results": [
+    {
+      "id": "046",
+      "domain": "greyorange.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "GreyOrange sells AI-driven warehouse automation solutions integrating robots and systems to businesses, focusing on physical automation equipment for logistics and supply chain operations."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"GreyOrange sells AI-driven warehouse automation solutions integrating robots and systems to businesses, focusing on physical automation equipment for logistics and supply chain operations.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "047",
+      "domain": "rgrobotix.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 6,
+        "qualified": false,
+        "reasoning": "The company uses a 6-axis robotic printing system to provide fabrication services rather than selling or leasing the robotic equipment itself, placing it in the mixed category."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 6,\n  \"qualified\": false,\n  \"reasoning\": \"The company uses a 6-axis robotic printing system to provide fabrication services rather than selling or leasing the robotic equipment itself, placing it in the mixed category.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 5,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "048",
+      "domain": "conveyorsoftware.ai",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 6,
+        "qualified": false,
+        "reasoning": "The company offers an automated conveyor system which is physical equipment for manufacturing and logistics, but the emphasis on software automation and operational features suggests a mixed focus rather than core robotics equipment sales."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 6,\n  \"qualified\": false,\n  \"reasoning\": \"The company offers an automated conveyor system which is physical equipment for manufacturing and logistics, but the emphasis on software automation and operational features suggests a mixed focus rather than core robotics equipment sales.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 4,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "049",
+      "domain": "chefrobotics.ai",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company sells AI-enabled robotic systems for food production automation to businesses, focusing on improving efficiency and reducing labor costs, which aligns strongly with B2B robotics equipment sales."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells AI-enabled robotic systems for food production automation to businesses, focusing on improving efficiency and reducing labor costs, which aligns strongly with B2B robotics equipment sales.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "050",
+      "domain": "geekplus.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company sells physical robotics solutions for warehouse and logistics automation to commercial sectors like e-commerce and manufacturing, indicating strong B2B robotics equipment sales."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells physical robotics solutions for warehouse and logistics automation to commercial sectors like e-commerce and manufacturing, indicating strong B2B robotics equipment sales.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "success": 5,
+    "failures": 0
+  }
+}

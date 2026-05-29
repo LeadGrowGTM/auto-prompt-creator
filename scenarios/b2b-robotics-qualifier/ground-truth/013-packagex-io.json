@@ -1,0 +1,13 @@
+{
+  "id": "013",
+  "domain": "packagex.io",
+  "split": "train",
+  "input": {
+    "description": "PackageX is a platform that utilizes vision-AI to automate logistics operations through various workflows. It transforms any device into an AI agent that scans and extracts data from labels and documents, streamlining processes such as inventory management, shipping, and returns. Key features include real-time tracking of shipments and integration with over 300 carriers. Offers customizable APIs for developers."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 2,
+    "qualified": false
+  }
+}

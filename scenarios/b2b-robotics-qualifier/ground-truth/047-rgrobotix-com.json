@@ -1,0 +1,13 @@
+{
+  "id": "047",
+  "domain": "rgrobotix.com",
+  "split": "holdout",
+  "input": {
+    "description": "ReformPhase offers robotic fabrication services that transform design concepts into functional 3D models. Their main product, RoboPrint, is a 6-axis robotic printing system for high-precision prints of various materials. Provides parametric design, CAD tools, and support for prototypes and production-ready parts through design files."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 5,
+    "qualified": false
+  }
+}

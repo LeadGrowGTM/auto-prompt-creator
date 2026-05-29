@@ -1,0 +1,13 @@
+{
+  "id": "041",
+  "domain": "streamlineit.com",
+  "split": "val",
+  "input": {
+    "description": "Andy's Shin Hinomoto is an official website that provides booking and information for various services, including food and drink. The site features an address in Tokyo and allows users to make reservations. It offers details on events, contact information, and operational hours for customer inquiries."
+  },
+  "ground_truth": {
+    "is_b2b": false,
+    "robotics_equipment_score": 1,
+    "qualified": false
+  }
+}

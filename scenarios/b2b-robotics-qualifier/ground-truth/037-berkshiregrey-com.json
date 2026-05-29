@@ -1,0 +1,13 @@
+{
+  "id": "037",
+  "domain": "berkshiregrey.com",
+  "split": "val",
+  "input": {
+    "description": "Berkshire Grey offers robotic automation solutions for supply chain operations. Main products include the Scoop Robotic Trailer Unloader, which automates picking, sorting, and store replenishment while reducing labor costs by up to 50%. Also provides AI-driven software, specialized hardware, and integrated systems deployable in greenfield or brownfield warehouses."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

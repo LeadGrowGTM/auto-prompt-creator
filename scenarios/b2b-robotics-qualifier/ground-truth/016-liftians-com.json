@@ -1,0 +1,13 @@
+{
+  "id": "016",
+  "domain": "liftians.com",
+  "split": "train",
+  "input": {
+    "description": "Liftians Robotics provides warehouse automation solutions. Their main product, Rampbot, is a specialized automated material handling robot that can navigate various environments. Key features include real-time monitoring, predictive maintenance, customizable software, and 24/7 global support. The system operates in-house rather than relying on cloud services."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

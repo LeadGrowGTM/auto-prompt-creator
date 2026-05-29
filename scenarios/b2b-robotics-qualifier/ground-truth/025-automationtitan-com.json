@@ -1,0 +1,13 @@
+{
+  "id": "025",
+  "domain": "automationtitan.com",
+  "split": "train",
+  "input": {
+    "description": "Titan Automation provides advanced automation solutions for food and beverage, automotive manufacturing, pharmaceuticals, packaging, logistics, and warehouse automation. Main services include system design and installation, PLC/HMI integration, site audits, and comprehensive support for automated systems. They also offer training and consultation for operating automated systems."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

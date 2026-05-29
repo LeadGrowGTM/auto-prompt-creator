@@ -1,0 +1,13 @@
+{
+  "id": "009",
+  "domain": "macrovey.com",
+  "split": "train",
+  "input": {
+    "description": "Macrovey provides robotics-driven solutions for warehouse operations, focusing on automated picking, storage, and kitting. Their services include the development of fully autonomous robots, AGVs, and smart AI control systems. Key features include a Warehouse Control System (WCS), modular architecture, and a Robotics-as-a-Service model. Serves construction, DoD, education, and warehousing."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

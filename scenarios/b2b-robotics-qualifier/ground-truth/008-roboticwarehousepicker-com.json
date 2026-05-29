@@ -1,0 +1,13 @@
+{
+  "id": "008",
+  "domain": "roboticwarehousepicker.com",
+  "split": "train",
+  "input": {
+    "description": "Robotic Warehouse Picker offers a platform for integrating inventory drones and automated general assortment (AGVs) into warehouse operations. The service focuses on improving safety, accuracy, and operational efficiency by utilizing aerial scanning and ground-level movement of goods. Key features include real-time inventory monitoring, integration with existing management systems, and managing multiple robots simultaneously."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

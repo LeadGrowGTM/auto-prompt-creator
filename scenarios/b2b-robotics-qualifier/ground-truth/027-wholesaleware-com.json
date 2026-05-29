@@ -1,0 +1,13 @@
+{
+  "id": "027",
+  "domain": "wholesaleware.com",
+  "split": "train",
+  "input": {
+    "description": "WholesaleWare is a cloud-based software solution for the food wholesale industry, offering inventory management, pricing analytics, and logistics automation. Provides real-time reporting on order trends, stock information, and compliance. Supports customer-centric eCommerce integration, automated sales orders, and employee performance tracking. Accessible from any device."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 1,
+    "qualified": false
+  }
+}

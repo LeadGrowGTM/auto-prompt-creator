@@ -1,0 +1,13 @@
+{
+  "id": "007",
+  "domain": "atlas-robotics.com",
+  "split": "train",
+  "input": {
+    "description": "Atlas Robotics offers an AI-powered pallet jack designed for warehouse automation. Its main functionality is to manage complex environments by navigating tight spaces, uneven floors, and dynamic conditions efficiently. Key features include advanced barcode scanning, automated trailer loading, inventory replenishment. The system operates on a monthly per shift model with no upfront costs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

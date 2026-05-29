@@ -1,0 +1,13 @@
+{
+  "id": "043",
+  "domain": "svtrobotics.com",
+  "split": "val",
+  "input": {
+    "description": "SOFTBOT Platform is a technology-agnostic solution that enables deployment, monitoring, and scaling of supply chain automation through prebuilt connectors. Allows users to integrate warehouse technologies without custom code. Key features include real-time performance monitoring, automated alerts, and ability to scale automation across multiple sites."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 3,
+    "qualified": false
+  }
+}

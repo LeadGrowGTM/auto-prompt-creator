@@ -1,0 +1,13 @@
+{
+  "id": "045",
+  "domain": "roboworx.io",
+  "split": "val",
+  "input": {
+    "description": "Roboworx specializes in robot management and support for warehousing, healthcare, manufacturing, and foodservice. Offers preventative maintenance, customer training, performance optimization, and installation services. Key features include Robotic Service Manager (RSM) for real-time visibility and specialized centers of excellence for on-site service."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 4,
+    "qualified": false
+  }
+}

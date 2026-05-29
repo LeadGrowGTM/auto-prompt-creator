@@ -1,0 +1,13 @@
+{
+  "id": "022",
+  "domain": "apptronik.com",
+  "split": "train",
+  "input": {
+    "description": "Apptronik offers a General Purpose Humanoid Robot called Apollo, designed to automate various tasks in industries such as logistics, manufacturing, and retail. The robot is built for trailer unloading, case picking, palletization, and machine tending. Key features include a lightweight design for heavy lifting, low maintenance, and ability to reduce employee turnover by handling repetitive tasks."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "011",
+  "domain": "knowella.com",
+  "split": "train",
+  "input": {
+    "description": "E-RISE is an AI-powered platform designed to enhance operational efficiency across various industries, including operations, supply chain, workplace safety, and quality. It offers tools for automating workflows, real-time analytics, and training programs, allowing teams to manage processes efficiently without coding skills. Key features include customizable apps, chatbots for customer support, Gantt charts, and a no-code app builder."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 1,
+    "qualified": false
+  }
+}

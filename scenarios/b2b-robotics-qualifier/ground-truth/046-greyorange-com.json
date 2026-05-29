@@ -1,0 +1,13 @@
+{
+  "id": "046",
+  "domain": "greyorange.com",
+  "split": "holdout",
+  "input": {
+    "description": "GreyOrange provides AI-driven solutions for warehouse, supply chain, and eCommerce operations. Main functionality includes automating pick-up, shipping, returns, and inventory management through a platform integrating people, robots, and systems. Key features include pick-to-person automation, real-time RFID tracking, and optimized logistics across multiple sites. 1001-5000 employees."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

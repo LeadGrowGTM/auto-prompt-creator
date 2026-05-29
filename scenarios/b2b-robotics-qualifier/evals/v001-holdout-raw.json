@@ -1,0 +1,103 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-04-20T15:09:13.358Z",
+  "model": "gpt-4.1-mini",
+  "estimated_tokens": 426,
+  "results": [
+    {
+      "id": "046",
+      "domain": "greyorange.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "GreyOrange sells AI-driven warehouse automation solutions integrating robots and systems to businesses, focusing on physical automation equipment for logistics."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"GreyOrange sells AI-driven warehouse automation solutions integrating robots and systems to businesses, focusing on physical automation equipment for logistics.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "047",
+      "domain": "rgrobotix.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "ReformPhase sells a 6-axis robotic printing system primarily for industrial and production use, targeting businesses needing high-precision fabrication, which aligns well with B2B robotics equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"ReformPhase sells a 6-axis robotic printing system primarily for industrial and production use, targeting businesses needing high-precision fabrication, which aligns well with B2B robotics equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 5,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "048",
+      "domain": "conveyorsoftware.ai",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 5,
+        "qualified": false,
+        "reasoning": "The company offers an automated conveyor system which implies physical equipment, but the description emphasizes software automation and operational features rather than hardware sales or deployment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 5,\n  \"qualified\": false,\n  \"reasoning\": \"The company offers an automated conveyor system which implies physical equipment, but the description emphasizes software automation and operational features rather than hardware sales or deployment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 4,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "049",
+      "domain": "chefrobotics.ai",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and sells AI-enabled robotic systems for food production automation, targeting businesses in the food industry with physical robotic equipment and a B2B subscription model."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and sells AI-enabled robotic systems for food production automation, targeting businesses in the food industry with physical robotic equipment and a B2B subscription model.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "050",
+      "domain": "geekplus.com",
+      "split": "holdout",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Geek+ designs and sells physical robotics systems for warehouse and logistics automation to commercial customers, integrating hardware with software for operational efficiency."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Geek+ designs and sells physical robotics systems for warehouse and logistics automation to commercial customers, integrating hardware with software for operational efficiency.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    }
+  ],
+  "summary": {
+    "total": 5,
+    "success": 5,
+    "failures": 0
+  }
+}

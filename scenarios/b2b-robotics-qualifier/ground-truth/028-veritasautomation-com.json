@@ -1,0 +1,13 @@
+{
+  "id": "028",
+  "domain": "veritasautomation.com",
+  "split": "train",
+  "input": {
+    "description": "Veritas Automation Solutions provides advanced automation services for manufacturing and warehouse operations. Main functionalities include improving productivity, reducing downtime, and enhancing safety through robotic systems that work alongside human operators. Key features include real-time data analytics, collaborative robotics, and project management support tailored to specific business needs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

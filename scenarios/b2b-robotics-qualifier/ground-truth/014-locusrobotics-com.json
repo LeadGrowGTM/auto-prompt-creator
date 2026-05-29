@@ -1,0 +1,13 @@
+{
+  "id": "014",
+  "domain": "locusrobotics.com",
+  "split": "train",
+  "input": {
+    "description": "Locus Robotics offers automated warehouse automation solutions designed to enhance productivity and operational efficiency across various industries. Their main product, LocusONE, is an AI-driven platform that supports the deployment of robotic robots for tasks such as picking, transport, and mezzanine management. Key features include customizable robot models, seamless integration with existing warehouse management systems."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

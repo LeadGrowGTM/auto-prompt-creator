@@ -1,0 +1,13 @@
+{
+  "id": "031",
+  "domain": "plusonerobotics.com",
+  "split": "val",
+  "input": {
+    "description": "Plus One Robotics offers automated material handling solutions for warehouse operations, focusing on depalletizing, parcel induction, and palletizing. Products utilize AI-powered vision technology. Key features include portable depallets, dual-arm induction systems, and supervised autonomy platform. Serves merchandise, retail, and food service, executing over 1.5 billion picks across 15 countries."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

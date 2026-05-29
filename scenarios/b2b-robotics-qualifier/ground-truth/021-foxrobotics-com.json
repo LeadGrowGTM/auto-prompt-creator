@@ -1,0 +1,13 @@
+{
+  "id": "021",
+  "domain": "foxrobotics.com",
+  "split": "train",
+  "input": {
+    "description": "Fox Robotics offers the FoxBot ATL, an automated forklift designed for efficient trailer loading and unloading in warehouse environments. The robots can unload trailers in 45 minutes, reducing labor costs by up to 40% while enhancing safety through advanced AI and machine learning. Key features include real-time route planning, 360-degree monitoring, and focus on reliability."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

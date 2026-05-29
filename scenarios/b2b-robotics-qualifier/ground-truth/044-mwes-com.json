@@ -1,0 +1,13 @@
+{
+  "id": "044",
+  "domain": "mwes.com",
+  "split": "val",
+  "input": {
+    "description": "Midwest Engineered Systems (MWES) specializes in designing, engineering, and integrating industrial automation solutions for food production, aerospace, and automotive. Main functionality includes automating robotic welding, material handling, assembly line modernization, and business system integration. Offers customized systems, support for new installations, and ongoing maintenance."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 8,
+    "qualified": true
+  }
+}

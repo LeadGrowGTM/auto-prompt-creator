@@ -1,0 +1,13 @@
+{
+  "id": "010",
+  "domain": "lab0.com",
+  "split": "train",
+  "input": {
+    "description": "LAB0 offers a robotic automation system called RoboGlide designed to enhance warehouse operations through AI-powered tools. The system automates tasks such as container unloading, product inspection, damage detection, and pallet wrapping without the need for human intervention. Key features include real-time AI decision-making, seamless integration with existing operations, and customizable design."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

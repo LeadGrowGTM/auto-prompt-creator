@@ -1,0 +1,13 @@
+{
+  "id": "038",
+  "domain": "unboxrobotics.com",
+  "split": "val",
+  "input": {
+    "description": "Unbox Robotics offers robotic solutions for parcel distribution, focusing on fast sortation and order consolidation using swarm robotics. Their technology automates sorting processes with minimal space and costs. System is customizable to specific business needs, aiming to enhance customer experience while reducing operational costs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

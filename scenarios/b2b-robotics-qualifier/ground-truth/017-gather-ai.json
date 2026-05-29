@@ -1,0 +1,13 @@
+{
+  "id": "017",
+  "domain": "gather.ai",
+  "split": "train",
+  "input": {
+    "description": "Gather AI is a technology solution for intralogistics that enhances inventory management and operational efficiency across warehouses. It captures over 10 data points each image to provide real-time insights on product movement, inventory accuracy, and occupancy levels. Key features include advanced search, 3D case counting, automated reporting, and integrating off-the-shelf drones with existing warehouse systems without requiring infrastructure changes."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 5,
+    "qualified": false
+  }
+}

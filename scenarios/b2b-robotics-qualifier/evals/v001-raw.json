@@ -1,0 +1,823 @@
+{
+  "prompt_version": "v001",
+  "timestamp": "2026-04-20T15:06:37.446Z",
+  "model": "gpt-4.1-mini",
+  "estimated_tokens": 426,
+  "results": [
+    {
+      "id": "001",
+      "domain": "primerobotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and sells physical robotic systems for warehouse automation to various industries, clearly targeting business customers with hardware solutions."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and sells physical robotic systems for warehouse automation to various industries, clearly targeting business customers with hardware solutions.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "002",
+      "domain": "smert.ai",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company offers customizable physical robotic solutions for industries like hospitality, manufacturing, and logistics, indicating strong B2B robotics equipment sales with some consulting services."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company offers customizable physical robotic solutions for industries like hospitality, manufacturing, and logistics, indicating strong B2B robotics equipment sales with some consulting services.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "003",
+      "domain": "amcx.ai",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "AMC Robotics designs and sells physical autonomous robots and robotic systems for industrial applications, clearly targeting business customers with hardware solutions."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"AMC Robotics designs and sells physical autonomous robots and robotic systems for industrial applications, clearly targeting business customers with hardware solutions.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "004",
+      "domain": "universallogic.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Universal Logic provides AI-driven robotic solutions and automation systems for retail and distribution businesses, focusing on physical task automation like pallet sorting and piece picking, which aligns strongly with B2B robotics equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Universal Logic provides AI-driven robotic solutions and automation systems for retail and distribution businesses, focusing on physical task automation like pallet sorting and piece picking, which aligns strongly with B2B robotics equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "005",
+      "domain": "flexrobot.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company provides physical smart robots and automation systems for warehouse logistics, selling them via a RaaS model to businesses, which aligns strongly with B2B robotics equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides physical smart robots and automation systems for warehouse logistics, selling them via a RaaS model to businesses, which aligns strongly with B2B robotics equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "006",
+      "domain": "btr.tech",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company sells automated storage and retrieval systems and robotic sorting systems to logistics and e-commerce businesses, indicating strong B2B robotics equipment offerings with additional services."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells automated storage and retrieval systems and robotic sorting systems to logistics and e-commerce businesses, indicating strong B2B robotics equipment offerings with additional services.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "007",
+      "domain": "atlas-robotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Atlas Robotics sells AI-powered pallet jacks, physical robotic equipment for warehouse automation, primarily to businesses on a subscription model, fitting core B2B robotics criteria."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Atlas Robotics sells AI-powered pallet jacks, physical robotic equipment for warehouse automation, primarily to businesses on a subscription model, fitting core B2B robotics criteria.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "008",
+      "domain": "roboticwarehousepicker.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true,
+        "reasoning": "The company integrates physical robots (inventory drones and AGVs) into warehouse operations, selling automation equipment primarily to businesses, though the focus is on integration and platform services as well."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 7,\n  \"qualified\": true,\n  \"reasoning\": \"The company integrates physical robots (inventory drones and AGVs) into warehouse operations, selling automation equipment primarily to businesses, though the focus is on integration and platform services as well.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "009",
+      "domain": "macrovey.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and deploys physical autonomous robots and AGVs for warehouse operations, selling robotics equipment and services primarily to business sectors."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and deploys physical autonomous robots and AGVs for warehouse operations, selling robotics equipment and services primarily to business sectors.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "010",
+      "domain": "lab0.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company sells a physical robotic automation system designed for warehouse operations, targeting business customers and automating industrial tasks."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells a physical robotic automation system designed for warehouse operations, targeting business customers and automating industrial tasks.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "011",
+      "domain": "knowella.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false,
+        "reasoning": "The company provides AI-powered software tools for workflow automation and analytics, but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 1,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides AI-powered software tools for workflow automation and analytics, but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "012",
+      "domain": "deusrobotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company provides integrated robotics automation systems including physical robots like shelf-to-person robots and automated picking, targeting business operations, which strongly aligns with B2B robotics equipment sales."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides integrated robotics automation systems including physical robots like shelf-to-person robots and automated picking, targeting business operations, which strongly aligns with B2B robotics equipment sales.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "013",
+      "domain": "packagex.io",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 3,
+        "qualified": false,
+        "reasoning": "The company provides AI-driven software solutions for logistics automation but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 3,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides AI-driven software solutions for logistics automation but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "014",
+      "domain": "locusrobotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Locus Robotics designs and deploys physical warehouse robots for commercial customers, focusing on automation hardware integrated with AI software, fitting core B2B robotics equipment criteria."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Locus Robotics designs and deploys physical warehouse robots for commercial customers, focusing on automation hardware integrated with AI software, fitting core B2B robotics equipment criteria.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "015",
+      "domain": "assurity-plus.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and provides autonomous robotic systems for warehousing operations, selling physical robots to commercial clients across multiple industries."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and provides autonomous robotic systems for warehousing operations, selling physical robots to commercial clients across multiple industries.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "016",
+      "domain": "liftians.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company sells specialized automated material handling robots to warehouses, which are commercial customers, making it a core B2B robotics equipment provider."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells specialized automated material handling robots to warehouses, which are commercial customers, making it a core B2B robotics equipment provider.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "017",
+      "domain": "gather.ai",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 4,
+        "qualified": false,
+        "reasoning": "The company provides technology solutions and integrates off-the-shelf drones but does not appear to sell physical robotics or automated equipment directly; focus is on software and data insights."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 4,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides technology solutions and integrates off-the-shelf drones but does not appear to sell physical robotics or automated equipment directly; focus is on software and data insights.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 5,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "018",
+      "domain": "robotsdynamic.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Boston Dynamics designs and sells physical robots like Spot and Stretch primarily to industrial and government customers, making it a core B2B robotics equipment company."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Boston Dynamics designs and sells physical robots like Spot and Stretch primarily to industrial and government customers, making it a core B2B robotics equipment company.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "019",
+      "domain": "knapp.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company provides physical automation solutions including robotic transport and pallet sorting systems primarily for business clients, though it also offers software integration, indicating a strong focus on hardware automation with some software components."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides physical automation solutions including robotic transport and pallet sorting systems primarily for business clients, though it also offers software integration, indicating a strong focus on hardware automation with some software components.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "020",
+      "domain": "symbotic.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 10,
+        "qualified": true,
+        "reasoning": "Symbotic designs and deploys advanced physical robotics systems for warehouse automation, selling to commercial customers in retail and distribution sectors."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 10,\n  \"qualified\": true,\n  \"reasoning\": \"Symbotic designs and deploys advanced physical robotics systems for warehouse automation, selling to commercial customers in retail and distribution sectors.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 10,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "021",
+      "domain": "foxrobotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Fox Robotics designs and sells automated forklifts, physical robotic equipment, to warehouse businesses, clearly fitting a core B2B robotics equipment company profile."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Fox Robotics designs and sells automated forklifts, physical robotic equipment, to warehouse businesses, clearly fitting a core B2B robotics equipment company profile.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "022",
+      "domain": "apptronik.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 10,
+        "qualified": true,
+        "reasoning": "Apptronik designs and sells a physical humanoid robot specifically for industrial automation tasks, targeting business customers in logistics, manufacturing, and retail."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 10,\n  \"qualified\": true,\n  \"reasoning\": \"Apptronik designs and sells a physical humanoid robot specifically for industrial automation tasks, targeting business customers in logistics, manufacturing, and retail.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "023",
+      "domain": "robot.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and sells physical autonomous robots for delivery, logistics, and service industries to large business clients, indicating a strong B2B robotics equipment focus."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and sells physical autonomous robots for delivery, logistics, and service industries to large business clients, indicating a strong B2B robotics equipment focus.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "024",
+      "domain": "apls.ai",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false,
+        "reasoning": "The company provides AI-driven software solutions including RPA and analytics, but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 2,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides AI-driven software solutions including RPA and analytics, but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "025",
+      "domain": "automationtitan.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true,
+        "reasoning": "The company provides system design, installation, and integration of automated systems primarily for industrial sectors, indicating strong involvement in physical automation equipment sales and deployment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 7,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides system design, installation, and integration of automated systems primarily for industrial sectors, indicating strong involvement in physical automation equipment sales and deployment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "026",
+      "domain": "epicsysinc.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company integrates and deploys physical automation and robotic systems for industrial clients, focusing on process manufacturing, which aligns with B2B robotics equipment sales and services."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company integrates and deploys physical automation and robotic systems for industrial clients, focusing on process manufacturing, which aligns with B2B robotics equipment sales and services.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "027",
+      "domain": "wholesaleware.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false,
+        "reasoning": "The company provides cloud-based software for inventory and logistics management but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 1,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides cloud-based software for inventory and logistics management but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "028",
+      "domain": "veritasautomation.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true,
+        "reasoning": "The company provides collaborative robotic systems and automation services to manufacturing and warehouse businesses, indicating they sell physical robotics equipment integrated with software, fitting a strong automation hardware profile."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 7,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides collaborative robotic systems and automation services to manufacturing and warehouse businesses, indicating they sell physical robotics equipment integrated with software, fitting a strong automation hardware profile.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "029",
+      "domain": "righthandrobotics.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company sells a physical robotic piece-picking system to businesses in pharmaceuticals and e-commerce, automating order fulfillment with AI-enabled robots."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company sells a physical robotic piece-picking system to businesses in pharmaceuticals and e-commerce, automating order fulfillment with AI-enabled robots.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "030",
+      "domain": "indproservices.com",
+      "split": "train",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company provides physical automation and robotic systems integrated into supply chain operations, selling to various industries, indicating strong B2B robotics equipment focus with some software and services."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company provides physical automation and robotic systems integrated into supply chain operations, selling to various industries, indicating strong B2B robotics equipment focus with some software and services.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "031",
+      "domain": "plusonerobotics.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and sells physical automated robotic systems for warehouse material handling to commercial customers, fitting core B2B robotics equipment criteria."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and sells physical automated robotic systems for warehouse material handling to commercial customers, fitting core B2B robotics equipment criteria.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "032",
+      "domain": "kpisolutions.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "The company integrates and deploys physical warehouse automation systems including robotic piece picking, serving commercial sectors, which aligns with strong B2B robotics equipment provision."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"The company integrates and deploys physical warehouse automation systems including robotic piece picking, serving commercial sectors, which aligns with strong B2B robotics equipment provision.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 7,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "033",
+      "domain": "auto-fc.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 6,
+        "qualified": false,
+        "reasoning": "The company provides consulting and tailored solutions for warehouse automation and robotics but does not explicitly state selling physical robotics equipment, placing it in a mixed services and hardware category."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 6,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides consulting and tailored solutions for warehouse automation and robotics but does not explicitly state selling physical robotics equipment, placing it in a mixed services and hardware category.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 5,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "034",
+      "domain": "addverb.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Addverb designs and implements physical warehouse robots for material handling, selling to commercial sectors, making it a core B2B robotics equipment company."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Addverb designs and implements physical warehouse robots for material handling, selling to commercial sectors, making it a core B2B robotics equipment company.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 10,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "035",
+      "domain": "pelicanrobotics.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "Pelican Robotics designs and sells AI-powered physical robots for warehouse automation, targeting business customers with hardware solutions that improve operational workflows."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"Pelican Robotics designs and sells AI-powered physical robots for warehouse automation, targeting business customers with hardware solutions that improve operational workflows.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "036",
+      "domain": "networkon.io",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false,
+        "reasoning": "The company provides AI-powered delivery management software focused on operations and dispatch automation, but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 2,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides AI-powered delivery management software focused on operations and dispatch automation, but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "037",
+      "domain": "berkshiregrey.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and deploys physical robotic automation systems for supply chain operations, selling integrated hardware and software solutions to commercial warehouse customers."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and deploys physical robotic automation systems for supply chain operations, selling integrated hardware and software solutions to commercial warehouse customers.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "038",
+      "domain": "unboxrobotics.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true,
+        "reasoning": "The company designs and sells physical robotic systems for parcel distribution to businesses, focusing on automation and operational efficiency."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 9,\n  \"qualified\": true,\n  \"reasoning\": \"The company designs and sells physical robotic systems for parcel distribution to businesses, focusing on automation and operational efficiency.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 9,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "039",
+      "domain": "jascicloud.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 3,
+        "qualified": false,
+        "reasoning": "The company provides software for warehouse management and integrates with robotic automation but does not sell physical robotics or automated equipment itself."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 3,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides software for warehouse management and integrates with robotic automation but does not sell physical robotics or automated equipment itself.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "040",
+      "domain": "anyware-robotics.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false,
+        "reasoning": "The company provides communication training and website optimization services, with no indication of selling physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 1,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides communication training and website optimization services, with no indication of selling physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 1,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "041",
+      "domain": "streamlineit.com",
+      "split": "val",
+      "output": {
+        "is_b2b": false,
+        "robotics_equipment_score": 1,
+        "qualified": false,
+        "reasoning": "The company provides booking and information services for food and drink, which is not related to selling physical robotics or automated equipment to businesses."
+      },
+      "raw_response": "{\n  \"is_b2b\": false,\n  \"robotics_equipment_score\": 1,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides booking and information services for food and drink, which is not related to selling physical robotics or automated equipment to businesses.\"\n}",
+      "ground_truth": {
+        "is_b2b": false,
+        "robotics_equipment_score": 1,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "042",
+      "domain": "rickjeffersonsolutions.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false,
+        "reasoning": "The company provides AI and automation services focused on software solutions for business process improvement, without selling physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 2,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides AI and automation services focused on software solutions for business process improvement, without selling physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 2,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "043",
+      "domain": "svtrobotics.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 3,
+        "qualified": false,
+        "reasoning": "The company provides software for deploying and managing supply chain automation but does not sell physical robotics or automated equipment."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 3,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides software for deploying and managing supply chain automation but does not sell physical robotics or automated equipment.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 3,
+        "qualified": false
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "044",
+      "domain": "mwes.com",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true,
+        "reasoning": "MWES designs and integrates industrial automation systems including robotic welding and material handling, selling physical automation solutions primarily to businesses."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 8,\n  \"qualified\": true,\n  \"reasoning\": \"MWES designs and integrates industrial automation systems including robotic welding and material handling, selling physical automation solutions primarily to businesses.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 8,
+        "qualified": true
+      },
+      "parse_failure": false
+    },
+    {
+      "id": "045",
+      "domain": "roboworx.io",
+      "split": "val",
+      "output": {
+        "is_b2b": true,
+        "robotics_equipment_score": 4,
+        "qualified": false,
+        "reasoning": "The company provides robot management, maintenance, and support services rather than selling physical robotics equipment, placing it in a tangential role to robotics hardware."
+      },
+      "raw_response": "{\n  \"is_b2b\": true,\n  \"robotics_equipment_score\": 4,\n  \"qualified\": false,\n  \"reasoning\": \"The company provides robot management, maintenance, and support services rather than selling physical robotics equipment, placing it in a tangential role to robotics hardware.\"\n}",
+      "ground_truth": {
+        "is_b2b": true,
+        "robotics_equipment_score": 4,
+        "qualified": false
+      },
+      "parse_failure": false
+    }
+  ],
+  "summary": {
+    "total": 45,
+    "success": 45,
+    "failures": 0
+  }
+}

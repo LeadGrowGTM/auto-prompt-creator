@@ -1,0 +1,13 @@
+{
+  "id": "035",
+  "domain": "pelicanrobotics.com",
+  "split": "val",
+  "input": {
+    "description": "Pelican Robotics offers AI-powered robotics solutions for warehouse automation. Their technology enhances pick and place operations with real-time data analysis, machine learning, and customizable robot designs. Key features include seamless integration with existing systems, reliability, and flexibility to adapt to changing workflows."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

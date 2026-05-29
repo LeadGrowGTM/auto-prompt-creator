@@ -1,0 +1,13 @@
+{
+  "id": "034",
+  "domain": "addverb.com",
+  "split": "val",
+  "input": {
+    "description": "Addverb is a global robotics company that specializes in warehouse automation solutions. Main functionality includes designing and implementing intelligent robots for material movement, sorting, picking, and storage across automotive, consumer goods, and pharmaceuticals. Key features include modular robot systems, real-time inventory visibility, and comprehensive management software. 1001-5000 employees."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 10,
+    "qualified": true
+  }
+}

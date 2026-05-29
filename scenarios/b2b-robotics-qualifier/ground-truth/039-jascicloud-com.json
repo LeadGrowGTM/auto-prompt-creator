@@ -1,0 +1,13 @@
+{
+  "id": "039",
+  "domain": "jascicloud.com",
+  "split": "val",
+  "input": {
+    "description": "JASCI is a cloud-based warehouse management system (WMS) that automates supply chain operations for B2B and B2C markets. Main functionality includes managing inventory, labor, shipping, and logistics through AI technology. Key features include real-time analytics, automated workforce planning, robotic automation integration, and integration with ERP systems. Aims to reduce costs and enhance productivity."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 2,
+    "qualified": false
+  }
+}

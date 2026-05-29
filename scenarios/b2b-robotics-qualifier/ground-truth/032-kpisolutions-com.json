@@ -1,0 +1,13 @@
+{
+  "id": "032",
+  "domain": "kpisolutions.com",
+  "split": "val",
+  "input": {
+    "description": "KPI Solutions is a supply chain consulting and integrator specializing in customized warehouse automation. Services include facility design, system integration, and ongoing support. Key features include automated storage systems, robotic piece picking, intelligent software for real-time decision-making. Provides lifetime maintenance and training. Serves agri-food, food and beverage, and medical/pharma."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 7,
+    "qualified": true
+  }
+}

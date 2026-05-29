@@ -1,0 +1,13 @@
+{
+  "id": "033",
+  "domain": "auto-fc.com",
+  "split": "val",
+  "input": {
+    "description": "Automated Fulfillment Consulting (Auto-FC) specializes in warehouse automation and robotics solutions. They offer business reviews, proposals, and execution of robotic and automated processes. Their approach combines AI technology with data analysis to support decision-making for businesses looking to improve logistics operations. Aims to simplify automation by providing tailored solutions and expertise."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 5,
+    "qualified": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "018",
+  "domain": "robotsdynamic.com",
+  "split": "train",
+  "input": {
+    "description": "Boston Dynamics offers a range of robotics solutions designed for various industries, including manufacturing, construction, and government. Their main products include Spot, a mobile robot for dynamic sensing and industrial inspection, and Stretch, an integrated arm for flexible manipulation. The company provides integration services, training, consulting, and support to help organizations adopt robotics and AI effectively."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 9,
+    "qualified": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "005",
+  "domain": "flexrobot.com",
+  "split": "train",
+  "input": {
+    "description": "FlexRobot.ai offers technology solutions for automated logistics automation, focusing on smart robots designed to enhance efficiency and reduce labor costs in warehouse operations. Their services include a robotic as a service (RaaS) model that provides a full lifecycle of support. Key features include intelligent systems for storage, distribution, and sorting, along with AI-driven robotics."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 8,
+    "qualified": true
+  }
+}

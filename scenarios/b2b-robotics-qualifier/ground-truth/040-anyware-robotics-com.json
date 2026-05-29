@@ -1,0 +1,13 @@
+{
+  "id": "040",
+  "domain": "anyware-robotics.com",
+  "split": "val",
+  "input": {
+    "description": "Biz Ventures Marketing Group offers a range of services aimed at enhancing communication skills for individuals and businesses. Main functionality includes optimizing websites, providing training on effective messaging, and offering tools like the Communication Skills Blog with tips and tools for improving communication skills."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 1,
+    "qualified": false
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "id": "006",
+  "domain": "btr.tech",
+  "split": "train",
+  "input": {
+    "description": "Btr.tech provides automation solutions for logistics and e-commerce operations, focusing on enhancing efficiency and reducing labor reliance. Their main offerings include automated storage and retrieval systems, robotic sorting systems, and digital commerce services tailored to meet specific client needs. Key features include advisory support, project management, real-time data analytics."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 8,
+    "qualified": true
+  }
+}

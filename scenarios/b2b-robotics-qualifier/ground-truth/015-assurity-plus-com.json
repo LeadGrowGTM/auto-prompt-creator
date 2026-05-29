@@ -1,0 +1,13 @@
+{
+  "id": "015",
+  "domain": "assurity-plus.com",
+  "split": "train",
+  "input": {
+    "description": "Assurity Plus provides robotic automation solutions for warehousing operations, focusing on pallet loading and unloading. Their systems enhance efficiency, accuracy, and safety across various industries such as grocery, food and beverage, consumer goods, and third-party logistics. Key features include autonomous robots, cleaning robots, and automated delivery robots that can be customized to meet specific warehouse needs."
+  },
+  "ground_truth": {
+    "is_b2b": true,
+    "robotics_equipment_score": 8,
+    "qualified": true
+  }
+}
