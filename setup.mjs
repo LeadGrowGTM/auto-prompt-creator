@@ -6,8 +6,14 @@
  *
  * Usage:
  *   bun setup.mjs --name my-scenario
+ *   bun setup.mjs --name my-scenario --mode icp-loop
  *   bun setup.mjs --name my-scenario --dimensions "accuracy:0.5,format:0.3,style:0.2"
  *   bun setup.mjs --name my-scenario --threshold 0.90 --budget 600
+ *
+ * Modes:
+ *   standard   (default) — classic anneal loop, runs all inputs per iteration
+ *   icp-loop   — interactive human validation: 10 companies at a time, gate on
+ *                3 consecutive clean batches before graduation
  */
 
 import { mkdirSync, writeFileSync, existsSync } from "fs";
@@ -23,21 +29,29 @@ const { values } = parseArgs({
     threshold: { type: "string", default: "0.92" },
     budget: { type: "string", default: "800" },
     iterations: { type: "string", default: "10" },
+    mode: { type: "string", default: "standard" }, // "standard" | "icp-loop"
   },
 });
 
 if (!values.name) {
-  console.error("Usage: bun setup.mjs --name <scenario-name>");
+  console.error("Usage: bun setup.mjs --name <scenario-name> [--mode icp-loop]");
   console.error("Options:");
   console.error('  --description "What this prompt does"');
   console.error('  --dimensions "accuracy:0.5,format:0.3,style:0.2"');
   console.error("  --threshold 0.92");
   console.error("  --budget 800");
   console.error("  --iterations 10");
+  console.error("  --mode standard|icp-loop");
   process.exit(1);
 }
 
 const name = values.name;
+const mode = values.mode;
+if (mode !== "standard" && mode !== "icp-loop") {
+  console.error(`Unknown mode: ${mode}. Use "standard" or "icp-loop".`);
+  process.exit(1);
+}
+
 const root = resolve(import.meta.dir, "scenarios", name);
 
 if (existsSync(root)) {
@@ -69,7 +83,7 @@ for (const dir of dirs) {
 const scenario = {
   name,
   description: values.description || "[TODO] Describe the " + name + " task",
-  model: "claude-haiku",
+  model: "claude-haiku-4-5-20251001",
   rubric: { dimensions: dims },
   accuracy_threshold: parseFloat(values.threshold),
   max_iterations: parseInt(values.iterations),
@@ -91,6 +105,17 @@ const scenario = {
   example_cap_per_concept: 4,
 };
 
+if (mode === "icp-loop") {
+  scenario.icp_loop = {
+    enabled: true,
+    batch_size: 10,
+    clean_rounds_required: 3,
+    // Model used during interactive validation (higher quality than scoring model)
+    model: "claude-sonnet-4-6",
+    show_reasoning: true,
+  };
+}
+
 writeFileSync(join(root, "scenario.json"), JSON.stringify(scenario, null, 2) + "\n");
 
 // Write loop-state.json
@@ -108,17 +133,28 @@ const loopState = {
     overfitting_threshold: scenario.overfitting_threshold,
   },
   score_history: [],
+  consecutive_plateaus: 0,
 };
+
+if (mode === "icp-loop") {
+  loopState.icp_loop = {
+    clean_rounds: 0,
+    current_batch_offset: 0,
+    total_batches_reviewed: 0,
+    gate_cleared: false,
+    corrections_history: [],
+  };
+}
 
 writeFileSync(join(root, "evals", "loop-state.json"), JSON.stringify(loopState, null, 2) + "\n");
 
-// Write placeholder v001.md to prompts/ (not evals/)
+// Write placeholder v001.md
 writeFileSync(
   join(root, "prompts", "v001.md"),
   "[TODO] Paste your baseline prompt here.\n\nThis is the starting point for optimization.\n"
 );
 
-// Write example input template (generic, not B2B-specific)
+// Write example input template
 const exampleInput = {
   _comment: "[TODO] Replace these fields with your scenario's input schema",
   field1: "[TODO] Primary input field",
@@ -143,84 +179,164 @@ const exampleGT = {
 };
 writeFileSync(join(root, "ground-truth", "example.json"), JSON.stringify(exampleGT, null, 2) + "\n");
 
-// Write parameterized run-eval.mjs
+// ─── run-eval.mjs — Anthropic Flex API ────────────────────────────────────────
+
 const runEvalTemplate = `#!/usr/bin/env bun
 /**
- * Parameterized eval runner for ${name}
+ * Eval runner for ${name} — Anthropic REST API, service_tier: flex
  *
- * Usage: bun run-eval.mjs --version v001
+ * Usage:
+ *   bun run-eval.mjs --version v001
+ *   bun run-eval.mjs --version v001 --split val
+ *   bun run-eval.mjs --version v001 --split holdout
  */
-import { readFileSync, writeFileSync, readdirSync } from "fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import { parseArgs } from "util";
-import { $ } from "bun";
 
 const { values: args } = parseArgs({
   args: process.argv.slice(2),
-  options: { version: { type: "string" } },
+  options: {
+    version: { type: "string" },
+    split: { type: "string", default: "" },
+  },
 });
 
 if (!args.version) {
-  console.error("Usage: bun run-eval.mjs --version vNNN");
+  console.error("Usage: bun run-eval.mjs --version vNNN [--split val|holdout]");
   process.exit(1);
 }
 
-const version = args.version;
-const scenarioDir = resolve(import.meta.dir, "..");
-const evalsDir = import.meta.dir;
-const promptFile = join(scenarioDir, "prompts", version + ".md");
-const gtDir = join(scenarioDir, "ground-truth");
-const outFile = join(evalsDir, version + "-raw.json");
+const VERSION = args.version;
+const BASE = resolve(import.meta.dir, "..");
+const PROMPT_FILE = join(BASE, "prompts", VERSION + ".md");
+const GT_DIR = join(BASE, "ground-truth");
+const suffix = args.split ? \`-\${args.split}\` : "";
+const OUT_FILE = join(BASE, "evals", VERSION + suffix + "-raw.json");
 
-// Read prompt
-const promptTemplate = readFileSync(promptFile, "utf-8");
+if (existsSync(OUT_FILE)) {
+  console.log(\`Output already exists: \${OUT_FILE}. Delete to re-run.\`);
+  process.exit(0);
+}
 
-// Read ground truth files for inputs
-const gtFiles = readdirSync(gtDir).filter((f) => f.endsWith(".json")).sort();
-const results = [];
+const ANTHROPIC_API_KEY = Bun.env["ANTHROPIC_API_KEY"] || "";
+if (!ANTHROPIC_API_KEY) {
+  console.error("ANTHROPIC_API_KEY not found in environment.");
+  process.exit(1);
+}
 
-for (const file of gtFiles) {
-  const gt = JSON.parse(readFileSync(join(gtDir, file), "utf-8"));
-  const input = gt.input;
-  const id = gt.id || file.replace(".json", "");
+const scenarioConfig = JSON.parse(readFileSync(join(BASE, "scenario.json"), "utf-8"));
+const MODEL = scenarioConfig.model || "claude-haiku-4-5-20251001";
 
-  // [TODO] Customize this line for your scenario's input format
-  const fullPrompt = promptTemplate + "\\n\\n" + JSON.stringify(input, null, 2);
+const promptTemplate = readFileSync(PROMPT_FILE, "utf-8");
+const estimatedTokens = Math.ceil(promptTemplate.split(/\\s+/).length * 1.3);
+console.log(\`Prompt: \${PROMPT_FILE} (\${estimatedTokens} est tokens)\`);
+if (estimatedTokens > 700) console.log("  WARNING: CONSOLIDATION TRIGGER (>700 tokens)");
+if (estimatedTokens > 800) console.log("  ERROR: TOKEN BUDGET EXCEEDED (>800 tokens)");
 
-  // Write prompt to temp file to avoid shell escaping issues
-  const tmpFile = join(evalsDir, ".tmp-prompt.txt");
-  writeFileSync(tmpFile, fullPrompt);
+const gtFiles = readdirSync(GT_DIR).filter((f) => f.endsWith(".json")).sort();
+const allGT = gtFiles.map((f) => JSON.parse(readFileSync(join(GT_DIR, f), "utf-8")));
 
-  console.log("Running " + id + "...");
+let inputs;
+if (args.split === "holdout") inputs = allGT.filter((g) => g.split === "holdout");
+else if (args.split === "val")  inputs = allGT.filter((g) => g.split === "val");
+else if (args.split === "train") inputs = allGT.filter((g) => g.split === "train");
+else inputs = allGT.filter((g) => g.split !== "holdout");
 
-  try {
-    const result = await $\`cat \${tmpFile} | claude --print --model haiku --allowedTools ""\`.text();
-    results.push({
-      id,
-      company: input.company_name || input.name || id,
-      split: gt.split || "train",
-      output: result.trim(),
-      tokens: promptTemplate.length,
-      groundTruth: gt.ground_truth,
-    });
-    console.log("  Done: " + result.trim().substring(0, 80));
-  } catch (err) {
-    console.error("  FAILED: " + err.message);
-    results.push({ id, company: input.company_name || id, split: gt.split || "train", output: "ERROR", tokens: 0, groundTruth: gt.ground_truth });
+console.log(\`Processing \${inputs.length} inputs (\${args.split || "train+val"})...\\n\`);
+
+async function callClaude(systemPrompt, userMessage, retries = 1) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": ANTHROPIC_API_KEY,
+          "anthropic-version": "2023-06-01",
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 512,
+          service_tier: "flex",
+          system: systemPrompt,
+          // [TODO] Customize this for your scenario's input format
+          messages: [{ role: "user", content: userMessage }],
+        }),
+      });
+
+      if (!resp.ok) {
+        const errText = await resp.text();
+        throw new Error(\`API \${resp.status}: \${errText}\`);
+      }
+
+      const data = await resp.json();
+      return data.content[0].type === "text" ? data.content[0].text.trim() : "";
+    } catch (err) {
+      if (attempt < retries) {
+        console.log(\`  Retry \${attempt + 1}...\`);
+        await new Promise((r) => setTimeout(r, 1000));
+      } else {
+        throw err;
+      }
+    }
   }
 }
 
-// Clean up temp file
-try { require("fs").unlinkSync(join(evalsDir, ".tmp-prompt.txt")); } catch {}
+const results = [];
+let successCount = 0, failCount = 0;
 
-writeFileSync(outFile, JSON.stringify(results, null, 2));
-console.log("\\nWrote " + results.length + " results to " + outFile);
-console.log("Passed: " + results.filter((r) => r.output !== "ERROR").length + "/" + results.length);
+async function processOne(gt) {
+  const id = gt.id;
+  console.log(\`[\${id}] (\${gt.split})\`);
+  try {
+    const rawText = await callClaude(promptTemplate, JSON.stringify(gt.input));
+    let cleaned = rawText.replace(/\`\`\`json\\s*/g, "").replace(/\`\`\`\\s*/g, "").trim();
+    const jsonMatch = cleaned.match(/\\{[\\s\\S]*\\}/);
+    if (jsonMatch) cleaned = jsonMatch[0];
+    let parsed = null;
+    try {
+      parsed = JSON.parse(cleaned);
+      successCount++;
+      console.log(\`  OK: \${JSON.stringify(parsed).substring(0, 100)}\`);
+    } catch {
+      console.log(\`  PARSE FAIL: \${cleaned.substring(0, 100)}\`);
+      failCount++;
+    }
+    return { id, split: gt.split, output: parsed, raw_response: rawText, ground_truth: gt.ground_truth, parse_failure: !parsed };
+  } catch (err) {
+    console.log(\`  ERROR: \${err.message}\`);
+    failCount++;
+    return { id, split: gt.split, output: null, raw_response: \`ERROR: \${err.message}\`, ground_truth: gt.ground_truth, parse_failure: true };
+  }
+}
+
+const CONCURRENCY = 5;
+for (let i = 0; i < inputs.length; i += CONCURRENCY) {
+  const batch = inputs.slice(i, i + CONCURRENCY);
+  const batchResults = await Promise.all(batch.map(processOne));
+  results.push(...batchResults);
+}
+
+results.sort((a, b) => a.id.localeCompare(b.id));
+
+writeFileSync(OUT_FILE, JSON.stringify({
+  prompt_version: VERSION,
+  timestamp: new Date().toISOString(),
+  model: MODEL,
+  service_tier: "flex",
+  estimated_tokens: estimatedTokens,
+  results,
+  summary: { total: results.length, success: successCount, failures: failCount },
+}, null, 2));
+
+console.log(\`\\nDone. \${successCount}/\${results.length} parsed. Output: \${OUT_FILE}\`);
 `;
 
 writeFileSync(join(root, "evals", "run-eval.mjs"), runEvalTemplate);
 
-// Write parameterized judge.mjs
+// ─── judge.mjs ────────────────────────────────────────────────────────────────
+
 const judgeTemplate = `#!/usr/bin/env bun
 /**
  * Semi-automated judge for ${name}
@@ -257,11 +373,11 @@ const outFile = join(evalsDir, version + ".json");
 const scenarioConfig = JSON.parse(readFileSync(join(scenarioDir, "scenario.json"), "utf-8"));
 const rubric = scenarioConfig.rubric.dimensions;
 
-// Read raw outputs
 const rawOutputs = JSON.parse(readFileSync(rawFile, "utf-8"));
+// Support both flat array (legacy) and {results:[...]} shape
+const rawArr = Array.isArray(rawOutputs) ? rawOutputs : rawOutputs.results;
 
 if (args.finalize) {
-  // Read filled template and compute final scores
   if (!existsSync(templateFile)) {
     console.error("No score template found at " + templateFile);
     console.error("Run without --finalize first to generate the template.");
@@ -294,7 +410,6 @@ if (args.finalize) {
     });
   }
 
-  // Compute aggregates
   const train = perInput.filter((p) => p.split === "train");
   const val = perInput.filter((p) => p.split === "val");
   const holdout = perInput.filter((p) => p.split === "holdout");
@@ -310,7 +425,7 @@ if (args.finalize) {
   const output = {
     prompt_version: version,
     timestamp: new Date().toISOString(),
-    config: { target_model: "haiku", judge: "manual", normalization: "(score - 1) / 4" },
+    config: { judge: "manual", normalization: "(score - 1) / 4" },
     aggregate: {
       overall_score: Math.round(avg(perInput) * 10000) / 10000,
       train_score: Math.round(avg(train) * 10000) / 10000,
@@ -324,19 +439,18 @@ if (args.finalize) {
   writeFileSync(outFile, JSON.stringify(output, null, 2));
   console.log("Wrote scored results to " + outFile);
   console.log("Overall: " + output.aggregate.overall_score);
-  console.log("Train: " + output.aggregate.train_score);
-  console.log("Val: " + output.aggregate.validation_score);
+  console.log("Train:   " + output.aggregate.train_score);
+  console.log("Val:     " + output.aggregate.validation_score);
   if (output.aggregate.holdout_score) console.log("Holdout: " + output.aggregate.holdout_score);
 
 } else {
-  // Generate score template for manual review
   const semanticDims = Object.keys(rubric).filter((d) => d !== "format_comp" && d !== "format_compliance");
 
-  const inputs = rawOutputs.map((raw) => ({
+  const inputs = rawArr.map((raw) => ({
     id: raw.id,
     split: raw.split,
-    haiku_output: raw.output,
-    ground_truth: raw.groundTruth,
+    model_output: raw.output || raw.raw_response,
+    ground_truth: raw.ground_truth || raw.groundTruth,
     scores: Object.fromEntries(semanticDims.map((d) => [d, null])),
   }));
 
@@ -359,25 +473,270 @@ if (args.finalize) {
 
 writeFileSync(join(root, "evals", "judge.mjs"), judgeTemplate);
 
-// Count ground truth files for validation warning
-const gtCount = 1; // Just the example file
-if (gtCount < 12) {
-  console.log("Warning: Minimum 12 ground truth files recommended (currently: example only).");
-  console.log("Add at least 12 real test cases before running the anneal loop.");
+// ─── icp-loop.mjs (icp-loop mode only) ───────────────────────────────────────
+
+if (mode === "icp-loop") {
+  const icpLoopTemplate = `#!/usr/bin/env bun
+/**
+ * ICP Loop — Interactive prompt validation with human review
+ *
+ * Feeds batches of N companies through the model (Anthropic Flex tier), shows
+ * reasoning per company, collects corrections. Gate: clean_rounds_required
+ * consecutive clean batches (zero corrections) before graduation is allowed.
+ *
+ * Usage:
+ *   bun icp-loop.mjs --version v001
+ *   bun icp-loop.mjs --version v001 --batch 3   # jump to specific batch number
+ */
+import { readFileSync, writeFileSync, readdirSync } from "fs";
+import { join, resolve } from "path";
+import { parseArgs } from "util";
+import { createInterface } from "readline";
+
+const { values: args } = parseArgs({
+  args: process.argv.slice(2),
+  options: {
+    version: { type: "string" },
+    batch: { type: "string" },
+  },
+});
+
+if (!args.version) {
+  console.error("Usage: bun icp-loop.mjs --version vNNN [--batch N]");
+  process.exit(1);
+}
+
+const ANTHROPIC_API_KEY = Bun.env["ANTHROPIC_API_KEY"] || "";
+if (!ANTHROPIC_API_KEY) {
+  console.error("ANTHROPIC_API_KEY not found in environment.");
+  process.exit(1);
+}
+
+const VERSION = args.version;
+const BASE = resolve(import.meta.dir, "..");
+const EVALS_DIR = import.meta.dir;
+const stateFile = join(EVALS_DIR, "loop-state.json");
+
+const scenarioConfig = JSON.parse(readFileSync(join(BASE, "scenario.json"), "utf-8"));
+const icpConfig = scenarioConfig.icp_loop || {};
+const BATCH_SIZE = icpConfig.batch_size || 10;
+const CLEAN_ROUNDS_REQUIRED = icpConfig.clean_rounds_required || 3;
+const MODEL = icpConfig.model || "claude-sonnet-4-6";
+
+const state = JSON.parse(readFileSync(stateFile, "utf-8"));
+if (!state.icp_loop) {
+  state.icp_loop = {
+    clean_rounds: 0,
+    current_batch_offset: 0,
+    total_batches_reviewed: 0,
+    gate_cleared: false,
+    corrections_history: [],
+  };
+}
+const icpState = state.icp_loop;
+
+if (icpState.gate_cleared) {
+  console.log("Gate already cleared — " + CLEAN_ROUNDS_REQUIRED + " consecutive clean rounds achieved.");
+  console.log("Run /anneal-prompt to graduate, or run full eval:");
+  console.log("  bun run-eval.mjs --version " + VERSION);
+  process.exit(0);
+}
+
+const promptFile = join(BASE, "prompts", VERSION + ".md");
+const promptTemplate = readFileSync(promptFile, "utf-8");
+
+// Load all inputs from ground-truth dir (sorted deterministically)
+const gtDir = join(BASE, "ground-truth");
+const allInputs = readdirSync(gtDir)
+  .filter((f) => f.endsWith(".json"))
+  .sort()
+  .map((f) => JSON.parse(readFileSync(join(gtDir, f), "utf-8")));
+
+// Determine batch
+const batchIndex = args.batch !== undefined
+  ? parseInt(args.batch) - 1
+  : Math.floor(icpState.current_batch_offset / BATCH_SIZE) % Math.ceil(allInputs.length / BATCH_SIZE);
+const startIdx = (batchIndex * BATCH_SIZE) % allInputs.length;
+const batch = [];
+for (let i = 0; i < BATCH_SIZE; i++) {
+  batch.push(allInputs[(startIdx + i) % allInputs.length]);
+}
+
+const batchNum = batchIndex + 1;
+const totalBatches = Math.ceil(allInputs.length / BATCH_SIZE);
+
+console.log("\\n--- ICP Loop | " + VERSION + " | Batch " + batchNum + "/" + totalBatches + " | Clean: " + icpState.clean_rounds + "/" + CLEAN_ROUNDS_REQUIRED + " ---\\n");
+console.log("Model: " + MODEL + " (Flex)");
+console.log("Classifying " + batch.length + " companies...\\n");
+
+async function callFlex(systemPrompt, userMessage, retries = 1) {
+  for (let attempt = 0; attempt <= retries; attempt++) {
+    try {
+      const resp = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": ANTHROPIC_API_KEY,
+          "anthropic-version": "2023-06-01",
+        },
+        body: JSON.stringify({
+          model: MODEL,
+          max_tokens: 600,
+          service_tier: "flex",
+          system: systemPrompt,
+          messages: [{ role: "user", content: userMessage }],
+        }),
+      });
+      if (!resp.ok) {
+        const errText = await resp.text();
+        throw new Error("API " + resp.status + ": " + errText);
+      }
+      const data = await resp.json();
+      return data.content[0].type === "text" ? data.content[0].text.trim() : "";
+    } catch (err) {
+      if (attempt < retries) {
+        await new Promise((r) => setTimeout(r, 1500));
+      } else {
+        throw err;
+      }
+    }
+  }
+}
+
+async function classifyOne(gt) {
+  const id = gt.id;
+  // Ask for explicit reasoning before JSON to make corrections actionable
+  const userMsg =
+    "Classify this company. In 2-3 sentences, explain your reasoning first. Then output your JSON classification.\\n\\n" +
+    JSON.stringify(gt.input, null, 2);
+
+  try {
+    const text = await callFlex(promptTemplate, userMsg);
+    const jsonMatch = text.match(/\\{[\\s\\S]*\\}/);
+    let parsed = null;
+    try { parsed = JSON.parse(jsonMatch?.[0] || ""); } catch {}
+    const reasoning = text.replace(/\\{[\\s\\S]*\\}/, "").trim();
+    return { id, input: gt.input, reasoning, parsed, ground_truth: gt.ground_truth };
+  } catch (err) {
+    return { id, input: gt.input, reasoning: "ERROR: " + err.message, parsed: null, ground_truth: gt.ground_truth };
+  }
+}
+
+// Run batch concurrently (max 5 at a time)
+const CONCURRENCY = 5;
+const batchResults = [];
+for (let i = 0; i < batch.length; i += CONCURRENCY) {
+  const chunk = batch.slice(i, i + CONCURRENCY);
+  const results = await Promise.all(chunk.map(classifyOne));
+  batchResults.push(...results);
+  process.stdout.write("  " + Math.min(i + CONCURRENCY, batch.length) + "/" + batch.length + " done\\r");
+}
+console.log("\\n");
+
+// Interactive review
+const rl = createInterface({ input: process.stdin, output: process.stdout });
+const ask = (q) => new Promise((res) => rl.question(q, res));
+
+const corrections = [];
+
+for (let i = 0; i < batchResults.length; i++) {
+  const r = batchResults[i];
+  const companyName = r.input?.company_name || r.input?.name || r.id;
+
+  console.log("[" + (i + 1) + "/" + batchResults.length + "] " + companyName);
+  if (r.reasoning) console.log("  Reasoning : " + r.reasoning);
+  console.log("  Result    : " + (r.parsed ? JSON.stringify(r.parsed) : "(PARSE FAIL — no JSON in response)"));
+
+  const answer = await ask("  [Enter=accept, type correction]: ");
+
+  if (answer.trim()) {
+    corrections.push({
+      id: r.id,
+      company: companyName,
+      model_output: r.parsed,
+      model_reasoning: r.reasoning,
+      correction: answer.trim(),
+    });
+    console.log("  Noted.");
+  }
   console.log("");
 }
 
-console.log("Scenario created: " + name);
+rl.close();
+
+// Update state
+const editCount = corrections.length;
+const wasClean = editCount === 0;
+
+if (wasClean) {
+  icpState.clean_rounds++;
+  console.log("Batch " + batchNum + " CLEAN. Clean rounds: " + icpState.clean_rounds + "/" + CLEAN_ROUNDS_REQUIRED);
+} else {
+  icpState.clean_rounds = 0;
+  console.log("Batch " + batchNum + ": " + editCount + " correction(s). Counter reset to 0.");
+}
+
+icpState.total_batches_reviewed++;
+icpState.current_batch_offset += BATCH_SIZE;
+
+if (corrections.length > 0) {
+  const corrFile = join(EVALS_DIR, "icp-corrections-" + VERSION + "-batch" + batchNum + ".json");
+  writeFileSync(corrFile, JSON.stringify({ version: VERSION, batch: batchNum, corrections }, null, 2));
+  const nextVersion = "v" + String(parseInt(VERSION.slice(1)) + 1).padStart(3, "0");
+  console.log("\\nCorrections -> " + corrFile);
+  console.log("Revise prompt for " + nextVersion + " using those corrections, then run:");
+  console.log("  bun icp-loop.mjs --version " + nextVersion);
+}
+
+if (icpState.clean_rounds >= CLEAN_ROUNDS_REQUIRED) {
+  icpState.gate_cleared = true;
+  console.log("\\nGATE CLEARED — " + CLEAN_ROUNDS_REQUIRED + " consecutive clean rounds.");
+  console.log("Prompt " + VERSION + " is validated. Run full eval:");
+  console.log("  bun run-eval.mjs --version " + VERSION);
+} else if (wasClean) {
+  console.log("\\nNext batch:");
+  console.log("  bun icp-loop.mjs --version " + VERSION);
+}
+
+// Append summary to corrections_history
+icpState.corrections_history.push({
+  version: VERSION,
+  batch: batchNum,
+  edits: editCount,
+  clean_after: wasClean,
+  timestamp: new Date().toISOString(),
+});
+
+writeFileSync(stateFile, JSON.stringify(state, null, 2));
+`;
+
+  writeFileSync(join(root, "evals", "icp-loop.mjs"), icpLoopTemplate);
+}
+
+// ─── Console output ───────────────────────────────────────────────────────────
+
+console.log("");
+console.log("Scenario created: " + name + " (mode: " + mode + ")");
 console.log("Location: " + root);
 console.log("");
 console.log("Next steps:");
-console.log("  1. Edit scenario.json - update description and rubric dimensions");
-console.log("  2. Add input files to inputs/ (12-15 recommended, delete example.json)");
-console.log("  3. Add ground truth to ground-truth/ (set split: train/val/holdout)");
-console.log("  4. Paste your baseline prompt into prompts/v001.md");
-console.log("  5. Run: /anneal-prompt " + name);
-console.log("");
-console.log("Generated scripts:");
-console.log("  evals/run-eval.mjs  -- bun run-eval.mjs --version v001");
-console.log("  evals/judge.mjs     -- bun judge.mjs --version v001");
+console.log("  1. Edit scenario.json — update description and rubric dimensions");
+console.log("  2. Add ground truth files to ground-truth/ (12-15 recommended)");
+console.log("  3. Paste baseline prompt into prompts/v001.md");
+
+if (mode === "icp-loop") {
+  console.log("  4. Run the ICP loop:");
+  console.log("       bun " + join("scenarios", name, "evals", "icp-loop.mjs") + " --version v001");
+  console.log("");
+  console.log("     Review 10 companies, correct any misclassifications.");
+  console.log("     Revise the prompt, run again. Gate clears after 3 clean batches.");
+  console.log("  5. Once gate is cleared, run full eval:");
+  console.log("       bun " + join("scenarios", name, "evals", "run-eval.mjs") + " --version v001");
+} else {
+  console.log("  4. Run: /anneal-prompt " + name);
+  console.log("");
+  console.log("Generated scripts:");
+  console.log("  evals/run-eval.mjs  — bun run-eval.mjs --version v001");
+  console.log("  evals/judge.mjs     — bun judge.mjs --version v001");
+}
 console.log("");
