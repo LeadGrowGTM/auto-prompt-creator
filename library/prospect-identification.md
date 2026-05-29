@@ -51,3 +51,8 @@ Output ONLY these two lines:
 - Decision Makers: [title] and [title]
 
 Rules: plural labels, lowercase, "and" separator, abbreviations (GMs, VPs, CTOs, CFOs, CIOs, CISOs), specific not generic.
+CRITICAL: NEVER output size-only labels like "enterprise companies", "mid-market companies", "large organizations" as the industry descriptor. Always name the INDUSTRY: "financial services firms", "healthcare organizations", "manufacturing companies", "government agencies". If the product sells broadly, identify the TOP 2 most likely buyer industries from the description.
+
+## Company
+
+{company_name} | {company_description}

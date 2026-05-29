@@ -12,6 +12,7 @@ input_schema:
   brief_angles: string
   prior_agent_output: object
   variant_count: integer
+  client_kb_context: string
 output_schema:
   variant_01: object
   variant_02: object
@@ -37,6 +38,7 @@ You have been given:
 - **Campaign brief context**: `brief_market`, `brief_angles`, `segment_name`.
 - **Segment-specific EDPs**: `segment_edps` is a list of prospect-voice pain/desire/objection bullets. These MUST visibly shape the opener — not generic copy.
 - **Optionally**, `prior_agent_output`: if non-null, another agent already wrote variants for this segment. Your variants MUST be distinct in angle from the prior output — not paraphrases. Different hook, different evidence type, different CTA framing.
+- **Optionally**, `client_kb_context`: if non-empty, pre-loaded client files (`_master.md` + proven winning patterns). Use for voice calibration, proven angles, and format reference. Brief EDPs and segment definition take precedence. Ignore if empty.
 
 ## Hard rules (non-negotiable)
 
@@ -82,6 +84,9 @@ Schema:
 
 `--- COMPANION FILES ---`
 {companion_texts}
+
+`--- CLIENT KNOWLEDGE BASE (supplementary, use if non-empty) ---`
+{client_kb_context}
 
 `--- CAMPAIGN INPUTS ---`
 - segment_name: {segment_name}

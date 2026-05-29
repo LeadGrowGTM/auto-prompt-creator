@@ -16,6 +16,7 @@ input_schema:
   lead_person_name: string
   lead_person_title: string
   lead_industry: string
+  lead_signal_context: string
 output_schema:
   situation_line: string
   value_line: string
@@ -40,6 +41,7 @@ You have been given:
 - **Campaign brief context**: `brief_market`, `brief_angles`, `segment_name`.
 - **Segment-specific EDPs**: `segment_edps` is a list of prospect-voice pain/desire/objection bullets. These MUST visibly shape the situation_line — not generic copy.
 - **Per-lead context**: `lead_company_name`, `lead_company_domain`, `lead_person_name`, `lead_person_title`, `lead_industry`. Use these to make the output feel researched and specific to THIS person at THIS company.
+- **Signal context**: `lead_signal_context` — a one-line signal already written for this lead (e.g., "Shipped South of Midnight in 2025", "Announced Project X in early 2026"). If non-empty, anchor the `situation_line` to this specific signal — it's the outreach moment. Do NOT ignore it or genericize it.
 - **Optionally**, `prior_agent_output`: if non-null, another agent already wrote personalization for this lead. Your output MUST be distinct in angle from the prior output — different EDP, different hook, different evidence type. Not paraphrases.
 
 ## Hard rules (non-negotiable)
@@ -83,5 +85,6 @@ You have been given:
 - lead_person_name: {lead_person_name}
 - lead_person_title: {lead_person_title}
 - lead_industry: {lead_industry}
+- lead_signal_context: {lead_signal_context}
 
 Return ONLY the JSON object. No preamble, no trailing prose.
