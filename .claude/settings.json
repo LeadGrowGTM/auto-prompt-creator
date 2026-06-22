@@ -1,9 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git:*)",
-      "Bash(bun:*)",
-      "Bash(bunx:*)"
+      "Bash(bun setup.mjs *)",
+      "Bash(bun scenarios/*/evals/run-eval.mjs *)",
+      "Bash(bun scenarios/*/evals/judge.mjs *)",
+      "Bash(bun run *)",
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git diff *)"
     ]
   }
 }
