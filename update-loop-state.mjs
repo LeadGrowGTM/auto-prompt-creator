@@ -20,7 +20,7 @@
  *   4. Exits non-zero on any error; leaves file unchanged
  */
 
-import { readFileSync, writeFileSync, renameSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, renameSync, existsSync, unlinkSync } from "fs";
 import { join, resolve } from "path";
 import { parseArgs } from "util";
 
@@ -103,7 +103,7 @@ try {
 } catch (err) {
   console.error(`Atomic write failed: ${err.message}`);
   // Clean up temp file if it exists
-  try { if (existsSync(tmpFile)) Bun.file(tmpFile).unlink?.(); } catch {}
+  try { if (existsSync(tmpFile)) unlinkSync(tmpFile); } catch {}
   process.exit(1);
 }
 
