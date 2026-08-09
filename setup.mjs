@@ -349,6 +349,7 @@ const judgeTemplate = `#!/usr/bin/env bun
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join, resolve } from "path";
 import { parseArgs } from "util";
+import { normalizeScore, weightedScore, aggregateScores } from "../../../lib/score.mjs";
 
 const { values: args } = parseArgs({
   args: process.argv.slice(2),
@@ -387,33 +388,36 @@ if (args.finalize) {
   const template = JSON.parse(readFileSync(templateFile, "utf-8"));
   const perInput = [];
 
+  const weights = Object.fromEntries(
+    Object.entries(rubric).map(([dim, config]) => [dim, config.weight])
+  );
+
   for (const entry of template.inputs) {
     const dimensions = {};
-    let weightedSum = 0;
 
-    for (const [dim, config] of Object.entries(rubric)) {
+    for (const [dim] of Object.entries(rubric)) {
       const raw = entry.scores[dim];
       if (raw === null || raw === undefined) {
         console.error("Missing score for " + entry.id + " dimension " + dim);
         process.exit(1);
       }
-      const normalized = (raw - 1) / 4;
+      const normalized = normalizeScore(raw);
       dimensions[dim] = { raw, normalized };
-      weightedSum += normalized * config.weight;
     }
+
+    const normalizedDims = Object.fromEntries(
+      Object.entries(dimensions).map(([dim, v]) => [dim, v.normalized])
+    );
 
     perInput.push({
       input_id: entry.id,
       split: entry.split,
-      weighted_score: Math.round(weightedSum * 10000) / 10000,
+      weighted_score: Math.round(weightedScore(normalizedDims, weights) * 10000) / 10000,
       dimensions,
     });
   }
 
-  const train = perInput.filter((p) => p.split === "train");
-  const val = perInput.filter((p) => p.split === "val");
-  const holdout = perInput.filter((p) => p.split === "holdout");
-  const avg = (arr) => arr.length ? arr.reduce((s, p) => s + p.weighted_score, 0) / arr.length : null;
+  const aggregated = aggregateScores(perInput);
 
   const dimAverages = {};
   for (const dim of Object.keys(rubric)) {
@@ -427,10 +431,10 @@ if (args.finalize) {
     timestamp: new Date().toISOString(),
     config: { judge: "manual", normalization: "(score - 1) / 4" },
     aggregate: {
-      overall_score: Math.round(avg(perInput) * 10000) / 10000,
-      train_score: Math.round(avg(train) * 10000) / 10000,
-      validation_score: val.length ? Math.round(avg(val) * 10000) / 10000 : null,
-      holdout_score: holdout.length ? Math.round(avg(holdout) * 10000) / 10000 : null,
+      overall_score: aggregated.overall_score,
+      train_score: aggregated.train_score,
+      validation_score: aggregated.validation_score,
+      holdout_score: aggregated.holdout_score,
       dimension_averages: dimAverages,
     },
     per_input: perInput,
