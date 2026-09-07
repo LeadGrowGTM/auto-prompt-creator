@@ -14,3 +14,7 @@ Thumbs.db
 # Temp/scratch
 temp/
 *.tmp
+
+# Agent worktrees
+.worktrees/
+.agents/skills/
